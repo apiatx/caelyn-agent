@@ -697,12 +697,12 @@ function PredictionAgent() {
     <GlassCard className="p-5 mb-8">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%)' }}>
           <Sparkles className="w-4 h-4 text-white" />
         </div>
         <div>
           <h2 className="text-base font-bold text-white flex items-center gap-2">
-            Prediction Markets Agent
+            Caelyn Predicts
           </h2>
           <p className="text-[10px] text-white/30">
             Ask how prediction market odds affect investments, sectors, and positioning
@@ -776,7 +776,7 @@ function PredictionAgent() {
         <Button
           type="submit"
           disabled={loading || !input.trim()}
-          className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-3 py-2 rounded-lg transition-all disabled:opacity-30 flex-shrink-0"
+          className="text-white px-3 py-2 rounded-lg transition-all disabled:opacity-30 flex-shrink-0" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)' }}
         >
           {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
         </Button>
@@ -851,28 +851,37 @@ const openInNewTab = (url: string) => {
 
 export default function PredictPage() {
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
-      {/* Prediction Markets Section - Enhanced Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen text-white relative" style={{ background: '#050510', fontFamily: "'Outfit', sans-serif" }}>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+      `}</style>
+      {/* Blue radial gradient background — same as Social page */}
+      <div style={{
+        position: 'fixed', top: '-40%', left: '-20%', width: '140%', height: '140%',
+        background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(99,102,241,0.06) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(6,182,212,0.04) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 60%)',
+        pointerEvents: 'none', zIndex: 0
+      }} />
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative" style={{ zIndex: 1 }}>
         <div className="text-center relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-red-500/20 to-yellow-500/20 blur-3xl -z-10"></div>
-          <div className="flex justify-center items-center gap-4 mb-6">
-            <div className="w-28 h-28 rounded-full flex items-center justify-center border-2 border-yellow-400 shadow-2xl hover:scale-110 transition-transform duration-300 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-blue-500/10 to-cyan-500/10 blur-3xl -z-10"></div>
+          <div className="flex justify-center items-center gap-4 mb-4">
+            <div className="w-28 h-28 rounded-full flex items-center justify-center border-2 shadow-2xl hover:scale-110 transition-transform duration-300 overflow-hidden" style={{ borderColor: '#38bdf8' }}>
               <img
                 src={diceImage}
                 alt="Prediction Markets"
                 className="w-28 h-28 object-cover"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl font-bold bg-gradient-to-r from-white via-orange-200 to-yellow-200 bg-clip-text text-transparent">Prediction Markets</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold" style={{ background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 40%, #06b6d4 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prediction Markets</h2>
           </div>
-          <p className="text-lg text-white/80 font-medium tracking-wide">Decentralized Casino and Analytics</p>
-          <div className="w-32 h-1 bg-gradient-to-r from-orange-500 to-yellow-500 mx-auto mt-4 rounded-full"></div>
+          <p className="text-base font-medium tracking-wide" style={{ color: '#64748b' }}>Decentralized Casino and Analytics</p>
+          <div className="w-32 h-1 mx-auto mt-3 rounded-full" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)' }}></div>
         </div>
       </div>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative" style={{ zIndex: 1 }}>
 
         {/* ═══ Prediction Markets Agent ═══ */}
         <PredictionAgent />
