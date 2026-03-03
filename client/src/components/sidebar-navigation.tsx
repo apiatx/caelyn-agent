@@ -22,7 +22,7 @@ interface NavItem {
 
 export function SidebarNavigation({ className = "", isCollapsed, isMobile = false, isMobileMenuOpen = false, onToggle, onCloseMobile }: SidebarNavigationProps) {
   const [location, setLocation] = useLocation();
-  const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const [expandedItems, setExpandedItems] = useState<string[]>(['crypto-stocks']);
 
   const navigateTo = (url: string) => {
     setLocation(url);

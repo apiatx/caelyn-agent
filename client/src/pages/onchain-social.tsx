@@ -145,7 +145,7 @@ function GrokSocialAgent() {
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '0.82rem', fontWeight: 600, color: '#e2e8f0',
               letterSpacing: '-0.01em', margin: 0,
-            }}>Grok Social Agent</h3>
+            }}>Social Caelyn</h3>
             <p style={{
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: '0.62rem', color: '#475569',
@@ -378,24 +378,16 @@ export default function OnchainSocialPage() {
         }} />
 
         {/* HERO */}
-        <div style={{ padding: '4rem 3rem 2rem', maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
-          <div style={{
-            display: 'inline-block', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500,
-            letterSpacing: '0.12em', textTransform: 'uppercase', color: '#38bdf8',
-            border: '1px solid rgba(56,189,248,0.25)', borderRadius: 100, padding: '0.4rem 1.2rem',
-            marginBottom: '2.5rem', background: 'rgba(56,189,248,0.05)'
-          }}>
-            Social Intelligence
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+        <div style={{ padding: '1.5rem 3rem 1rem', maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
             <img src={socialImage} alt="Caelyn.ai" style={{ width: 320, height: 'auto', objectFit: 'contain' }} />
-            <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.03em' }}>
+            <h1 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 700, lineHeight: 1.15, letterSpacing: '-0.03em', margin: 0 }}>
               <span className="gradient-text">Social</span>
             </h1>
+            <p style={{ fontSize: '0.9rem', color: '#64748b', margin: 0, lineHeight: 1.5 }}>
+              Social intelligence and community analytics
+            </p>
           </div>
-          <p style={{ fontSize: '1.05rem', color: '#64748b', maxWidth: 680, margin: '0 auto', lineHeight: 1.7 }}>
-            Social intelligence and community analytics
-          </p>
         </div>
 
         {/* DIVIDER */}
@@ -404,12 +396,16 @@ export default function OnchainSocialPage() {
         {/* ═══ Grok Social Agent ═══ */}
         <GrokSocialAgent />
 
-        {/* StocksX Section */}
-        <section style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>StocksX</h3>
-          <h2 style={{ fontSize: '1.6rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1.5rem', color: '#e2e8f0' }}>Stocks <span className="ice">X Accounts</span></h2>
+        {/* StocksX + CryptoX Side by Side */}
+        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'stretch' }}>
 
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+          {/* ── Left: Stocks X ── */}
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>StocksX</h3>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#e2e8f0' }}>Stocks <span className="ice">X Accounts</span></h2>
+
+          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.25rem', flex: 1, overflowY: 'auto', maxHeight: '65vh' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.5rem' }}>
               {[
                 { name: 'RebellioMarket', handle: '@RebellioMarket' },
@@ -456,12 +452,12 @@ export default function OnchainSocialPage() {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* CryptoX Section */}
-        <section style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>CryptoX</h3>
-          <h2 style={{ fontSize: '1.6rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1.5rem', color: '#e2e8f0' }}>Crypto <span className="ice">X Accounts</span></h2>
+          </div>
+          {/* ── Right: Crypto X ── */}
+          <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>CryptoX</h3>
+          <h2 style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#e2e8f0' }}>Crypto <span className="ice">X Accounts</span></h2>
+          <div style={{ flex: 1, overflowY: 'auto', maxHeight: '65vh', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
           {/* Research and Fundamentals */}
           <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
@@ -721,6 +717,9 @@ export default function OnchainSocialPage() {
             </div>
           </div>
 
+          </div>
+          </div>
+          </div>
         </section>
 
         {/* Platforms Section */}

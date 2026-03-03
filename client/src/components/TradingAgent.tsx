@@ -2113,9 +2113,10 @@ export default function TradingAgent() {
     const totalCount = sections.reduce((sum, sec) => sum + sec.items.length, 0);
 
     const renderTickerRow = (item: any, i: number, sec: {key:string, color:string, border:string, items:any[]}) => {
+      if (!item || !item.ticker) return null;
       const rowId = `${sec.key}-${item.ticker}`;
       const isExp = expandedTicker === rowId;
-      const tvSym = item.ticker.includes(':') ? item.ticker : item.ticker;
+      const tvSym = item.ticker?.includes(':') ? item.ticker : item.ticker;
       return <div key={i}>
         <div onClick={() => setExpandedTicker(isExp ? null : rowId)} style={{ padding:'8px 14px', borderBottom: (i < sec.items.length - 1 || isExp) ? `1px solid ${C.border}` : 'none', display:'flex', alignItems:'center', gap:10, background: i % 2 === 0 ? 'transparent' : `${C.bg}80`, cursor:'pointer' }}>
           <span style={{ color:sec.color, fontSize:13, fontWeight:700, fontFamily:font, width:70, flexShrink:0 }}>{item.ticker}</span>

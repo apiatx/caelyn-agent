@@ -726,12 +726,17 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
       {/* Calendar header */}
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
-          <CalendarDays className="w-5 h-5 text-yellow-400" />
+          <div className="w-9 h-9 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+            <CalendarDays className="w-5 h-5 text-white" />
+          </div>
           <div>
             <h3 className="text-base font-bold text-white">
               Earnings Calendar
             </h3>
-            <p className="text-[10px] text-white/30 mt-0.5">
+            <p className="text-[10px] text-white/30 mt-0.5 leading-tight">
+              Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context
+            </p>
+            <p className="text-[10px] text-white/20 mt-0.5">
               {weekMonth} {weekYear} &middot; {totalThisWeek} earnings call{totalThisWeek !== 1 ? "s" : ""} this week
             </p>
           </div>
@@ -1046,12 +1051,17 @@ export default function StocksEarningsCalendarPage() {
         <GlassCard className="p-5">
           {earningsLoading && earningsMarkets.length === 0 ? (
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <CalendarDays className="w-5 h-5 text-yellow-400" />
-                <h3 className="text-sm font-bold text-white/90">
-                  Earnings Calendar
-                  <span className="text-white/30 font-normal ml-2">/ Loading...</span>
-                </h3>
+              <div className="flex items-center gap-3 mb-1">
+                <div className="w-9 h-9 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <CalendarDays className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-white">
+                    Earnings Calendar
+                    <span className="text-white/30 font-normal text-xs ml-2">/ Loading...</span>
+                  </h3>
+                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context</p>
+                </div>
               </div>
               <div className="grid grid-cols-5 gap-2">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -1060,10 +1070,17 @@ export default function StocksEarningsCalendarPage() {
               </div>
             </div>
           ) : earningsMarkets.length === 0 ? (
-            <div className="flex items-center gap-3">
-              <CalendarDays className="w-5 h-5 text-yellow-400" />
-              <h3 className="text-sm font-bold text-white/90">Earnings Calendar</h3>
-              <span className="text-[10px] text-white/30 ml-2">No earnings markets found. Check back closer to earnings season.</span>
+            <div>
+              <div className="flex items-center gap-3 mb-1">
+                <div className="w-9 h-9 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <CalendarDays className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-white">Earnings Calendar</h3>
+                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context</p>
+                </div>
+              </div>
+              <p className="text-xs text-white/30 mt-3">No earnings markets found. Check back closer to earnings season.</p>
             </div>
           ) : (
             <EarningsCalendarWidget markets={earningsMarkets} />
