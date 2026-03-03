@@ -734,7 +734,7 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
               Earnings Calendar
             </h3>
             <p className="text-[10px] text-white/30 mt-0.5 leading-tight">
-              Polymarket-powered earnings predictions with Finnhub fundamentals &amp; AI news context
+              Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context
             </p>
             <p className="text-[10px] text-white/20 mt-0.5">
               {weekMonth} {weekYear} &middot; {totalThisWeek} earnings call{totalThisWeek !== 1 ? "s" : ""} this week
@@ -1046,7 +1046,7 @@ export default function StocksEarningsCalendarPage() {
                     Earnings Calendar
                     <span className="text-white/30 font-normal text-xs ml-2">/ Loading...</span>
                   </h3>
-                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; AI news context</p>
+                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context</p>
                 </div>
               </div>
               <div className="grid grid-cols-5 gap-2">
@@ -1063,7 +1063,7 @@ export default function StocksEarningsCalendarPage() {
                 </div>
                 <div>
                   <h3 className="text-base font-bold text-white">Earnings Calendar</h3>
-                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; AI news context</p>
+                  <p className="text-[10px] text-white/30 leading-tight">Polymarket-powered earnings predictions with Finnhub fundamentals &amp; news context</p>
                 </div>
               </div>
               <p className="text-xs text-white/30 mt-3">No earnings markets found. Check back closer to earnings season.</p>
