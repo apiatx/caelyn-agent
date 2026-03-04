@@ -29,7 +29,7 @@ function renderGrokResponse(text: string) {
       { regex: /\b(bullish|buy|strong buy|long|upgrade|breakout|moon|pump|rally|green|accumulate)\b/gi, color: '#22c55e' },
       { regex: /\b(bearish|sell|short|downgrade|breakdown|dump|crash|red|distribute|warning|risk|avoid)\b/gi, color: '#ef4444' },
       { regex: /\b(neutral|hold|mixed|sideways|consolidat\w*|uncertain|wait)\b/gi, color: '#6b7280' },
-      { regex: /(@\w+)/g, color: '#38bdf8' },
+      { regex: /(@\w+)/g, color: '#5cc8f0' },
       { regex: /(\$[A-Z]{1,6})/g, color: '#a78bfa' },
       { regex: /(Sentiment Score:?\s*\d+\/10|Confidence:?\s*\d+\/10|\d+\/10)/gi, color: '#f59e0b' },
     ];
@@ -126,7 +126,7 @@ function GrokSocialAgent() {
     <section style={{ maxWidth: 880, margin: '0 auto', padding: '0 3rem 2rem', position: 'relative', zIndex: 1 }}>
       <div style={{
         background: '#0a0b1e',
-        border: '1px solid #1e2148',
+        border: '1px solid rgba(255,255,255,0.06)',
         borderRadius: 12,
         padding: '1.5rem',
         marginBottom: '1.5rem',
@@ -135,7 +135,7 @@ function GrokSocialAgent() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
           <div style={{
             width: 32, height: 32,
-            background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%)',
+            background: 'linear-gradient(135deg, #2090d0 0%, #3b82f6 50%, #80d8f8 100%)',
             borderRadius: 8,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             fontSize: '0.9rem', fontWeight: 700, color: '#fff',
@@ -165,8 +165,8 @@ function GrokSocialAgent() {
             disabled={loading}
             style={{
               flex: 1,
-              background: '#111228',
-              border: '1px solid #1e2148',
+              background: 'rgba(10,12,18,0.85)',
+              border: '1px solid rgba(255,255,255,0.06)',
               borderRadius: 8,
               padding: '0.65rem 0.9rem',
               fontFamily: "'JetBrains Mono', monospace",
@@ -177,13 +177,13 @@ function GrokSocialAgent() {
               opacity: loading ? 0.5 : 1,
             }}
             onFocus={e => { e.currentTarget.style.borderColor = '#3b82f6'; }}
-            onBlur={e => { e.currentTarget.style.borderColor = '#1e2148'; }}
+            onBlur={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)'; }}
           />
           <button
             type="submit"
             disabled={loading || !input.trim()}
             style={{
-              background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 100%)',
+              background: 'linear-gradient(135deg, #2090d0 0%, #3b82f6 100%)',
               border: 'none',
               borderRadius: 8,
               padding: '0.65rem 1rem',
@@ -214,8 +214,8 @@ function GrokSocialAgent() {
                 fontFamily: "'JetBrains Mono', monospace",
                 fontSize: '0.65rem',
                 color: '#64748b',
-                background: 'rgba(99,102,241,0.06)',
-                border: '1px solid rgba(99,102,241,0.2)',
+                background: 'rgba(32,144,208,0.06)',
+                border: '1px solid rgba(32,144,208,0.2)',
                 borderRadius: 100,
                 padding: '0.35rem 0.75rem',
                 cursor: loading ? 'not-allowed' : 'pointer',
@@ -225,15 +225,15 @@ function GrokSocialAgent() {
               }}
               onMouseOver={e => {
                 if (!loading) {
-                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.15)';
+                  (e.currentTarget as HTMLButtonElement).style.background = 'rgba(32,144,208,0.15)';
                   (e.currentTarget as HTMLButtonElement).style.color = '#94a3b8';
-                  (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(99,102,241,0.4)';
+                  (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(32,144,208,0.4)';
                 }
               }}
               onMouseOut={e => {
-                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(99,102,241,0.06)';
+                (e.currentTarget as HTMLButtonElement).style.background = 'rgba(32,144,208,0.06)';
                 (e.currentTarget as HTMLButtonElement).style.color = '#64748b';
-                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(99,102,241,0.2)';
+                (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(32,144,208,0.2)';
               }}
             >{prompt}</button>
           ))}
@@ -250,8 +250,8 @@ function GrokSocialAgent() {
           }}>
             {messages.map((msg, i) => (
               <div key={i} style={{
-                background: msg.role === 'user' ? 'rgba(99,102,241,0.08)' : '#0d0e22',
-                border: `1px solid ${msg.role === 'user' ? 'rgba(99,102,241,0.2)' : '#1e2148'}`,
+                background: msg.role === 'user' ? 'rgba(32,144,208,0.08)' : '#0d0e22',
+                border: `1px solid ${msg.role === 'user' ? 'rgba(32,144,208,0.2)' : 'rgba(255,255,255,0.06)'}`,
                 borderRadius: 8,
                 padding: '0.75rem 1rem',
               }}>
@@ -261,7 +261,7 @@ function GrokSocialAgent() {
                   fontWeight: 700,
                   textTransform: 'uppercase' as const,
                   letterSpacing: '0.1em',
-                  color: msg.role === 'user' ? '#818cf8' : '#38bdf8',
+                  color: msg.role === 'user' ? '#80d8f8' : '#5cc8f0',
                   marginBottom: '0.4rem',
                 }}>{msg.role === 'user' ? 'YOU' : 'GROK'}</div>
                 <div style={{
@@ -277,7 +277,7 @@ function GrokSocialAgent() {
             {loading && (
               <div style={{
                 background: '#0d0e22',
-                border: '1px solid #1e2148',
+                border: '1px solid rgba(255,255,255,0.06)',
                 borderRadius: 8,
                 padding: '0.75rem 1rem',
               }}>
@@ -357,23 +357,23 @@ export default function OnchainSocialPage() {
   };
 
   return (
-    <div className="min-h-screen text-white relative" style={{ background: '#050510', fontFamily: "'Outfit', sans-serif", lineHeight: 1.65 }}>
+    <div className="min-h-screen text-white relative" style={{ background: '#050608', fontFamily: "'Outfit', sans-serif", lineHeight: 1.65 }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-        .social-page .ice { color: #38bdf8; }
+        .social-page .ice { color: #5cc8f0; }
         .social-page .gradient-text {
-          background: linear-gradient(135deg, #6366f1 0%, #3b82f6 40%, #06b6d4 100%);
+          background: linear-gradient(135deg, #e0f0ff 0%, #5cc8f0 40%, #2090d0 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        .social-page .profile-cell:hover { background: #161838 !important; }
-        .social-page .section-card:hover { background: #161838 !important; }
+        .social-page .profile-cell:hover { background: rgba(255,255,255,0.03) !important; }
+        .social-page .section-card:hover { background: rgba(255,255,255,0.03) !important; }
       `}</style>
 
       <div className="social-page relative" style={{ zIndex: 1 }}>
         <div style={{
           position: 'fixed', top: '-40%', left: '-20%', width: '140%', height: '140%',
-          background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(99,102,241,0.06) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(6,182,212,0.04) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(40,160,220,0.04) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(60,180,240,0.03) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(50,170,230,0.02) 0%, transparent 60%)',
           pointerEvents: 'none', zIndex: 0
         }} />
 
@@ -391,7 +391,7 @@ export default function OnchainSocialPage() {
         </div>
 
         {/* DIVIDER */}
-        <div style={{ width: 60, height: 2, background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)', margin: '0 auto 2rem', borderRadius: 2 }} />
+        <div style={{ width: 60, height: 2, background: 'linear-gradient(135deg, #2090d0, #3b82f6, #80d8f8)', margin: '0 auto 2rem', borderRadius: 2 }} />
 
         {/* ═══ Grok Social Agent ═══ */}
         <GrokSocialAgent />
@@ -402,10 +402,10 @@ export default function OnchainSocialPage() {
 
           {/* ── Left: Stocks X ── */}
           <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>StocksX</h3>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.5rem' }}>StocksX</h3>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#e2e8f0' }}>Stocks <span className="ice">X Accounts</span></h2>
 
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.25rem', flex: 1, overflowY: 'auto', maxHeight: '65vh' }}>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.25rem', flex: 1, overflowY: 'auto', maxHeight: '65vh' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.5rem' }}>
               {[
                 { name: 'RebellioMarket', handle: '@RebellioMarket' },
@@ -443,11 +443,11 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account.handle}
                   href={`https://x.com/${account.handle.replace('@', '')}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account.name}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account.name}</span>
                 </SafeLink>
               ))}
             </div>
@@ -455,13 +455,13 @@ export default function OnchainSocialPage() {
           </div>
           {/* ── Right: Crypto X ── */}
           <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>CryptoX</h3>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.5rem' }}>CryptoX</h3>
           <h2 style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#e2e8f0' }}>Crypto <span className="ice">X Accounts</span></h2>
           <div style={{ flex: 1, overflowY: 'auto', maxHeight: '65vh', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
           {/* Research and Fundamentals */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Research and Fundamentals</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Research and Fundamentals</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
               {[
                 'TechDev_52', 'ofvoice25355', 'CoinGurruu', 'stacy_muur', 
@@ -473,19 +473,19 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account}
                   href={`https://x.com/${account}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account}</span>
                 </SafeLink>
               ))}
             </div>
           </div>
 
           {/* Traders */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Traders</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Traders</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
               {[
                 'TheEuroSniper', 'EricCryptoman', 'Whale_AI_net', 'CryptoThannos', 
@@ -500,35 +500,35 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account}
                   href={`https://x.com/${account}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account}</span>
                 </SafeLink>
               ))}
               <SafeLink
                 href="https://x.com/sonder_crypto/status/1968059158491767121"
-                style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                 className="profile-cell"
               >
-                <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>sonder_crypto</span>
+                <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>sonder_crypto</span>
               </SafeLink>
               <SafeLink
                 href="https://x.com/alecTrading/status/1971938635097559333"
-                style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                 className="profile-cell"
               >
-                <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>alecTrading</span>
+                <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>alecTrading</span>
               </SafeLink>
             </div>
           </div>
 
           {/* Thoughts & Opinions */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Thoughts & Opinions</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Thoughts & Opinions</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
               {[
                 'CryptoZer0_'
@@ -536,19 +536,19 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account}
                   href={`https://x.com/${account}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account}</span>
                 </SafeLink>
               ))}
             </div>
           </div>
 
           {/* Macro */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Macro</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Macro</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
               {[
                 '_The_Prophet__'
@@ -556,19 +556,19 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account}
                   href={`https://x.com/${account}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account}</span>
                 </SafeLink>
               ))}
             </div>
           </div>
 
           {/* Market Today */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Market Today</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Market Today</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.5rem' }}>
               {[
                 'aicryptopattern'
@@ -576,25 +576,25 @@ export default function OnchainSocialPage() {
                 <SafeLink
                   key={account}
                   href={`https://x.com/${account}`}
-                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                  style={{ padding: '0.6rem 0.9rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                   className="profile-cell"
                 >
-                  <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#38bdf8', fontWeight: 500 }}>{account}</span>
+                  <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                  <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5cc8f0', fontWeight: 500 }}>{account}</span>
                 </SafeLink>
               ))}
             </div>
           </div>
 
           {/* Chains */}
-          <div style={{ background: '#111228', border: '1px solid #1e2148', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '1.25rem' }}>Chains</h3>
+          <div style={{ background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, padding: '1.5rem', marginBottom: '1.5rem' }}>
+            <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '1.25rem' }}>Chains</h3>
 
             {/* Base and Solana Ecosystems - Side by Side */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
               {/* Base Ecosystem */}
-              <div style={{ background: '#0c0d1e', border: '1px solid #1e2148', borderRadius: 10, padding: '1.25rem' }}>
-                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem', textAlign: 'center' }}>Base Ecosystem</h4>
+              <div style={{ background: 'rgba(8,10,16,0.9)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '1.25rem' }}>
+                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem', textAlign: 'center' }}>Base Ecosystem</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '0.5rem' }}>
                   {[
                     { handle: 'BaseDailyTK', name: 'Base Daily TK', desc: '@BaseDailyTK - Daily BASE network updates and insights' },
@@ -613,12 +613,12 @@ export default function OnchainSocialPage() {
                     <SafeLink
                       key={account.handle}
                       href={`https://x.com/${account.handle}`}
-                      style={{ padding: '0.6rem 0.75rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                      style={{ padding: '0.6rem 0.75rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                       className="profile-cell"
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.25rem' }}>
-                        <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: '#38bdf8', fontWeight: 500 }}>{account.name}</span>
+                        <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: '#5cc8f0', fontWeight: 500 }}>{account.name}</span>
                       </div>
                       <div style={{ fontSize: '0.68rem', color: '#475569' }}>{account.desc}</div>
                     </SafeLink>
@@ -627,17 +627,17 @@ export default function OnchainSocialPage() {
               </div>
 
               {/* Solana Ecosystem */}
-              <div style={{ background: '#0c0d1e', border: '1px solid #1e2148', borderRadius: 10, padding: '1.25rem' }}>
-                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem', textAlign: 'center' }}>Solana Ecosystem</h4>
+              <div style={{ background: 'rgba(8,10,16,0.9)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '1.25rem' }}>
+                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem', textAlign: 'center' }}>Solana Ecosystem</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '0.5rem' }}>
                   {[
-                    { handle: 'Dior100x', name: 'Dior100x', desc: '@Dior100x - Solana trading insights', color: '#38bdf8' },
-                    { handle: '_Shadow36', name: '_Shadow36', desc: '@_Shadow36 - Solana market analysis', color: '#38bdf8' },
-                    { handle: 'WolverCrypto', name: 'WolverCrypto', desc: '@WolverCrypto - Crypto trading insights', color: '#38bdf8' },
-                    { handle: 'watchingmarkets', name: 'watchingmarkets', desc: '@watchingmarkets - Market watching insights', color: '#38bdf8' },
-                    { handle: 'Crypto_Alch', name: 'Crypto_Alch', desc: '@Crypto_Alch - Crypto alchemy insights', color: '#38bdf8' },
-                    { handle: 'bruhbearr', name: 'bruhbearr', desc: '@bruhbearr - Solana trading insights', color: '#38bdf8' },
-                    { handle: 'AltcoinMarksman', name: 'AltcoinMarksman', desc: '@AltcoinMarksman - Solana market analysis', color: '#38bdf8' },
+                    { handle: 'Dior100x', name: 'Dior100x', desc: '@Dior100x - Solana trading insights', color: '#5cc8f0' },
+                    { handle: '_Shadow36', name: '_Shadow36', desc: '@_Shadow36 - Solana market analysis', color: '#5cc8f0' },
+                    { handle: 'WolverCrypto', name: 'WolverCrypto', desc: '@WolverCrypto - Crypto trading insights', color: '#5cc8f0' },
+                    { handle: 'watchingmarkets', name: 'watchingmarkets', desc: '@watchingmarkets - Market watching insights', color: '#5cc8f0' },
+                    { handle: 'Crypto_Alch', name: 'Crypto_Alch', desc: '@Crypto_Alch - Crypto alchemy insights', color: '#5cc8f0' },
+                    { handle: 'bruhbearr', name: 'bruhbearr', desc: '@bruhbearr - Solana trading insights', color: '#5cc8f0' },
+                    { handle: 'AltcoinMarksman', name: 'AltcoinMarksman', desc: '@AltcoinMarksman - Solana market analysis', color: '#5cc8f0' },
                   ].map((account) => (
                     <SafeLink
                       key={account.handle}
@@ -659,20 +659,20 @@ export default function OnchainSocialPage() {
             {/* Bittensor and BNB Ecosystems - Side by Side */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1rem' }}>
               {/* Bittensor Ecosystem */}
-              <div style={{ background: '#0c0d1e', border: '1px solid #1e2148', borderRadius: 10, padding: '1.25rem' }}>
-                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem', textAlign: 'center' }}>Bittensor Ecosystem</h4>
+              <div style={{ background: 'rgba(8,10,16,0.9)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '1.25rem' }}>
+                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem', textAlign: 'center' }}>Bittensor Ecosystem</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '0.5rem' }}>
                   {[
-                    { handle: 'tao_agent', name: 'TAO Agent', desc: '@tao_agent - Bittensor Signal Intelligence', color: '#38bdf8' },
-                    { handle: 'Bitcast_network', name: 'Bitcast Network', desc: '@Bitcast_network - TAO Network Analytics', color: '#38bdf8' },
-                    { handle: 'TaoStacker', name: 'TaoStacker', desc: '@TaoStacker - TAO Staking Insights', color: '#38bdf8' },
-                    { handle: 'TaoIsTheKey', name: 'TaoIsTheKey', desc: '@TaoIsTheKey - TAO Market Analysis', color: '#38bdf8' },
-                    { handle: 'varimotrades', name: 'VARiMOtrading', desc: '@varimotrades - TAO Trading Signals', color: '#38bdf8' },
-                    { handle: '_g_x_g', name: 'GXG', desc: '@_g_x_g - Bittensor Intelligence', color: '#38bdf8' },
-                    { handle: 'TalkingTensor', name: 'Talking Tensor', desc: '@TalkingTensor - Bittensor Insights', color: '#38bdf8' },
-                    { handle: 'Shogun__base', name: 'Shogun Base', desc: '@Shogun__base - Base Network Trading', color: '#38bdf8' },
-                    { handle: 'Victor_crypto_2', name: 'Victor Crypto', desc: '@Victor_crypto_2 - Crypto Market Analysis', color: '#38bdf8' },
-                    { handle: 'btcrenaissance', name: 'BTC Renaissance', desc: '@btcrenaissance - Bittensor Insights', color: '#38bdf8' },
+                    { handle: 'tao_agent', name: 'TAO Agent', desc: '@tao_agent - Bittensor Signal Intelligence', color: '#5cc8f0' },
+                    { handle: 'Bitcast_network', name: 'Bitcast Network', desc: '@Bitcast_network - TAO Network Analytics', color: '#5cc8f0' },
+                    { handle: 'TaoStacker', name: 'TaoStacker', desc: '@TaoStacker - TAO Staking Insights', color: '#5cc8f0' },
+                    { handle: 'TaoIsTheKey', name: 'TaoIsTheKey', desc: '@TaoIsTheKey - TAO Market Analysis', color: '#5cc8f0' },
+                    { handle: 'varimotrades', name: 'VARiMOtrading', desc: '@varimotrades - TAO Trading Signals', color: '#5cc8f0' },
+                    { handle: '_g_x_g', name: 'GXG', desc: '@_g_x_g - Bittensor Intelligence', color: '#5cc8f0' },
+                    { handle: 'TalkingTensor', name: 'Talking Tensor', desc: '@TalkingTensor - Bittensor Insights', color: '#5cc8f0' },
+                    { handle: 'Shogun__base', name: 'Shogun Base', desc: '@Shogun__base - Base Network Trading', color: '#5cc8f0' },
+                    { handle: 'Victor_crypto_2', name: 'Victor Crypto', desc: '@Victor_crypto_2 - Crypto Market Analysis', color: '#5cc8f0' },
+                    { handle: 'btcrenaissance', name: 'BTC Renaissance', desc: '@btcrenaissance - Bittensor Insights', color: '#5cc8f0' },
                   ].map((account) => (
                     <SafeLink
                       key={account.handle}
@@ -691,8 +691,8 @@ export default function OnchainSocialPage() {
               </div>
 
               {/* BNB Ecosystem */}
-              <div style={{ background: '#0c0d1e', border: '1px solid #1e2148', borderRadius: 10, padding: '1.25rem' }}>
-                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem', textAlign: 'center' }}>BNB Ecosystem</h4>
+              <div style={{ background: 'rgba(8,10,16,0.9)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 10, padding: '1.25rem' }}>
+                <h4 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem', textAlign: 'center' }}>BNB Ecosystem</h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))', gap: '0.5rem' }}>
                   {[
                     { handle: 'cryptoknight890', name: 'CryptoKnight890', desc: '@cryptoknight890 - BNB ecosystem insights' },
@@ -702,12 +702,12 @@ export default function OnchainSocialPage() {
                     <SafeLink
                       key={account.handle}
                       href={`https://x.com/${account.handle}`}
-                      style={{ padding: '0.6rem 0.75rem', background: 'rgba(56,189,248,0.08)', border: '1px solid rgba(56,189,248,0.2)', borderRadius: 6, transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+                      style={{ padding: '0.6rem 0.75rem', background: 'rgba(92,200,240,0.08)', border: '1px solid rgba(92,200,240,0.2)', borderRadius: 6, transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
                       className="profile-cell"
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.25rem' }}>
-                        <span style={{ color: '#38bdf8', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
-                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: '#38bdf8', fontWeight: 500 }}>{account.name}</span>
+                        <span style={{ color: '#5cc8f0', fontWeight: 700, fontSize: '0.85rem' }}>𝕏</span>
+                        <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', color: '#5cc8f0', fontWeight: 500 }}>{account.name}</span>
                       </div>
                       <div style={{ fontSize: '0.68rem', color: '#475569' }}>{account.desc}</div>
                     </SafeLink>
@@ -724,42 +724,42 @@ export default function OnchainSocialPage() {
 
         {/* Platforms Section */}
         <section style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Platforms</h3>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Platforms</h3>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1.5rem', color: '#e2e8f0' }}>Social <span className="ice">Media</span></h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: '#1e2148', border: '1px solid #1e2148', borderRadius: 12, overflow: 'hidden' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, overflow: 'hidden' }}>
             <SafeLink
               href='https://substack.com/'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <span style={{ fontSize: '1.2rem' }}>📰</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8' }}>Substack</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0' }}>Substack</span>
               </div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>Newsletter Publishing Platform</div>
             </SafeLink>
 
             <SafeLink
               href='https://x.com/home'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>𝕏</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8' }}>X</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0' }}>X</span>
               </div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>Social Media & News Feed</div>
             </SafeLink>
 
             <SafeLink
               href='https://farcaster.xyz/'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <span style={{ fontSize: '1.2rem' }}>🌐</span>
-                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8' }}>Farcaster</span>
+                <span style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0' }}>Farcaster</span>
               </div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>Decentralized Social Network</div>
             </SafeLink>
@@ -768,41 +768,41 @@ export default function OnchainSocialPage() {
 
         {/* Analytics Section */}
         <section style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>
-          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>Analytics</h3>
+          <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>Analytics</h3>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1.5rem', color: '#e2e8f0' }}>AI-Powered <span className="ice">Intelligence</span></h2>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: '#1e2148', border: '1px solid #1e2148', borderRadius: 12, overflow: 'hidden' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, overflow: 'hidden' }}>
             <SafeLink
               href='https://yaps.kaito.ai/'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>Kaito</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.5rem' }}>Kaito</div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>AI-Powered Social Intelligence</div>
             </SafeLink>
 
             <SafeLink
               href='https://app.kolytics.pro/leaderboard'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>Kolytics</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.5rem' }}>Kolytics</div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>Social Signal Analytics</div>
             </SafeLink>
 
             <SafeLink
               href='https://www.alphabot.app/pulse'
-              style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
+              style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', cursor: 'pointer', textAlign: 'left' }}
               className="section-card"
             >
-              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.5rem' }}>Alphabot</div>
+              <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.5rem' }}>Alphabot</div>
               <div style={{ fontSize: '0.9rem', fontWeight: 500, color: '#e2e8f0' }}>Social Sentiment Bot</div>
             </SafeLink>
           </div>
         </section>
 
         {/* FOOTER */}
-        <footer style={{ borderTop: '1px solid #1e2148', padding: '3rem', textAlign: 'center', color: '#38bdf8', fontSize: '0.85rem', maxWidth: 880, margin: '2rem auto 0' }}>
+        <footer style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '3rem', textAlign: 'center', color: '#5cc8f0', fontSize: '0.85rem', maxWidth: 880, margin: '2rem auto 0' }}>
           <p style={{ fontSize: '0.75rem', color: '#475569' }}>
             Social intelligence and community analytics
           </p>

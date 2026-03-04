@@ -41,10 +41,10 @@ export default function OnchainDiscoverPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -99,7 +99,7 @@ export default function OnchainDiscoverPage() {
                     <BarChart3 className="w-6 h-6 text-white" />
                   </div>
                   <h4 className="text-lg font-bold text-white group-hover:text-blue-300 mb-2">DappRadar</h4>
-                  <p className="text-gray-400 group-hover:text-gray-300 text-sm max-w-md mx-auto">Discover DApps & analytics across all blockchains</p>
+                  <p className="text-white/35 group-hover:text-white/45 text-sm max-w-md mx-auto">Discover DApps & analytics across all blockchains</p>
                 </button>
               </div>
               
@@ -114,7 +114,7 @@ export default function OnchainDiscoverPage() {
                     </div>
                     <h4 className="text-gray-200 font-bold text-lg">Ethereum Ecosystem</h4>
                   </div>
-                  <p className="text-gray-300 text-sm font-medium text-center">Comprehensive ecosystem guide</p>
+                  <p className="text-white/45 text-sm font-medium text-center">Comprehensive ecosystem guide</p>
                 </SafeLink>
 
                 <SafeLink
@@ -127,7 +127,7 @@ export default function OnchainDiscoverPage() {
                     </div>
                     <h4 className="text-indigo-300 font-bold text-lg">Solana Ecosystem</h4>
                   </div>
-                  <p className="text-gray-300 text-sm font-medium text-center">SwissBorg Academy ecosystem guide</p>
+                  <p className="text-white/45 text-sm font-medium text-center">SwissBorg Academy ecosystem guide</p>
                 </SafeLink>
 
                 <SafeLink
@@ -140,7 +140,7 @@ export default function OnchainDiscoverPage() {
                     </div>
                     <h4 className="text-cyan-300 font-bold text-lg">Base Ecosystem</h4>
                   </div>
-                  <p className="text-gray-300 text-sm font-medium text-center">Official Base ecosystem directory</p>
+                  <p className="text-white/45 text-sm font-medium text-center">Official Base ecosystem directory</p>
                 </SafeLink>
               </div>
 
@@ -155,7 +155,7 @@ export default function OnchainDiscoverPage() {
                     </div>
                     <h4 className="text-emerald-300 font-bold text-lg">Gravity Ecosystem</h4>
                   </div>
-                  <p className="text-gray-300 text-sm font-medium text-center">Explore the Gravity network</p>
+                  <p className="text-white/45 text-sm font-medium text-center">Explore the Gravity network</p>
                 </SafeLink>
 
                 <SafeLink
@@ -168,7 +168,7 @@ export default function OnchainDiscoverPage() {
                     </div>
                     <h4 className="text-purple-300 font-bold text-lg">Zapper</h4>
                   </div>
-                  <p className="text-gray-300 text-sm font-medium text-center">DeFi portfolio management</p>
+                  <p className="text-white/45 text-sm font-medium text-center">DeFi portfolio management</p>
                 </SafeLink>
               </div>
 
@@ -183,7 +183,7 @@ export default function OnchainDiscoverPage() {
                     <span className="text-white font-bold text-xl">A</span>
                   </div>
                   <h4 className="text-lg font-bold text-white group-hover:text-blue-300 mb-2">Alchemy</h4>
-                  <p className="text-gray-400 group-hover:text-gray-300 text-sm max-w-md mx-auto">Discover top DApps and Web3 applications</p>
+                  <p className="text-white/35 group-hover:text-white/45 text-sm max-w-md mx-auto">Discover top DApps and Web3 applications</p>
                 </button>
               </div>
             </GlassCard>

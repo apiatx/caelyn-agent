@@ -12,9 +12,9 @@ export default function AltsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
-      <header className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50">
+      <header className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8">
           <div className="flex justify-between items-center py-3 lg:py-4">
             <div className="flex items-center space-x-3 sm:space-x-4">
@@ -63,7 +63,7 @@ export default function AltsPage() {
               <TrendingUp className="w-4 h-4 mr-2 inline" />BTC
             </button>
             <button
-              className="flex-1 py-3 px-6 rounded-xl font-medium transition-all duration-300 bg-gradient-to-r from-crypto-silver/20 to-white/10 border border-crypto-silver/30 text-white"
+              className="flex-1 py-3 px-6 rounded-xl font-medium transition-all duration-300 bg-gradient-to-r from-white/[0.06] to-white/[0.03] border border-white/[0.08] text-white"
             >
               <BarChart3 className="w-4 h-4 mr-2 inline" />Alts
             </button>
@@ -133,7 +133,7 @@ export default function AltsPage() {
                 <TrendingUp className="w-4 h-4 mr-1 inline" />BTC
               </button>
               <button
-                className="whitespace-nowrap py-2 px-3 rounded-lg text-sm font-medium transition-all duration-300 bg-gradient-to-r from-crypto-silver/20 to-white/10 border border-crypto-silver/30 text-white"
+                className="whitespace-nowrap py-2 px-3 rounded-lg text-sm font-medium transition-all duration-300 bg-gradient-to-r from-white/[0.06] to-white/[0.03] border border-white/[0.08] text-white"
               >
                 <BarChart3 className="w-4 h-4 mr-1 inline" />Alts
               </button>
@@ -221,7 +221,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_eth&symbol=ETHUSD&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=ETHUSD"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView Ethereum Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
@@ -250,7 +250,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_sol&symbol=SOLUSD&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=SOLUSD"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView Solana Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
@@ -279,7 +279,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_xrp&symbol=BITSTAMP%3AXRPUSD&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=BITSTAMP%3AXRPUSD"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView XRP Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
@@ -308,7 +308,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_pengu&symbol=CRYPTO%3APENGUPUDUSD&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=CRYPTO%3APENGUPUDUSD"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView PENGU Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
@@ -337,7 +337,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_ethd&symbol=CRYPTOCAP%3AETH.D&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=CRYPTOCAP%3AETH.D"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView ETH Dominance Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />
@@ -366,7 +366,7 @@ export default function AltsPage() {
             <div className="w-full">
               <iframe
                 src="https://www.tradingview.com/widgetembed/?frameElementId=tradingview_others&symbol=CRYPTOCAP%3AOTHERS.D&interval=D&hidesidetoolbar=1&hidetoptoolbar=1&symboledit=1&saveimage=1&toolbarbg=F1F3F6&studies=[]&hideideas=1&theme=Dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[]&disabled_features=[]&locale=en&utm_source=localhost&utm_medium=widget&utm_campaign=chart&utm_term=CRYPTOCAP%3AOTHERS.D"
-                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                 title="TradingView OTHERS Dominance Chart"
                 sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
               />

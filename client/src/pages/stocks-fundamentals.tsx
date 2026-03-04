@@ -4,7 +4,7 @@ import { TrendingUp, ExternalLink } from "lucide-react";
 
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -15,7 +15,7 @@ export default function StocksFundamentalsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-4 lg:space-y-8">
           <GlassCard className="p-3 sm:p-4 lg:p-6">
@@ -35,7 +35,7 @@ export default function StocksFundamentalsPage() {
             <div className="w-full">
               <iframe
                 src="https://fiscal.ai/dashboard/7b99775e-bf9c-4b18-85a8-7a62cd29a52b/"
-                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                 title="Fiscal.ai Dashboard"
                 frameBorder="0"
                 loading="eager"

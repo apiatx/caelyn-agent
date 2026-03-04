@@ -1392,7 +1392,7 @@ export default function StocksEarningsCalendarPage() {
   }, [fetchEarnings]);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <EarningsAgent />
         <GlassCard className="p-5">

@@ -5,7 +5,7 @@ import { Activity, Newspaper, Calendar } from "lucide-react";
 import TickerTapeWidget from "@/components/TickerTapeWidget";
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -199,7 +199,7 @@ const EconomicCalendarWidget = memo(function EconomicCalendarWidget() {
 
 export default function StocksDashboardPage() {
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       <div className="w-full h-[72px] overflow-hidden">
         <TickerTapeWidget />
       </div>
@@ -214,7 +214,7 @@ export default function StocksDashboardPage() {
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white">Top Stories</h3>
               </div>
-              <div className="w-full min-h-[560px] rounded-lg overflow-hidden border border-crypto-silver/20">
+              <div className="w-full min-h-[560px] rounded-lg overflow-hidden border border-white/[0.06]">
                 <TopStoriesWidget />
               </div>
             </GlassCard>
@@ -226,23 +226,23 @@ export default function StocksDashboardPage() {
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white">Economic Calendar</h3>
               </div>
-              <div className="w-full min-h-[560px] rounded-lg overflow-hidden border border-crypto-silver/20">
+              <div className="w-full min-h-[560px] rounded-lg overflow-hidden border border-white/[0.06]">
                 <EconomicCalendarWidget />
               </div>
             </GlassCard>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
               <MarketOverviewWidget config={indicesConfig} />
             </div>
-            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
               <MarketOverviewWidget config={stocksConfig} />
             </div>
-            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
               <MarketOverviewWidget config={currenciesConfig} />
             </div>
-            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
               <MarketOverviewWidget config={cryptoConfig} />
             </div>
           </div>
@@ -254,7 +254,7 @@ export default function StocksDashboardPage() {
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Forex Heatmap</h3>
             </div>
-            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
               <ForexHeatmapWidget />
             </div>
           </GlassCard>
@@ -266,7 +266,7 @@ export default function StocksDashboardPage() {
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Economic Map</h3>
             </div>
-            <div className="w-full h-[700px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[700px] rounded-lg overflow-hidden border border-white/[0.06]">
               <EconomicMapWidget />
             </div>
           </GlassCard>

@@ -16,10 +16,10 @@ export default function P2EPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
-      <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+      <header
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -67,7 +67,7 @@ export default function P2EPage() {
               </div>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden mb-6">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden mb-6">
               <iframe
                 src="https://playtoearn.com/trending-blockchaingames"
                 className="w-full h-[700px] border-0"

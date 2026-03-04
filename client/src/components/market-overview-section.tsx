@@ -215,7 +215,7 @@ export function MarketOverviewSection() {
   const getFearGreedColor = (value: number) => {
     if (value >= 75) return 'text-green-400';
     if (value >= 55) return 'text-green-300';
-    if (value >= 45) return 'text-gray-300';
+    if (value >= 45) return 'text-white/45';
     if (value >= 25) return 'text-orange-400';
     return 'text-red-400';
   };
@@ -242,7 +242,7 @@ export function MarketOverviewSection() {
 
   if (isLoading) {
     return (
-      <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+      <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
         <div className="flex items-center gap-2 mb-4">
           <Globe className="w-5 h-5 text-blue-400" />
           <h2 className="text-xl font-bold text-white">Market Overview</h2>
@@ -252,7 +252,7 @@ export function MarketOverviewSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-black/30 border border-crypto-silver/20 rounded-lg p-4 animate-pulse">
+            <div key={i} className="bg-black/30 border border-white/[0.06] rounded-lg p-4 animate-pulse">
               <div className="h-4 bg-gray-600 rounded mb-2"></div>
               <div className="h-6 bg-gray-600 rounded"></div>
             </div>
@@ -264,12 +264,12 @@ export function MarketOverviewSection() {
 
   if (error || (!overview && !isLoading)) {
     return (
-      <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+      <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
         <div className="flex items-center gap-2 mb-4">
           <Globe className="w-5 h-5 text-red-400" />
           <h2 className="text-xl font-bold text-white">Market Overview</h2>
         </div>
-        <div className="text-center text-gray-400">
+        <div className="text-center text-white/35">
           <Activity className="w-12 h-12 mx-auto mb-2 opacity-50" />
           <p>Unable to load market data</p>
           <p className="text-sm">Please check your connection and try again</p>
@@ -282,7 +282,7 @@ export function MarketOverviewSection() {
   // Show loading if still loading and no data
   if (isLoading && !overview) {
     return (
-      <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+      <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
         <div className="flex items-center gap-2 mb-4">
           <Globe className="w-5 h-5 text-blue-400" />
           <h2 className="text-xl font-bold text-white">Market Overview</h2>
@@ -292,7 +292,7 @@ export function MarketOverviewSection() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-black/30 border border-crypto-silver/20 rounded-lg p-4 animate-pulse">
+            <div key={i} className="bg-black/30 border border-white/[0.06] rounded-lg p-4 animate-pulse">
               <div className="h-4 bg-gray-600 rounded mb-2"></div>
               <div className="h-6 bg-gray-600 rounded"></div>
             </div>
@@ -311,7 +311,7 @@ export function MarketOverviewSection() {
   const usd = globalMetrics.quote.USD;
 
   return (
-    <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-4 sm:p-6">
+    <div className="bg-black/20 border border-white/[0.06] rounded-lg p-4 sm:p-6">
       {/* Crypto Hippo Header */}
       <div className="text-center mb-4">
         <img 
@@ -325,7 +325,7 @@ export function MarketOverviewSection() {
       <div className="flex items-center gap-2 mb-6">
         <Globe className="w-5 h-5 text-blue-400" />
         <h2 className="text-xl font-bold text-white">Crypto Market Overview</h2>
-        <div className="ml-auto text-xs text-gray-400">Live Data</div>
+        <div className="ml-auto text-xs text-white/35">Live Data</div>
       </div>
 
       {/* Global Market Stats - Clickable Link */}
@@ -432,7 +432,7 @@ export function MarketOverviewSection() {
                 {/* Index Value and Classification */}
                 <div className="text-center">
                   <div className="text-4xl font-bold text-white mb-1">{fearGreedIndex.index_value}</div>
-                  <div className="text-gray-400 text-lg">{fearGreedIndex.classification}</div>
+                  <div className="text-white/35 text-lg">{fearGreedIndex.classification}</div>
                 </div>
               </div>
             </div>
@@ -445,19 +445,19 @@ export function MarketOverviewSection() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Yesterday</span>
+                    <span className="text-white/35 text-sm">Yesterday</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFearGreedBadgeColor(fearGreedIndex.historical.yesterday_classification)}`}>
                       {fearGreedIndex.historical.yesterday_classification} - {fearGreedIndex.historical.yesterday}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Last Week</span>
+                    <span className="text-white/35 text-sm">Last Week</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFearGreedBadgeColor(fearGreedIndex.historical.last_week_classification)}`}>
                       {fearGreedIndex.historical.last_week_classification} - {fearGreedIndex.historical.last_week}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Last Month</span>
+                    <span className="text-white/35 text-sm">Last Month</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFearGreedBadgeColor(fearGreedIndex.historical.last_month_classification)}`}>
                       {fearGreedIndex.historical.last_month_classification} - {fearGreedIndex.historical.last_month}
                     </span>
@@ -474,7 +474,7 @@ export function MarketOverviewSection() {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-white font-medium text-sm">Yearly High</p>
-                        <p className="text-gray-400 text-xs">({fearGreedIndex.yearly.high_date})</p>
+                        <p className="text-white/35 text-xs">({fearGreedIndex.yearly.high_date})</p>
                       </div>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFearGreedBadgeColor(fearGreedIndex.yearly.high_classification)}`}>
                         {fearGreedIndex.yearly.high_classification} - {fearGreedIndex.yearly.high}
@@ -486,7 +486,7 @@ export function MarketOverviewSection() {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-white font-medium text-sm">Yearly Low</p>
-                        <p className="text-gray-400 text-xs">({fearGreedIndex.yearly.low_date})</p>
+                        <p className="text-white/35 text-xs">({fearGreedIndex.yearly.low_date})</p>
                       </div>
                       <span className={`px-2 py-1 rounded-full text-xs font-medium ${getFearGreedBadgeColor(fearGreedIndex.yearly.low_classification)}`}>
                         {fearGreedIndex.yearly.low_classification} - {fearGreedIndex.yearly.low}
@@ -516,21 +516,21 @@ export function MarketOverviewSection() {
             </span>
           </h3>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
             {etfLoading ? (
               <div className="text-center py-8">
                 <div className="animate-spin w-6 h-6 border-2 border-green-400 border-t-transparent rounded-full mx-auto mb-2"></div>
-                <p className="text-sm text-gray-400">Loading real ETF data...</p>
+                <p className="text-sm text-white/35">Loading real ETF data...</p>
               </div>
             ) : etfData ? (
               <>
                 {/* Total ETF Net Flow */}
                 <div className="text-center mb-6">
-                  <p className="text-sm text-gray-400 mb-1">Total ETF Net Flow (Daily)</p>
+                  <p className="text-sm text-white/35 mb-1">Total ETF Net Flow (Daily)</p>
                   <p className={`text-2xl sm:text-3xl font-bold ${getPercentageColor(etfData.total_btc_flows + etfData.total_eth_flows)}`}>
                     {formatNetflow(etfData.total_btc_flows + etfData.total_eth_flows)}
                   </p>
-                  <p className="text-xs text-gray-400 mt-1">
+                  <p className="text-xs text-white/35 mt-1">
                     Last updated: {new Date(etfData.last_updated).toLocaleString()}
                   </p>
                 </div>
@@ -547,7 +547,7 @@ export function MarketOverviewSection() {
                     <p className={`text-xl font-bold ${getPercentageColor(etfData.total_btc_flows)}`}>
                       {formatNetflow(etfData.total_btc_flows)}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-white/35">
                       {etfData.btc_etfs.length} BTC ETFs tracked
                     </p>
                   </div>
@@ -562,14 +562,14 @@ export function MarketOverviewSection() {
                     <p className={`text-xl font-bold ${getPercentageColor(etfData.total_eth_flows)}`}>
                       {formatNetflow(etfData.total_eth_flows)}
                     </p>
-                    <p className="text-xs text-gray-400">
+                    <p className="text-xs text-white/35">
                       {etfData.eth_etfs.length} ETH ETFs tracked
                     </p>
                   </div>
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Real-time data from CoinMarketCap API • Updates twice daily (8AM/8PM UTC)
                   </p>
                 </div>
@@ -577,7 +577,7 @@ export function MarketOverviewSection() {
             ) : (
               <div className="text-center py-8">
                 <p className="text-sm text-red-400">Unable to load ETF data</p>
-                <p className="text-xs text-gray-400 mt-1">Check API connection</p>
+                <p className="text-xs text-white/35 mt-1">Check API connection</p>
               </div>
             )}
           </div>
@@ -605,12 +605,12 @@ export function MarketOverviewSection() {
               
               <div className="flex items-baseline gap-1 mb-4">
                 <span className="text-white text-3xl font-bold">{altSeasonIndex.index_value}</span>
-                <span className="text-gray-400 text-lg">/ 100</span>
+                <span className="text-white/35 text-lg">/ 100</span>
               </div>
               
               {/* Progress Bar */}
               <div className="mb-3">
-                <div className="flex justify-between text-xs text-gray-400 mb-1">
+                <div className="flex justify-between text-xs text-white/35 mb-1">
                   <span>Bitcoin Season</span>
                   <span>Altcoin Season</span>
                 </div>
@@ -631,19 +631,19 @@ export function MarketOverviewSection() {
                 
                 <div className="space-y-2">
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Yesterday</span>
+                    <span className="text-white/35 text-sm">Yesterday</span>
                     <span className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-medium">
                       {altSeasonIndex.historical.yesterday}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Last Week</span>
+                    <span className="text-white/35 text-sm">Last Week</span>
                     <span className="bg-gray-600 text-white px-2 py-1 rounded-full text-xs font-medium">
                       {altSeasonIndex.historical.last_week}
                     </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-400 text-sm">Last Month</span>
+                    <span className="text-white/35 text-sm">Last Month</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                       altSeasonIndex.historical.last_month > 75 ? 'bg-blue-500 text-white' : 
                       altSeasonIndex.historical.last_month > 25 ? 'bg-gray-600 text-white' : 'bg-orange-500 text-white'
@@ -663,7 +663,7 @@ export function MarketOverviewSection() {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-white font-medium text-sm">Yearly High</p>
-                        <p className="text-gray-400 text-xs">({altSeasonIndex.yearly.high_date})</p>
+                        <p className="text-white/35 text-xs">({altSeasonIndex.yearly.high_date})</p>
                       </div>
                       <span className="bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">
                         {altSeasonIndex.yearly.high_description} - {altSeasonIndex.yearly.high}
@@ -675,7 +675,7 @@ export function MarketOverviewSection() {
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-white font-medium text-sm">Yearly Low</p>
-                        <p className="text-gray-400 text-xs">({altSeasonIndex.yearly.low_date})</p>
+                        <p className="text-white/35 text-xs">({altSeasonIndex.yearly.low_date})</p>
                       </div>
                       <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium">
                         {altSeasonIndex.yearly.low_description} - {altSeasonIndex.yearly.low}
@@ -711,7 +711,7 @@ export function MarketOverviewSection() {
             <div className="w-full">
               <iframe
                 src="https://feed.defillama.com/"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 title="DefiLlama News Feed"
                 frameBorder="0"
                 loading="lazy"
@@ -734,7 +734,7 @@ export function MarketOverviewSection() {
                 </div>
                 <h4 className="text-white font-medium">Binance Square</h4>
               </div>
-              <p className="text-gray-400 text-sm">Crypto news and social updates</p>
+              <p className="text-white/35 text-sm">Crypto news and social updates</p>
             </div>
 
             <div 
@@ -748,7 +748,7 @@ export function MarketOverviewSection() {
                 </div>
                 <h4 className="text-white font-medium">CMC Leaderboard</h4>
               </div>
-              <p className="text-gray-400 text-sm">Market Rankings</p>
+              <p className="text-white/35 text-sm">Market Rankings</p>
             </div>
 
             <div 
@@ -762,7 +762,7 @@ export function MarketOverviewSection() {
                 </div>
                 <h4 className="text-white font-medium">CoinGecko Chains</h4>
               </div>
-              <p className="text-gray-400 text-sm">Blockchain Analytics</p>
+              <p className="text-white/35 text-sm">Blockchain Analytics</p>
             </div>
 
             <div 
@@ -777,7 +777,7 @@ export function MarketOverviewSection() {
                 </div>
                 <h4 className="text-white font-medium">Arkham Intel</h4>
               </div>
-              <p className="text-gray-400 text-sm">On-chain intelligence & whale tracking</p>
+              <p className="text-white/35 text-sm">On-chain intelligence & whale tracking</p>
             </div>
           </div>
           
@@ -785,7 +785,7 @@ export function MarketOverviewSection() {
           <div className="mt-6">
             <iframe
               src="https://cryptopanic.com/news/bitcoin/"
-              className="w-full h-[500px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[500px] rounded-lg border border-white/[0.06]"
               title="CryptoPanic Bitcoin News"
               frameBorder="0"
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
@@ -817,7 +817,7 @@ export function MarketOverviewSection() {
       </div>
 
       {/* DXY (U.S. Dollar Index) Chart */}
-      <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-3 sm:p-4 lg:p-6 mt-6">
+      <div className="bg-black/20 border border-white/[0.06] rounded-lg p-3 sm:p-4 lg:p-6 mt-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-6">
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full flex items-center justify-center">
@@ -841,7 +841,7 @@ export function MarketOverviewSection() {
         <div className="w-full">
           <iframe
             src="https://www.tradingview.com/chart/e5l95XgZ/?symbol=TVC%3ADXY"
-            className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
             title="U.S. Dollar Index (DXY) Chart"
             frameBorder="0"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
@@ -854,7 +854,7 @@ export function MarketOverviewSection() {
       </div>
 
       {/* M2 Global Liquidity Index Chart */}
-      <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-3 sm:p-4 lg:p-6 mt-6">
+      <div className="bg-black/20 border border-white/[0.06] rounded-lg p-3 sm:p-4 lg:p-6 mt-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 mb-6">
           <div className="flex items-center gap-2">
             <div className="w-5 h-5 sm:w-6 sm:h-6 bg-indigo-500 rounded-full flex items-center justify-center">
@@ -885,7 +885,7 @@ export function MarketOverviewSection() {
         <div className="w-full">
           <iframe
             src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_m2global&symbol=FRED%3AM2SL&interval=1M&hidesidetoolbar=0&hidetoptoolbar=0&symboledit=1&saveimage=1&toolbarbg=0a0a0a&studies=[]&hideideas=1&theme=dark&style=1&timezone=Etc%2FUTC&studies_overrides={}&overrides={}&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22,%22timeframes_toolbar%22,%22show_interval_dialog_on_key_press%22]&disabled_features=[]&locale=en&utm_source=cryptohippo.com&utm_medium=widget&utm_campaign=chart&utm_term=FRED%3AM2SL"
-            className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
             title="M2 Global Liquidity Index Chart"
             frameBorder="0"
             scrolling="no"

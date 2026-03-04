@@ -32,12 +32,12 @@ export default function HippoAIPage() {
     <div className="text-white" style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
       <div className="fixed inset-0 z-0" style={{
         background: `
-          radial-gradient(ellipse 80% 60% at 20% 30%, rgba(120, 40, 200, 0.35) 0%, transparent 60%),
-          radial-gradient(ellipse 70% 50% at 80% 20%, rgba(30, 60, 180, 0.3) 0%, transparent 55%),
-          radial-gradient(ellipse 60% 40% at 60% 70%, rgba(180, 50, 120, 0.25) 0%, transparent 50%),
-          radial-gradient(ellipse 50% 50% at 10% 80%, rgba(20, 80, 160, 0.2) 0%, transparent 50%),
-          radial-gradient(ellipse 40% 30% at 90% 85%, rgba(100, 30, 150, 0.2) 0%, transparent 45%),
-          linear-gradient(180deg, #050510 0%, #0a0a1a 30%, #0d0820 60%, #080515 100%)
+          radial-gradient(ellipse 80% 60% at 20% 30%, rgba(30, 120, 200, 0.12) 0%, transparent 60%),
+          radial-gradient(ellipse 70% 50% at 80% 20%, rgba(40, 140, 220, 0.08) 0%, transparent 55%),
+          radial-gradient(ellipse 60% 40% at 60% 70%, rgba(50, 160, 230, 0.06) 0%, transparent 50%),
+          radial-gradient(ellipse 50% 50% at 10% 80%, rgba(30, 100, 180, 0.05) 0%, transparent 50%),
+          radial-gradient(ellipse 40% 30% at 90% 85%, rgba(40, 130, 200, 0.05) 0%, transparent 45%),
+          linear-gradient(180deg, #050608 0%, #060810 30%, #070910 60%, #050608 100%)
         `
       }} />
       <div className="fixed inset-0 z-0 opacity-[0.03]" style={{
@@ -52,7 +52,7 @@ export default function HippoAIPage() {
         backgroundSize: '200px 200px'
       }} />
 
-      <div className="relative z-50 w-full flex-shrink-0 overflow-hidden border-b border-white/5 backdrop-blur-lg" style={{ height: 78, background: 'rgba(5, 5, 16, 0.85)' }}>
+      <div className="relative z-50 w-full flex-shrink-0 overflow-hidden border-b border-white/5 backdrop-blur-lg" style={{ height: 78, background: 'rgba(5, 6, 8, 0.92)' }}>
         <div style={{ height: '110px' }}>
           <TickerTapeWidget />
         </div>
@@ -62,7 +62,7 @@ export default function HippoAIPage() {
         <TradingAgent />
       </div>
 
-      <div className="relative z-50 w-full flex-shrink-0 overflow-hidden border-t border-white/5 backdrop-blur-lg" style={{ height: 78, background: 'rgba(5, 5, 16, 0.85)' }}>
+      <div className="relative z-50 w-full flex-shrink-0 overflow-hidden border-t border-white/5 backdrop-blur-lg" style={{ height: 78, background: 'rgba(5, 6, 8, 0.92)' }}>
         <div style={{ height: '110px' }}>
           <BottomTickerTape />
         </div>

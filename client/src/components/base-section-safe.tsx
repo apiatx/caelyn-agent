@@ -61,7 +61,7 @@ const SafeIframe = ({ src, title, className = "" }: { src: string; title: string
       <iframe
         src={src}
         title={title}
-        className={`w-full h-[600px] rounded-lg border border-crypto-silver/20 ${className}`}
+        className={`w-full h-[600px] rounded-lg border border-white/[0.06] ${className}`}
         frameBorder="0"
         loading="lazy"
         sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation"
@@ -276,10 +276,10 @@ export default function BaseSectionSafe() {
             />
             
             {/* Related Platforms */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-crypto-silver/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/[0.03]">
               <SafeLink
                 href="https://bankr.bot/terminal"
-                className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
+                className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
@@ -287,15 +287,15 @@ export default function BaseSectionSafe() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">Bankr.bot</h4>
-                    <p className="text-gray-400 text-xs">Trading terminal</p>
+                    <p className="text-white/35 text-xs">Trading terminal</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors">→</div>
+                <div className="w-4 h-4 text-white/35 group-hover:text-purple-400 transition-colors">→</div>
               </SafeLink>
 
               <SafeLink
                 href="https://creator.bid/agents"
-                className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-emerald-500/30 transition-all duration-200 group"
+                className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-emerald-500/30 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
@@ -303,15 +303,15 @@ export default function BaseSectionSafe() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">Creator.bid</h4>
-                    <p className="text-gray-400 text-xs">Agent marketplace</p>
+                    <p className="text-white/35 text-xs">Agent marketplace</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 text-gray-400 group-hover:text-emerald-400 transition-colors">→</div>
+                <div className="w-4 h-4 text-white/35 group-hover:text-emerald-400 transition-colors">→</div>
               </SafeLink>
 
               <SafeLink
                 href="https://t.me/higherdotbot"
-                className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
+                className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
@@ -319,15 +319,15 @@ export default function BaseSectionSafe() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">Higher Bot</h4>
-                    <p className="text-gray-400 text-xs">Telegram trading bot</p>
+                    <p className="text-white/35 text-xs">Telegram trading bot</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors">→</div>
+                <div className="w-4 h-4 text-white/35 group-hover:text-blue-400 transition-colors">→</div>
               </SafeLink>
 
               <SafeLink
                 href="https://zora.co/explore"
-                className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
+                className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
@@ -335,10 +335,10 @@ export default function BaseSectionSafe() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">Zora</h4>
-                    <p className="text-gray-400 text-xs">NFT marketplace</p>
+                    <p className="text-white/35 text-xs">NFT marketplace</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors">→</div>
+                <div className="w-4 h-4 text-white/35 group-hover:text-purple-400 transition-colors">→</div>
               </SafeLink>
             </div>
           </div>
@@ -367,7 +367,7 @@ export default function BaseSectionSafe() {
               <SafeLink
                 key={account.handle}
                 href={account.url}
-                className="flex items-center justify-between p-3 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
+                className="flex items-center justify-between p-3 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -375,10 +375,10 @@ export default function BaseSectionSafe() {
                   </div>
                   <div>
                     <h4 className="text-white font-medium text-sm">{account.name}</h4>
-                    <p className="text-gray-400 text-xs">{account.handle}</p>
+                    <p className="text-white/35 text-xs">{account.handle}</p>
                   </div>
                 </div>
-                <div className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors">→</div>
+                <div className="w-4 h-4 text-white/35 group-hover:text-blue-400 transition-colors">→</div>
               </SafeLink>
             ))}
           </div>

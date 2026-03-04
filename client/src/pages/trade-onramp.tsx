@@ -9,7 +9,7 @@ import { useScrollFade } from "@/hooks/useScrollFade";
 
 // Glass card component for On Ramp section
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -23,10 +23,10 @@ export default function TradeOnRampPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -73,7 +73,7 @@ export default function TradeOnRampPage() {
               <Button
                 variant="outline"
                 onClick={() => openInNewTab('https://www.coinbase.com/home')}
-                className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+                className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
                 data-testid="button-coinbase"
               >
                 <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-blue-600/20">
@@ -88,7 +88,7 @@ export default function TradeOnRampPage() {
               <Button
                 variant="outline"
                 onClick={() => openInNewTab('https://www.kraken.com/')}
-                className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+                className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
                 data-testid="button-kraken"
               >
                 <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-purple-600/20">
@@ -103,7 +103,7 @@ export default function TradeOnRampPage() {
               <Button
                 variant="outline"
                 onClick={() => openInNewTab('https://www.moonpay.com/buy')}
-                className="bg-black/20 border-crypto-silver/20 hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+                className="bg-black/20 border-white/[0.06] hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
                 data-testid="button-moonpay"
               >
                 <div className="p-3 rounded-lg bg-gradient-to-r from-green-500/20 to-green-600/20">
@@ -118,7 +118,7 @@ export default function TradeOnRampPage() {
               <Button
                 variant="outline"
                 onClick={() => openInNewTab('https://strike.me/en/')}
-                className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+                className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
                 data-testid="button-strike"
               >
                 <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-yellow-500/20">
@@ -143,7 +143,7 @@ export default function TradeOnRampPage() {
                   <Wallet className="w-6 h-6 text-white" />
                 </div>
                 <h4 className="text-lg font-bold text-white group-hover:text-cyan-300 mb-2">ZKP2P</h4>
-                <p className="text-gray-400 group-hover:text-gray-300 text-sm max-w-md mx-auto">Zero-knowledge peer-to-peer fiat onramp</p>
+                <p className="text-white/35 group-hover:text-white/45 text-sm max-w-md mx-auto">Zero-knowledge peer-to-peer fiat onramp</p>
               </Button>
             </div>
           </GlassCard>

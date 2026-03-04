@@ -5,7 +5,7 @@ import { BarChart3, Activity, Zap, TrendingDown, TrendingUp, ExternalLink, Star 
 import { openSecureLink, getSecureIframeProps } from "@/utils/security";
 // Glass card component for Solana section
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -30,10 +30,10 @@ export default function SolanaSection() {
             Open Full View →
           </button>
         </div>
-        <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+        <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
           <iframe
             src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ASOLUSDT"
-            className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
             title="Solana Advanced Chart"
             frameBorder="0"
             scrolling="no"
@@ -72,7 +72,7 @@ export default function SolanaSection() {
               </div>
               <h4 className="text-blue-400 font-semibold">Moby Screener</h4>
             </div>
-            <p className="text-gray-400 text-sm">Advanced Solana token analytics and screening tools</p>
+            <p className="text-white/35 text-sm">Advanced Solana token analytics and screening tools</p>
           </button>
           
           <button
@@ -85,7 +85,7 @@ export default function SolanaSection() {
               </div>
               <h4 className="text-purple-400 font-semibold">DexScreener</h4>
             </div>
-            <p className="text-gray-400 text-sm">Live trending Solana tokens and pair analytics with real-time charts</p>
+            <p className="text-white/35 text-sm">Live trending Solana tokens and pair analytics with real-time charts</p>
           </button>
           
           {/* Birdeye Solana */}
@@ -99,7 +99,7 @@ export default function SolanaSection() {
               </div>
               <h4 className="text-orange-400 font-semibold">Birdeye</h4>
             </div>
-            <p className="text-gray-400 text-sm">Advanced Solana token analytics with comprehensive market data</p>
+            <p className="text-white/35 text-sm">Advanced Solana token analytics with comprehensive market data</p>
           </button>
           
           {/* 30 Day Trending on OpenSea */}
@@ -113,7 +113,7 @@ export default function SolanaSection() {
                 </div>
                 <h4 className="text-cyan-400 font-semibold">OpenSea</h4>
               </div>
-              <p className="text-gray-400 text-sm">Trending Solana tokens by 30-day price changes</p>
+              <p className="text-white/35 text-sm">Trending Solana tokens by 30-day price changes</p>
             </button>
         </div>
       </GlassCard>
@@ -148,7 +148,7 @@ export default function SolanaSection() {
           <div className="w-full">
             <iframe
               src="https://jup.ag/?utm_source=phantom&utm_medium=list"
-              className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[600px] rounded-lg border border-white/[0.06]"
               title="Jupiter DEX Aggregator"
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
             />
@@ -169,7 +169,7 @@ export default function SolanaSection() {
           <div className="w-full">
             <iframe
               src="https://raydium.io/swap/?inputMint=sol&outputMint=EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v"
-              className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[600px] rounded-lg border border-white/[0.06]"
               title="Raydium"
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
             />
@@ -190,7 +190,7 @@ export default function SolanaSection() {
           <div className="w-full">
             <iframe
               src="https://uranus.ag/trade/?token=BFgdzMkTPdKKJeTipv2njtDEwhKxkgFueJQfJGt1jups"
-              className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[600px] rounded-lg border border-white/[0.06]"
               title="Uranus DEX"
               sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
             />
@@ -214,7 +214,7 @@ export default function SolanaSection() {
           <a
             href="https://web3.okx.com/leaderboard"
             onClick={(e) => {e.preventDefault(); openSecureLink('https://web3.okx.com/leaderboard');}}
-            className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-red-500/30 transition-all duration-200 group cursor-pointer"
+            className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-red-500/30 transition-all duration-200 group cursor-pointer"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center">
@@ -222,17 +222,17 @@ export default function SolanaSection() {
               </div>
               <div>
                 <h3 className="text-white font-medium text-sm">OKX Leaderboard</h3>
-                <p className="text-gray-400 text-xs">Trading rankings</p>
+                <p className="text-white/35 text-xs">Trading rankings</p>
               </div>
             </div>
-            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-red-400 transition-colors" />
+            <ExternalLink className="w-4 h-4 text-white/35 group-hover:text-red-400 transition-colors" />
           </a>
 
           <a
             href="https://bonk.fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-orange-500/30 transition-all duration-200 group"
+            className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-orange-500/30 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center">
@@ -240,17 +240,17 @@ export default function SolanaSection() {
               </div>
               <div>
                 <h3 className="text-white font-medium text-sm">BONK.fun</h3>
-                <p className="text-gray-400 text-xs">Token platform</p>
+                <p className="text-white/35 text-xs">Token platform</p>
               </div>
             </div>
-            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-orange-400 transition-colors" />
+            <ExternalLink className="w-4 h-4 text-white/35 group-hover:text-orange-400 transition-colors" />
           </a>
 
           <a
             href="https://pump.fun"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-green-500/30 transition-all duration-200 group"
+            className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-green-500/30 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
@@ -258,17 +258,17 @@ export default function SolanaSection() {
               </div>
               <div>
                 <h3 className="text-white font-medium text-sm">Pump.fun</h3>
-                <p className="text-gray-400 text-xs">Launch platform</p>
+                <p className="text-white/35 text-xs">Launch platform</p>
               </div>
             </div>
-            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-green-400 transition-colors" />
+            <ExternalLink className="w-4 h-4 text-white/35 group-hover:text-green-400 transition-colors" />
           </a>
 
           <a
             href="https://believe.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
+            className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -276,10 +276,10 @@ export default function SolanaSection() {
               </div>
               <div>
                 <h3 className="text-white font-medium text-sm">Believe.app</h3>
-                <p className="text-gray-400 text-xs">Trading app</p>
+                <p className="text-white/35 text-xs">Trading app</p>
               </div>
             </div>
-            <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors" />
+            <ExternalLink className="w-4 h-4 text-white/35 group-hover:text-blue-400 transition-colors" />
           </a>
         </div>
       </GlassCard>
@@ -307,7 +307,7 @@ export default function SolanaSection() {
               </div>
               <div>
                 <p className="text-purple-400 font-medium">Solana Ecosystem</p>
-                <p className="text-sm text-gray-400">SwissBorg Academy ecosystem guide</p>
+                <p className="text-sm text-white/35">SwissBorg Academy ecosystem guide</p>
               </div>
             </div>
           </button>

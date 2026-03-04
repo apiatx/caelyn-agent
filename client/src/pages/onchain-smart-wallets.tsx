@@ -39,10 +39,10 @@ export default function OnchainSmartWalletsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -88,7 +88,7 @@ export default function OnchainSmartWalletsPage() {
               <iframe
                 src="https://app.chainlyze.ai/smart-wallet"
                 title="Chainlyze Smart Wallet Tracker"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 frameBorder="0"
                 loading="lazy"
                 sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation"
@@ -108,7 +108,7 @@ export default function OnchainSmartWalletsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-purple-400 font-semibold">HyperLiquid Whale</h4>
                 </div>
-                <p className="text-gray-400 text-sm">Hyperdash Trader Analytics</p>
+                <p className="text-white/35 text-sm">Hyperdash Trader Analytics</p>
               </SafeLink>
 
               <SafeLink
@@ -118,7 +118,7 @@ export default function OnchainSmartWalletsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-blue-400 font-semibold">WhaleAI - ETH/BASE</h4>
                 </div>
-                <p className="text-gray-400 text-sm">DeBank Portfolio Analysis</p>
+                <p className="text-white/35 text-sm">DeBank Portfolio Analysis</p>
               </SafeLink>
 
               <SafeLink
@@ -128,7 +128,7 @@ export default function OnchainSmartWalletsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-orange-400 font-semibold">Debt Relief Bot</h4>
                 </div>
-                <p className="text-gray-400 text-sm">DeBank wallet tracker</p>
+                <p className="text-white/35 text-sm">DeBank wallet tracker</p>
               </SafeLink>
 
               <SafeLink
@@ -138,7 +138,7 @@ export default function OnchainSmartWalletsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-red-400 font-semibold">DegenAI HL Vault</h4>
                 </div>
-                <p className="text-gray-400 text-sm">Copy trading vault strategy</p>
+                <p className="text-white/35 text-sm">Copy trading vault strategy</p>
               </SafeLink>
 
               <SafeLink
@@ -148,7 +148,7 @@ export default function OnchainSmartWalletsPage() {
                 <div className="flex items-center gap-2 mb-2">
                   <h4 className="text-pink-400 font-semibold">DegenAI Perps Bot</h4>
                 </div>
-                <p className="text-gray-400 text-sm">AI-powered perpetual trading bot</p>
+                <p className="text-white/35 text-sm">AI-powered perpetual trading bot</p>
               </SafeLink>
             </div>
 
@@ -164,7 +164,7 @@ export default function OnchainSmartWalletsPage() {
                   </div>
                   <div className="text-center">
                     <h4 className="text-green-300 font-bold text-xl">Indexy</h4>
-                    <p className="text-gray-300 text-sm">Crypto market indexing platform</p>
+                    <p className="text-white/45 text-sm">Crypto market indexing platform</p>
                   </div>
                   <ExternalLink className="w-5 h-5 text-green-400" />
                 </div>

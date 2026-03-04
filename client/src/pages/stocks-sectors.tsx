@@ -5,7 +5,7 @@ import { TrendingUp, ExternalLink, BarChart3 } from "lucide-react";
 
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -50,7 +50,7 @@ export default function StocksSectorsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-4 lg:space-y-8">
           <GlassCard className="p-3 sm:p-4 lg:p-6">
@@ -63,7 +63,7 @@ export default function StocksSectorsPage() {
                 <Badge className="bg-teal-500/20 text-teal-400 border-teal-500/30 text-xs">ALL US ETFs</Badge>
               </div>
             </div>
-            <div className="w-full h-[600px] sm:h-[700px] rounded-lg overflow-hidden border border-crypto-silver/20">
+            <div className="w-full h-[600px] sm:h-[700px] rounded-lg overflow-hidden border border-white/[0.06]">
               <ETFHeatmapWidget />
             </div>
           </GlassCard>
@@ -75,7 +75,7 @@ export default function StocksSectorsPage() {
                   <BarChart3 className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white">Stage Analysis Screener</h3>
-                <Badge className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-white border-crypto-silver/30 text-xs">SECTORS & FUNDS</Badge>
+                <Badge className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-white border-white/[0.06] text-xs">SECTORS & FUNDS</Badge>
               </div>
               <button onClick={() => openInNewTab('https://screener.nextbigtrade.com/#/markets')} className="text-purple-400 hover:text-purple-300 text-xs sm:text-sm flex items-center gap-1">
                 <ExternalLink className="w-3 h-3" />
@@ -86,7 +86,7 @@ export default function StocksSectorsPage() {
             <div className="w-full space-y-6">
               <iframe
                 src="https://screener.nextbigtrade.com/#/markets"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 title="Next Big Trade Sectors Screener"
                 loading="eager"
                 referrerPolicy="no-referrer"

@@ -82,7 +82,7 @@ export function MobulaPortfolioTracker() {
           value={walletAddress}
           onChange={(e) => setWalletAddress(e.target.value)}
           onKeyPress={handleKeyPress}
-          className="flex-1 bg-gray-900/50 border-crypto-silver/20 text-white placeholder-gray-400"
+          className="flex-1 bg-gray-900/50 border-white/[0.06] text-white placeholder-gray-400"
         />
         <Button 
           onClick={handleSearch}
@@ -101,7 +101,7 @@ export function MobulaPortfolioTracker() {
       {isLoading && searchedAddress && (
         <div className="text-center py-8">
           <Loader2 className="w-8 h-8 animate-spin text-green-400 mx-auto mb-4" />
-          <p className="text-gray-400">Fetching portfolio data...</p>
+          <p className="text-white/35">Fetching portfolio data...</p>
           <p className="text-gray-500 text-sm mt-1">Analyzing wallet: {searchedAddress.slice(0, 8)}...{searchedAddress.slice(-6)}</p>
         </div>
       )}
@@ -113,7 +113,7 @@ export function MobulaPortfolioTracker() {
             <TrendingDown className="w-8 h-8 text-red-400" />
           </div>
           <p className="text-red-400 mb-2">Failed to load portfolio</p>
-          <p className="text-gray-400 text-sm">Please check the wallet address and try again</p>
+          <p className="text-white/35 text-sm">Please check the wallet address and try again</p>
           <Button 
             onClick={() => refetch()}
             variant="outline"
@@ -132,7 +132,7 @@ export function MobulaPortfolioTracker() {
             <div className="flex items-center justify-between">
               <div>
                 <h4 className="text-green-400 font-semibold">Total Portfolio Value</h4>
-                <p className="text-gray-400 text-sm">
+                <p className="text-white/35 text-sm">
                   {searchedAddress.slice(0, 8)}...{searchedAddress.slice(-6)}
                 </p>
               </div>
@@ -157,7 +157,7 @@ export function MobulaPortfolioTracker() {
                 .map((balance, index) => (
                   <div
                     key={`${balance.asset}-${index}`}
-                    className="flex items-center justify-between p-3 bg-gray-900/30 rounded-lg border border-crypto-silver/10"
+                    className="flex items-center justify-between p-3 bg-gray-900/30 rounded-lg border border-white/[0.03]"
                   >
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
@@ -167,7 +167,7 @@ export function MobulaPortfolioTracker() {
                       </div>
                       <div>
                         <div className="text-white font-semibold">{balance.asset.toUpperCase()}</div>
-                        <div className="text-gray-400 text-sm">
+                        <div className="text-white/35 text-sm">
                           {formatBalance(balance.balance)} tokens
                         </div>
                       </div>
@@ -177,7 +177,7 @@ export function MobulaPortfolioTracker() {
                       <div className="text-white font-semibold">
                         ${balance.balance_usd.toFixed(2)}
                       </div>
-                      <div className="text-gray-400 text-sm">
+                      <div className="text-white/35 text-sm">
                         {formatPrice(balance.price)} per token
                       </div>
                     </div>
@@ -187,9 +187,9 @@ export function MobulaPortfolioTracker() {
           ) : (
             <div className="text-center py-8">
               <div className="w-16 h-16 bg-gray-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Wallet className="w-8 h-8 text-gray-400" />
+                <Wallet className="w-8 h-8 text-white/35" />
               </div>
-              <p className="text-gray-400">No token balances found</p>
+              <p className="text-white/35">No token balances found</p>
               <p className="text-gray-500 text-sm">This wallet appears to be empty or contains only very small amounts</p>
             </div>
           )}
@@ -203,7 +203,7 @@ export function MobulaPortfolioTracker() {
             <Search className="w-8 h-8 text-green-400" />
           </div>
           <h4 className="text-white font-semibold mb-2">Track Any Wallet</h4>
-          <p className="text-gray-400 mb-4">Enter a wallet address to view real-time portfolio data</p>
+          <p className="text-white/35 mb-4">Enter a wallet address to view real-time portfolio data</p>
           <div className="text-sm text-gray-500 space-y-1">
             <p>• Supports Ethereum and multi-chain addresses</p>
             <p>• Real-time token balances and USD values</p>

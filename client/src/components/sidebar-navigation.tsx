@@ -365,8 +365,8 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
             style={indent > 0 ? { marginLeft: indent } : undefined}
             className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'justify-between'} px-2 ${isMobile ? 'py-3' : 'py-1.5'} text-left text-xs font-medium transition-all duration-200 rounded-lg group ${
               hasActiveChild
-                ? "bg-gradient-to-r from-crypto-warning/20 to-yellow-400/10 border-l-2 border-crypto-warning text-white"
-                : "text-gray-300 hover:bg-white/5 hover:text-white"
+                ? "bg-white/[0.06] border-l-2 border-[hsl(200,90%,58%)] text-white"
+                : "text-white/45 hover:bg-white/[0.04] hover:text-white/80"
             }`}
             data-testid={`nav-${item.id}`}
           >
@@ -391,8 +391,8 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
             style={indent > 0 ? { marginLeft: indent } : undefined}
             className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'gap-2'} px-2 ${isMobile ? 'py-3' : 'py-1.5'} text-left text-xs font-medium transition-all duration-200 rounded-lg group ${
               itemIsActive
-                ? "bg-gradient-to-r from-crypto-warning/20 to-yellow-400/10 border-l-2 border-crypto-warning text-white shadow-md"
-                : "text-gray-300 hover:bg-white/5 hover:text-white"
+                ? "bg-white/[0.06] border-l-2 border-[hsl(200,90%,58%)] text-white shadow-md"
+                : "text-white/45 hover:bg-white/[0.04] hover:text-white/80"
             }`}
             data-testid={`nav-${item.id}`}
           >
@@ -413,14 +413,14 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
   return (
     <>
       {isMobile && (
-        <div className="fixed top-0 left-0 right-0 z-50 lg:hidden flex items-center justify-between px-4 h-14 bg-black/95 backdrop-blur-lg border-b border-crypto-silver/20">
+        <div className="fixed top-0 left-0 right-0 z-50 lg:hidden flex items-center justify-between px-4 h-14 border-b border-white/[0.06]" style={{ background: '#060709' }}>
           <div className="flex items-center gap-3">
             <img src={caelynLogo} alt="CaelynAI" className="w-10 h-10 rounded-full" />
-            <span style={{ fontSize:'0.9rem', fontWeight:800, letterSpacing:'0.1em', textTransform:'uppercase', background:'linear-gradient(135deg, #e8eaef 0%, #a78bfa 40%, #3b82f6 70%, #22c55e 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', fontFamily:"'JetBrains Mono', 'SF Mono', 'Fira Code', monospace" }}>TradeBlade</span>
+            <span style={{ fontSize:'0.85rem', fontWeight:700, letterSpacing:'0.12em', textTransform:'uppercase', background:'linear-gradient(135deg, #e0f0ff 0%, #5cc8f0 40%, #3b9ee6 70%, #2080c8 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', fontFamily:"'Inter', -apple-system, sans-serif" }}>CaelynAI</span>
           </div>
           <button
             onClick={onToggle}
-            className="bg-white/5 border border-crypto-silver/20 rounded-lg p-2.5 text-gray-300 hover:text-white transition-all"
+            className="bg-white/[0.04] border border-white/[0.08] rounded-lg p-2.5 text-white/45 hover:text-white transition-all"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -436,9 +436,10 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
                 isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
               }` 
             : `left-0 ${isCollapsed ? 'w-16' : 'w-48'}`
-        } bg-black/95 backdrop-blur-lg border-r border-crypto-silver/20 ${
+        } border-r border-white/[0.06] ${
           isMobile ? 'z-50' : 'z-40'
         } ${!isMobile ? 'transition-all duration-300 ease-in-out' : ''} flex flex-col ${className}`}
+        style={{ background: '#060709' }}
         aria-hidden={isMobile && !isMobileMenuOpen}
         inert={isMobile && !isMobileMenuOpen ? true : undefined}
       >
@@ -446,7 +447,7 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
         {/* Desktop Toggle Button */}
 
       {!isMobile && (
-      <div className="flex-shrink-0 border-b border-crypto-silver/20 flex items-center justify-center relative" style={{ width:'100%', padding: isCollapsed ? '6px' : '4px' }}>
+      <div className="flex-shrink-0 border-b border-white/[0.06] flex items-center justify-center relative" style={{ width:'100%', padding: isCollapsed ? '6px' : '4px' }}>
         <div className="overflow-hidden" style={{ transition: 'all 0.3s ease-in-out', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <img 
             src={caelynLogo}
@@ -458,7 +459,8 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
         <div className="absolute -right-3 -bottom-3 z-50">
           <button
             onClick={onToggle}
-            className="bg-black/90 backdrop-blur-lg border border-crypto-silver/20 rounded-full p-1.5 text-gray-300 hover:text-white hover:bg-white/5 transition-all duration-200 shadow-lg"
+            className="border border-white/[0.08] rounded-full p-1.5 text-white/40 hover:text-white hover:border-white/15 transition-all duration-200 shadow-lg"
+            style={{ background: '#0a0b0f' }}
             data-testid="toggle-sidebar"
           >
             {isCollapsed ? (
@@ -477,11 +479,11 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
       </div>
 
       {/* Pinned Bottom: Settings + About */}
-      <div className="flex-shrink-0 border-t border-crypto-silver/20 px-2 py-2 space-y-0.5">
+      <div className="flex-shrink-0 border-t border-white/[0.06] px-2 py-2 space-y-0.5">
         <button
           onClick={() => setSettingsOpen(true)}
           title={isCollapsed ? "Settings" : undefined}
-          className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'gap-2'} px-2 ${isMobile ? 'py-3' : 'py-1.5'} text-left text-xs font-medium transition-all duration-200 rounded-lg text-gray-300 hover:bg-white/5 hover:text-white`}
+          className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'gap-2'} px-2 ${isMobile ? 'py-3' : 'py-1.5'} text-left text-xs font-medium transition-all duration-200 rounded-lg text-white/45 hover:bg-white/[0.04] hover:text-white/80`}
           data-testid="nav-settings"
         >
           <Settings className="w-4 h-4" />
@@ -492,8 +494,8 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
           title={isCollapsed ? "About" : undefined}
           className={`w-full flex items-center ${isCollapsed ? 'justify-center' : 'gap-2'} px-2 ${isMobile ? 'py-3' : 'py-1.5'} text-left text-xs font-medium transition-all duration-200 rounded-lg ${
             isActive('/app/about')
-              ? "bg-gradient-to-r from-crypto-warning/20 to-yellow-400/10 border-l-2 border-crypto-warning text-white shadow-md"
-              : "text-gray-300 hover:bg-white/5 hover:text-white"
+              ? "bg-white/[0.06] border-l-2 border-[hsl(200,90%,58%)] text-white shadow-md"
+              : "text-white/45 hover:bg-white/[0.04] hover:text-white/80"
           }`}
           data-testid="nav-about"
         >
@@ -504,8 +506,8 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
 
       {/* Footer */}
       {(!isCollapsed || isMobile) && (
-        <div className="flex-shrink-0 px-4 py-2 border-t border-crypto-silver/20">
-          <div className="text-[10px] text-center" style={{ color: '#cce8ff' }}>
+        <div className="flex-shrink-0 px-4 py-2 border-t border-white/[0.06]">
+          <div className="text-[10px] text-center text-white/20">
             © 2026 CaelynAI
           </div>
         </div>

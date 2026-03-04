@@ -5,7 +5,7 @@ import chartIcon from "@assets/images_1757104413238.png";
 
 // Glass card component
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -16,7 +16,7 @@ export default function CryptoStonksPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Main Content */}
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-6">
@@ -67,7 +67,7 @@ export default function CryptoStonksPage() {
                 <div className="w-full">
                   <iframe
                     src="https://app.artemisanalytics.com/digital-asset-treasuries"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Artemis Digital Asset Treasuries"
                     sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                   />
@@ -111,7 +111,7 @@ export default function CryptoStonksPage() {
                 <div className="w-full">
                   <iframe
                     src="https://bitcointreasuries.net/"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Bitcoin Treasuries"
                     sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                   />
@@ -140,7 +140,7 @@ export default function CryptoStonksPage() {
                 <div className="w-full">
                   <iframe
                     src="https://strategicethreserve.xyz/"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Ethereum Treasuries"
                     sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                   />

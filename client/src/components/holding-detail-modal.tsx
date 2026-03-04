@@ -19,7 +19,7 @@ export function HoldingDetailModal({ holding, subnets, onClose }: HoldingDetailM
 
   return (
     <Dialog open={!!holding} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto glass-card-dark border-crypto-silver/30">
+      <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto glass-card-dark border-white/[0.08]">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-white flex items-center">
             <div className={`w-12 h-12 rounded-full mr-4 flex items-center justify-center text-lg font-bold ${
@@ -54,7 +54,7 @@ export function HoldingDetailModal({ holding, subnets, onClose }: HoldingDetailM
                 <span className="text-crypto-silver">Total Value</span>
                 <span className="text-white font-semibold">${totalValue.toFixed(2)}</span>
               </div>
-              <div className="border-t border-crypto-silver/20 pt-4">
+              <div className="border-t border-white/[0.06] pt-4">
                 <div className="flex justify-between items-center">
                   <span className="text-crypto-silver">Unrealized PnL</span>
                   <div className="text-right">
@@ -113,7 +113,7 @@ export function HoldingDetailModal({ holding, subnets, onClose }: HoldingDetailM
             <h3 className="text-lg font-semibold text-white mb-4">Subnet Allocation</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {subnets.map((subnet) => (
-                <div key={subnet.id} className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div key={subnet.id} className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
                       <div className={`w-8 h-8 rounded-full mr-3 flex items-center justify-center text-xs font-bold ${
@@ -150,7 +150,7 @@ export function HoldingDetailModal({ holding, subnets, onClose }: HoldingDetailM
         )}
 
         {/* Action Buttons */}
-        <div className="flex justify-between items-center mt-6 pt-6 border-t border-crypto-silver/20">
+        <div className="flex justify-between items-center mt-6 pt-6 border-t border-white/[0.06]">
           <Button variant="ghost" className="text-crypto-silver hover:text-white">
             <ExternalLink className="h-4 w-4 mr-2" />
             View on Explorer

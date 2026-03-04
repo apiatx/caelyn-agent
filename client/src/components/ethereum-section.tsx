@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { openSecureLink } from "@/utils/security";
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -57,10 +57,10 @@ export function EthereumSection() {
           </SafeLink>
         </div>
         
-        <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+        <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
           <iframe
             src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BITSTAMP%3AETHUSD"
-            className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
             title="Ethereum Advanced Chart"
             frameBorder="0"
             scrolling="no"
@@ -98,7 +98,7 @@ export function EthereumSection() {
               </div>
               <h4 className="text-green-400 font-semibold">DexScreener</h4>
             </div>
-            <p className="text-gray-400 text-sm">Live trending Ethereum tokens and pair analytics with real-time charts</p>
+            <p className="text-white/35 text-sm">Live trending Ethereum tokens and pair analytics with real-time charts</p>
           </button>
           
           {/* Birdeye Ethereum */}
@@ -112,7 +112,7 @@ export function EthereumSection() {
               </div>
               <h4 className="text-orange-400 font-semibold">Birdeye</h4>
             </div>
-            <p className="text-gray-400 text-sm">Comprehensive Ethereum token analytics with advanced charts and market insights</p>
+            <p className="text-white/35 text-sm">Comprehensive Ethereum token analytics with advanced charts and market insights</p>
           </button>
           
           {/* OpenSea */}
@@ -126,7 +126,7 @@ export function EthereumSection() {
               </div>
               <h4 className="text-cyan-400 font-semibold">OpenSea</h4>
             </div>
-            <p className="text-gray-400 text-sm">Trending Ethereum tokens by 30-day price changes</p>
+            <p className="text-white/35 text-sm">Trending Ethereum tokens by 30-day price changes</p>
           </button>
         </div>
       </GlassCard>
@@ -150,7 +150,7 @@ export function EthereumSection() {
           </SafeLink>
         </h3>
         
-        <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-4 space-y-6">
+        <div className="bg-black/20 border border-white/[0.06] rounded-lg p-4 space-y-6">
           {/* L2Beat iframe */}
           <div>
             <SafeIframe
@@ -179,7 +179,7 @@ export function EthereumSection() {
                 Open Full View →
               </button>
             </div>
-            <div className="w-full bg-gray-900/50 rounded-lg border border-crypto-silver/20 overflow-hidden">
+            <div className="w-full bg-gray-900/50 rounded-lg border border-white/[0.06] overflow-hidden">
               <SafeIframe
                 src="https://www.growthepie.com/"
                 title="GrowThePie Layer 2 Analytics"
@@ -262,7 +262,7 @@ export function EthereumSection() {
         <div className="p-4 bg-gray-500/10 border border-gray-500/20 rounded-lg">
           <SafeLink
             href="https://www.ethereum-ecosystem.com/"
-            className="block text-gray-400 hover:text-gray-300 transition-colors"
+            className="block text-white/35 hover:text-white/45 transition-colors"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gray-500 rounded-full flex items-center justify-center">
@@ -270,7 +270,7 @@ export function EthereumSection() {
               </div>
               <div>
                 <p className="text-white font-medium">Ethereum Ecosystem</p>
-                <p className="text-sm text-gray-400">Comprehensive ecosystem guide</p>
+                <p className="text-sm text-white/35">Comprehensive ecosystem guide</p>
               </div>
             </div>
           </SafeLink>

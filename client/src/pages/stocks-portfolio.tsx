@@ -55,7 +55,7 @@ interface DividendEvent {
 }
 
 const GlassCard = ({ children, className = "" }: { children: ReactNode; className?: string }) => (
-  <Card className={`backdrop-blur-lg ${className}`} style={{ background: '#141632', border: '1px solid #1e2148', boxShadow: '0 0 15px rgba(59, 130, 246, 0.05)', borderRadius: 12 }}>
+  <Card className={`backdrop-blur-lg ${className}`} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', boxShadow: '0 0 15px rgba(59, 130, 246, 0.05)', borderRadius: 12 }}>
     {children}
   </Card>
 );
@@ -70,16 +70,16 @@ const SECTOR_COLORS: Record<string, string> = {
   'Consumer Defensive': '#14b8a6',
   'Energy': '#ef4444',
   'Real Estate': '#a78bfa',
-  'Utilities': '#06b6d4',
+  'Utilities': '#80d8f8',
   'Basic Materials': '#d97706',
   'Crypto': '#f97316',
   'Commodities': '#78716c',
-  'ETFs': '#06b6d4',
+  'ETFs': '#80d8f8',
   'Indices': '#a78bfa',
   'Other': '#4b5563',
 };
 
-const PIE_COLORS = ['#3b82f6', '#22c55e', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6', '#ef4444', '#06b6d4', '#a78bfa', '#d97706', '#6366f1', '#f97316'];
+const PIE_COLORS = ['#3b82f6', '#22c55e', '#f59e0b', '#ec4899', '#8b5cf6', '#14b8a6', '#ef4444', '#80d8f8', '#a78bfa', '#d97706', '#2090d0', '#f97316'];
 
 const CRYPTO_TV_SYMBOLS: Record<string, string> = {
   "BTC": "BINANCE:BTCUSDT", "ETH": "BINANCE:ETHUSDT", "SOL": "BINANCE:SOLUSDT",
@@ -547,8 +547,8 @@ export default function StocksPortfolioPage() {
                 const vs = getVerdictStyle(pos.verdict);
                 const pnlPositive = pnlIsPositive(pos.pnl);
                 return (
-                  <div key={i} style={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, overflow: 'hidden' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderBottom: '1px solid #1e2148', background: '#0f1129' }}>
+                  <div key={i} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, overflow: 'hidden' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                         <span style={{ fontSize: 16, fontWeight: 800, color: '#fff', letterSpacing: '0.02em' }}>{pos.ticker}</span>
                         {pos.weight && <span style={{ fontSize: 11, color: '#94a3b8', fontWeight: 500 }}>{pos.weight}</span>}
@@ -589,7 +589,7 @@ export default function StocksPortfolioPage() {
         )}
 
         {review.overallAssessment && (
-          <div style={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, padding: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, padding: 16 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 12 }}>
               <span style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Overall Assessment</span>
               {review.grade && (
@@ -613,11 +613,11 @@ export default function StocksPortfolioPage() {
         )}
 
         {review.actionItems.length > 0 && (
-          <div style={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, padding: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, padding: 16 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 12 }}>Action Items</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
               {review.actionItems.map((item, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 12px', background: '#0f1129', borderRadius: 6, border: '1px solid #1e2148' }}>
+                <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 10, padding: '8px 12px', background: 'rgba(255,255,255,0.02)', borderRadius: 6, border: '1px solid rgba(255,255,255,0.06)' }}>
                   <span style={{ fontSize: 13, fontWeight: 800, color: '#60a5fa', minWidth: 20, flexShrink: 0 }}>{i + 1}</span>
                   <span style={{ fontSize: 12, color: '#e2e8f0', lineHeight: 1.6 }}>{item}</span>
                 </div>
@@ -627,14 +627,14 @@ export default function StocksPortfolioPage() {
         )}
 
         {review.newPosition && (
-          <div style={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, padding: 16 }}>
+          <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, padding: 16 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#34d399', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Suggested New Position</div>
             <div style={{ fontSize: 12, color: '#e2e8f0', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{review.newPosition.replace(/\*\*/g, '')}</div>
           </div>
         )}
 
         {review.otherSections.map((sec, i) => (
-          <div key={i} style={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, padding: 16 }}>
+          <div key={i} style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, padding: 16 }}>
             <div style={{ fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>{sec.title}</div>
             <div style={{ fontSize: 12, color: '#e2e8f0', lineHeight: 1.7, whiteSpace: 'pre-wrap' }}>{sec.body.replace(/\*\*/g, '')}</div>
           </div>
@@ -651,25 +651,25 @@ export default function StocksPortfolioPage() {
   const openInNewTab = (url: string) => window.open(url, '_blank', 'noopener,noreferrer');
 
   return (
-    <div className="min-h-screen text-white portfolio-page" style={{ background: 'radial-gradient(ellipse at top center, #0f1129 0%, #0a0b1a 50%, #050510 100%)' }}>
+    <div className="min-h-screen text-white portfolio-page" style={{ background: '#050608' }}>
       <style>{`
         .portfolio-page::-webkit-scrollbar { width: 6px; }
-        .portfolio-page::-webkit-scrollbar-track { background: #0a0b1a; }
-        .portfolio-page::-webkit-scrollbar-thumb { background: #1e2148; border-radius: 3px; }
-        .portfolio-page::-webkit-scrollbar-thumb:hover { background: #2d3066; }
+        .portfolio-page::-webkit-scrollbar-track { background: #050608; }
+        .portfolio-page::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.06); border-radius: 3px; }
+        .portfolio-page::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.12); }
       `}</style>
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-4 lg:space-y-6">
 
           {/* AI Review Button + Summary Stats */}
-          <div style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(90deg, transparent, #6366f1, #3b82f6, #06b6d4, transparent) 1', paddingBottom: 16, marginBottom: 24 }}>
+          <div style={{ borderBottom: '1px solid transparent', borderImage: 'linear-gradient(90deg, transparent, #2090d0, #5cc8f0, #80d8f8, transparent) 1', paddingBottom: 16, marginBottom: 24 }}>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
             <div className="flex items-center gap-3">
               <div>
-                <h1 style={{ fontSize: '1.75rem', fontWeight: 700, background: 'linear-gradient(135deg, #e2e8f0, #38bdf8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Portfolio Dashboard</h1>
+                <h1 style={{ fontSize: '1.75rem', fontWeight: 700, background: 'linear-gradient(135deg, #e2e8f0, #5cc8f0)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Portfolio Dashboard</h1>
                 {holdings.length > 0 && totalPortfolioValue > 0 && (
                   <div className="flex items-center gap-3 text-sm">
-                    <span className="text-crypto-silver">Total: <span style={{ color: '#38bdf8', fontWeight: 700, textShadow: '0 0 10px rgba(56, 189, 248, 0.3)' }}>{fmt(totalPortfolioValue)}</span></span>
+                    <span className="text-crypto-silver">Total: <span style={{ color: '#5cc8f0', fontWeight: 700, textShadow: '0 0 10px rgba(92, 200, 240, 0.3)' }}>{fmt(totalPortfolioValue)}</span></span>
                     <span className={totalDailyPL >= 0 ? 'text-green-400' : 'text-red-400'}>
                       Day: {fmtPL(totalDailyPL)}
                     </span>
@@ -683,11 +683,11 @@ export default function StocksPortfolioPage() {
             <div className="flex items-center gap-2">
               {holdings.length > 0 && (
                 <>
-                  <button onClick={() => fetchQuotes(holdings)} disabled={loadingQuotes} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-slate-400 hover:text-slate-200 transition-all disabled:opacity-50" style={{ background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.3)' }}>
+                  <button onClick={() => fetchQuotes(holdings)} disabled={loadingQuotes} className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm text-slate-400 hover:text-slate-200 transition-all disabled:opacity-50" style={{ background: 'rgba(32, 144, 208, 0.1)', border: '1px solid rgba(32, 144, 208, 0.3)' }}>
                     <RefreshCw className={`w-3.5 h-3.5 ${loadingQuotes ? 'animate-spin' : ''}`} />
                     Refresh
                   </button>
-                  <button onClick={runAIReview} disabled={aiLoading} className="flex items-center gap-1.5 text-sm font-medium text-white transition-all disabled:opacity-50" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)', boxShadow: '0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(59, 130, 246, 0.2)', borderRadius: 8, padding: '10px 24px' }}>
+                  <button onClick={runAIReview} disabled={aiLoading} className="flex items-center gap-1.5 text-sm font-medium text-white transition-all disabled:opacity-50" style={{ background: 'linear-gradient(135deg, #2090d0, #5cc8f0, #80d8f8)', boxShadow: '0 0 20px rgba(32, 144, 208, 0.4), 0 0 40px rgba(92, 200, 240, 0.2)', borderRadius: 8, padding: '10px 24px' }}>
                     <Bot className="w-4 h-4" />
                     {aiLoading ? aiStage || 'Analyzing...' : 'AI Portfolio Review'}
                   </button>
@@ -702,8 +702,8 @@ export default function StocksPortfolioPage() {
             const parsed = parsePortfolioReview(aiReview);
             return (
               <div style={{
-                background: "#141632",
-                border: "1px solid #1e2148",
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: "12px",
                 padding: "20px",
                 marginTop: "16px",
@@ -728,16 +728,16 @@ export default function StocksPortfolioPage() {
               <h3 className="text-sm font-semibold text-white">Add Holding</h3>
             </div>
             <div className="flex flex-col sm:flex-row gap-2">
-              <input type="text" placeholder="Ticker (e.g. NVDA)" value={newTicker} onChange={e => setNewTicker(e.target.value.toUpperCase())} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-36" style={{ background: '#0f1129', border: '1px solid #1e2148' }} />
-              <select value={selectedAssetType} onChange={e => setSelectedAssetType(e.target.value)} className="rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500/50 w-full sm:w-32 appearance-none cursor-pointer" style={{ background: '#0f1129', border: '1px solid #1e2148', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center' }}>
-                <option value="stock" style={{ background: '#0f1129' }}>Stock</option>
-                <option value="etf" style={{ background: '#0f1129' }}>ETF</option>
-                <option value="crypto" style={{ background: '#0f1129' }}>Crypto</option>
-                <option value="commodity" style={{ background: '#0f1129' }}>Commodity</option>
+              <input type="text" placeholder="Ticker (e.g. NVDA)" value={newTicker} onChange={e => setNewTicker(e.target.value.toUpperCase())} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-36" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }} />
+              <select value={selectedAssetType} onChange={e => setSelectedAssetType(e.target.value)} className="rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-cyan-500/50 w-full sm:w-32 appearance-none cursor-pointer" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\")", backgroundRepeat: 'no-repeat', backgroundPosition: 'right 8px center' }}>
+                <option value="stock" style={{ background: 'rgba(255,255,255,0.02)' }}>Stock</option>
+                <option value="etf" style={{ background: 'rgba(255,255,255,0.02)' }}>ETF</option>
+                <option value="crypto" style={{ background: 'rgba(255,255,255,0.02)' }}>Crypto</option>
+                <option value="commodity" style={{ background: 'rgba(255,255,255,0.02)' }}>Commodity</option>
               </select>
-              <input type="number" placeholder={SHARES_LABEL[selectedAssetType] || 'Shares'} value={newShares} onChange={e => setNewShares(e.target.value)} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-28" style={{ background: '#0f1129', border: '1px solid #1e2148' }} />
-              <input type="number" placeholder="Avg Price ($)" value={newAvgCost} onChange={e => setNewAvgCost(e.target.value)} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-32" style={{ background: '#0f1129', border: '1px solid #1e2148' }} />
-              <button onClick={addHolding} disabled={addingHolding || !newTicker.trim() || !newShares || !newAvgCost} className="flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all disabled:opacity-40" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6)', boxShadow: '0 0 12px rgba(99, 102, 241, 0.3)' }}>
+              <input type="number" placeholder={SHARES_LABEL[selectedAssetType] || 'Shares'} value={newShares} onChange={e => setNewShares(e.target.value)} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-28" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }} />
+              <input type="number" placeholder="Avg Price ($)" value={newAvgCost} onChange={e => setNewAvgCost(e.target.value)} onKeyDown={e => e.key === 'Enter' && addHolding()} className="rounded-lg px-3 py-2 text-sm text-white placeholder-crypto-silver/50 focus:outline-none focus:border-cyan-500/50 w-full sm:w-32" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }} />
+              <button onClick={addHolding} disabled={addingHolding || !newTicker.trim() || !newShares || !newAvgCost} className="flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium text-white transition-all disabled:opacity-40" style={{ background: 'linear-gradient(135deg, #2090d0, #5cc8f0)', boxShadow: '0 0 12px rgba(32, 144, 208, 0.3)' }}>
                 <Plus className="w-4 h-4" />
                 Add
               </button>
@@ -766,7 +766,7 @@ export default function StocksPortfolioPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr style={{ borderBottom: '1px solid #1e2148', background: '#0f1129' }}>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)' }}>
                       <th className="pb-2 pr-1 w-6"></th>
                       <th className="text-left pb-2 pr-3"><SortHeader label="Ticker" keyName="ticker" /></th>
                       <th className="text-right pb-2 px-3"><SortHeader label="Shares" keyName="shares" /></th>
@@ -786,9 +786,9 @@ export default function StocksPortfolioPage() {
                       const q = h.quote;
                       return (
                         <Fragment key={h.id}>
-                          <tr onClick={() => setExpandedCard(isExpanded ? null : h.id)} className="transition-colors cursor-pointer" style={{ borderBottom: '1px solid #1a1c3a' }} onMouseEnter={e => (e.currentTarget.style.background = 'rgba(99, 102, 241, 0.06)')} onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
+                          <tr onClick={() => setExpandedCard(isExpanded ? null : h.id)} className="transition-colors cursor-pointer" style={{ borderBottom: '1px solid #1a1c3a' }} onMouseEnter={e => (e.currentTarget.style.background = 'rgba(32, 144, 208, 0.06)')} onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}>
                             <td className="py-2.5 pr-1 w-6">
-                              {isExpanded ? <ChevronDown className="w-3.5 h-3.5" style={{ color: '#38bdf8' }} /> : <ChevronRight className="w-3.5 h-3.5 text-crypto-silver hover:text-[#38bdf8]" />}
+                              {isExpanded ? <ChevronDown className="w-3.5 h-3.5" style={{ color: '#5cc8f0' }} /> : <ChevronRight className="w-3.5 h-3.5 text-crypto-silver hover:text-[#5cc8f0]" />}
                             </td>
                             <td className="py-2.5 pr-3">
                               <div style={{ color: '#e2e8f0', fontWeight: 700, fontSize: '1rem' }}>{h.ticker}</div>
@@ -796,7 +796,7 @@ export default function StocksPortfolioPage() {
                             </td>
                             <td className="text-right py-2.5 px-3 text-crypto-silver">{h.shares}</td>
                             <td className="text-right py-2.5 px-3 text-crypto-silver">{fmt(h.avgCost)}</td>
-                            <td className="text-right py-2.5 px-3" style={{ color: '#38bdf8', fontWeight: 600 }}>
+                            <td className="text-right py-2.5 px-3" style={{ color: '#5cc8f0', fontWeight: 600 }}>
                               {loadingQuotes && !h.currentPrice ? <span className="animate-pulse text-crypto-silver">Loading...</span> : quotesError && !h.currentPrice ? <span className="text-yellow-500 text-xs">Unavailable</span> : h.currentPrice > 0 ? fmt(h.currentPrice) : <span className="text-crypto-silver/50">—</span>}
                             </td>
                             <td className="text-right py-2.5 px-3 font-medium" style={{ color: '#a78bfa' }}>
@@ -820,12 +820,12 @@ export default function StocksPortfolioPage() {
                           {isExpanded && (
                             <tr style={{ borderBottom: '1px solid #1a1c3a' }}>
                               <td colSpan={9} className="p-0">
-                                <div style={{ background: '#0f1129', borderTop: '1px solid #1e2148', padding: '12px' }}>
+                                <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '12px' }}>
                                   <div className="flex gap-1 mb-1.5">
                                     {[{l:'1H',v:'60'},{l:'4H',v:'240'},{l:'1D',v:'D'},{l:'1W',v:'W'},{l:'1M',v:'M'}].map(iv => (
                                       <button key={iv.v} onClick={(e) => { e.stopPropagation(); setPortfolioChartInterval(iv.v); }}
                                         className="text-[9px] font-semibold px-2 py-0.5 rounded cursor-pointer transition-colors"
-                                        style={{ background: portfolioChartInterval === iv.v ? 'rgba(56, 189, 248, 0.12)' : 'transparent', color: portfolioChartInterval === iv.v ? '#38bdf8' : '#64748b', border: `1px solid ${portfolioChartInterval === iv.v ? 'rgba(56, 189, 248, 0.25)' : '#1e2148'}` }}
+                                        style={{ background: portfolioChartInterval === iv.v ? 'rgba(92, 200, 240, 0.12)' : 'transparent', color: portfolioChartInterval === iv.v ? '#5cc8f0' : '#64748b', border: `1px solid ${portfolioChartInterval === iv.v ? 'rgba(92, 200, 240, 0.25)' : 'rgba(255,255,255,0.06)'}` }}
                                       >{iv.l}</button>
                                     ))}
                                   </div>
@@ -838,7 +838,7 @@ export default function StocksPortfolioPage() {
                                   </div>
                                   <div className="flex flex-wrap gap-2.5 mt-3">
                                     {q?.changesPercentage != null && (
-                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                         <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Price Change</div>
                                         <div className={`text-sm font-semibold ${q.changesPercentage >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                                           {q.changesPercentage >= 0 ? '+' : ''}{q.changesPercentage.toFixed(2)}%
@@ -846,7 +846,7 @@ export default function StocksPortfolioPage() {
                                       </div>
                                     )}
                                     {(h.assetType === 'stock' || h.assetType === 'crypto' || !h.assetType) && q?.marketCap != null && q.marketCap > 0 && (
-                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                         <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Market Cap</div>
                                         <div className="text-sm font-semibold text-white">
                                           ${q.marketCap >= 1e12 ? (q.marketCap / 1e12).toFixed(1) + 'T' : q.marketCap >= 1e9 ? (q.marketCap / 1e9).toFixed(1) + 'B' : q.marketCap >= 1e6 ? (q.marketCap / 1e6).toFixed(1) + 'M' : q.marketCap.toLocaleString()}
@@ -854,7 +854,7 @@ export default function StocksPortfolioPage() {
                                       </div>
                                     )}
                                     {q?.volume != null && q.volume > 0 && (
-                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                         <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Volume</div>
                                         <div className="text-sm font-semibold text-white">
                                           {q.volume >= 1e9 ? (q.volume / 1e9).toFixed(1) + 'B' : q.volume >= 1e6 ? (q.volume / 1e6).toFixed(1) + 'M' : q.volume >= 1e3 ? (q.volume / 1e3).toFixed(1) + 'K' : q.volume.toLocaleString()}
@@ -864,27 +864,27 @@ export default function StocksPortfolioPage() {
                                     {(() => {
                                       const sectorLabel = h.assetType === 'crypto' ? 'Crypto' : h.assetType === 'commodity' ? 'Commodities' : h.assetType === 'etf' ? (q?.sector && q.sector !== 'Unknown' ? q.sector : 'ETFs') : (q?.sector && q.sector !== 'Unknown' ? q.sector : null);
                                       return sectorLabel ? (
-                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                           <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Sector</div>
                                           <div className="text-sm font-semibold text-white">{sectorLabel}</div>
                                         </div>
                                       ) : null;
                                     })()}
                                     {(h.assetType === 'stock' || !h.assetType) && q?.pe != null && q.pe > 0 && (
-                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                         <div className="text-[10px] text-crypto-silver uppercase tracking-wider">P/E Ratio</div>
                                         <div className="text-sm font-semibold text-white">{q.pe.toFixed(1)}</div>
                                       </div>
                                     )}
                                     {(h.assetType === 'stock' || !h.assetType) && q?.eps != null && q.eps !== 0 && (
-                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                      <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                         <div className="text-[10px] text-crypto-silver uppercase tracking-wider">EPS</div>
                                         <div className="text-sm font-semibold text-white">${q.eps.toFixed(2)}</div>
                                       </div>
                                     )}
                                     {(h.assetType === 'stock' || !h.assetType) && target && (
                                       <>
-                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                           <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Target Consensus</div>
                                           <div className={`text-sm font-semibold ${target.targetConsensus > h.currentPrice ? 'text-green-400' : 'text-red-400'}`}>
                                             ${target.targetConsensus?.toFixed(2)}
@@ -893,7 +893,7 @@ export default function StocksPortfolioPage() {
                                             {h.currentPrice > 0 ? ((((target.targetConsensus - h.currentPrice) / h.currentPrice) * 100).toFixed(1) + '% upside') : ''}
                                           </div>
                                         </div>
-                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(99, 102, 241, 0.06)', border: '1px solid #1e2148' }}>
+                                        <div className="rounded-lg px-3 py-2" style={{ background: 'rgba(32, 144, 208, 0.06)', border: '1px solid rgba(255,255,255,0.06)' }}>
                                           <div className="text-[10px] text-crypto-silver uppercase tracking-wider">Target Range</div>
                                           <div className="text-sm font-semibold text-white">${target.targetLow?.toFixed(0)} – ${target.targetHigh?.toFixed(0)}</div>
                                         </div>
@@ -921,19 +921,19 @@ export default function StocksPortfolioPage() {
                 <h3 className="text-sm font-semibold text-white">Portfolio Totals</h3>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                <div className="rounded-lg px-3 py-2.5" style={{ background: '#0f1129', border: '1px solid #1e2148' }}>
+                <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-[10px] text-crypto-silver uppercase tracking-wider mb-1">Total Balance</div>
-                  <div className="text-base font-bold" style={{ color: '#38bdf8', textShadow: '0 0 8px rgba(56, 189, 248, 0.2)' }}>{fmt(totalPortfolioValue)}</div>
+                  <div className="text-base font-bold" style={{ color: '#5cc8f0', textShadow: '0 0 8px rgba(92, 200, 240, 0.2)' }}>{fmt(totalPortfolioValue)}</div>
                 </div>
-                <div className="rounded-lg px-3 py-2.5" style={{ background: '#0f1129', border: '1px solid #1e2148' }}>
+                <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-[10px] text-crypto-silver uppercase tracking-wider mb-1">Total Invested</div>
                   <div className="text-base font-bold" style={{ color: '#a78bfa' }}>{fmt(totalCostBasis)}</div>
                 </div>
-                <div className="rounded-lg px-3 py-2.5" style={{ background: '#0f1129', border: '1px solid #1e2148' }}>
+                <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-[10px] text-crypto-silver uppercase tracking-wider mb-1">Daily P&L</div>
                   <div className={`text-base font-bold ${totalDailyPL >= 0 ? 'text-green-400' : 'text-red-400'}`}>{fmtPL(totalDailyPL)}</div>
                 </div>
-                <div className="rounded-lg px-3 py-2.5" style={{ background: '#0f1129', border: '1px solid #1e2148' }}>
+                <div className="rounded-lg px-3 py-2.5" style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}>
                   <div className="text-[10px] text-crypto-silver uppercase tracking-wider mb-1">Total P&L</div>
                   <div className={`text-base font-bold ${totalOverallPL >= 0 ? 'text-green-400' : 'text-red-400'}`}>
                     <span>{fmtPL(totalOverallPL)}</span>
@@ -957,7 +957,7 @@ export default function StocksPortfolioPage() {
                           <Cell key={entry.name} fill={entry.color} />
                         ))}
                       </Pie>
-                      <Tooltip formatter={(value: number) => fmt(value)} contentStyle={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, color: '#e2e8f0', fontSize: 12 }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#e2e8f0' }} />
+                      <Tooltip formatter={(value: number) => fmt(value)} contentStyle={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, color: '#e2e8f0', fontSize: 12 }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#e2e8f0' }} />
                     </PieChart>
                   </ResponsiveContainer>
                 </div>
@@ -968,10 +968,10 @@ export default function StocksPortfolioPage() {
                 <div className="h-[280px]">
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={plBarData} layout="vertical" margin={{ left: 10, right: 20 }}>
-                      <CartesianGrid strokeDasharray="3 3" stroke="#1e2148" />
+                      <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
                       <XAxis type="number" tick={{ fill: '#64748b', fontSize: 11 }} tickFormatter={(v) => `$${v}`} />
                       <YAxis type="category" dataKey="ticker" tick={{ fill: '#e2e8f0', fontSize: 11, fontWeight: 600 }} width={50} />
-                      <Tooltip formatter={(value: number) => fmt(value)} contentStyle={{ background: '#141632', border: '1px solid #1e2148', borderRadius: 8, color: '#e2e8f0', fontSize: 12 }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#e2e8f0' }} />
+                      <Tooltip formatter={(value: number) => fmt(value)} contentStyle={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 8, color: '#e2e8f0', fontSize: 12 }} itemStyle={{ color: '#e2e8f0' }} labelStyle={{ color: '#e2e8f0' }} />
                       <Bar dataKey="dailyPL" radius={[0, 4, 4, 0]}>
                         {plBarData.map((entry, i) => (
                           <Cell key={i} fill={entry.fill} />
@@ -1039,7 +1039,7 @@ export default function StocksPortfolioPage() {
               { name: 'Snowball', url: 'https://snowball-analytics.com/dashboard' },
               { name: 'Simply Wall St', url: 'https://simplywall.st/portfolio/65b1f9ab-7fa4-4d25-95c6-b8fa93d94d77/holdings' },
             ].map(link => (
-              <button key={link.name} onClick={() => openInNewTab(link.url)} className="transition-all duration-300 text-xs hover:text-white flex items-center gap-1.5" style={{ background: 'rgba(99, 102, 241, 0.08)', border: '1px solid #1e2148', color: '#94a3b8', borderRadius: 8, padding: '8px 16px' }}>
+              <button key={link.name} onClick={() => openInNewTab(link.url)} className="transition-all duration-300 text-xs hover:text-white flex items-center gap-1.5" style={{ background: 'rgba(32, 144, 208, 0.08)', border: '1px solid rgba(255,255,255,0.06)', color: '#94a3b8', borderRadius: 8, padding: '8px 16px' }}>
                 <ExternalLink className="w-3 h-3" />
                 {link.name}
               </button>

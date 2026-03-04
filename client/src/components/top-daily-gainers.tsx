@@ -114,7 +114,7 @@ const TopDailyGainers = () => {
 
   if (isLoading) {
     return (
-      <div className="mt-6 bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+      <div className="mt-6 bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
         <div className="mb-4">
         </div>
         <div className="flex items-center justify-center py-8">
@@ -127,7 +127,7 @@ const TopDailyGainers = () => {
 
   if (error) {
     return (
-      <div className="mt-6 bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+      <div className="mt-6 bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
         <div className="mb-4">
         </div>
         <div className="text-center py-8">
@@ -139,7 +139,7 @@ const TopDailyGainers = () => {
   }
 
   return (
-    <div className="mt-6 bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6" data-testid="top-daily-gainers">
+    <div className="mt-6 bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6" data-testid="top-daily-gainers">
       <div className="mb-6">
       </div>
       
@@ -210,7 +210,7 @@ const TopDailyGainers = () => {
                   </div>
                 </div>
                 
-                <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-green-400 transition-colors ml-2" />
+                <ExternalLink className="w-3 h-3 text-white/35 group-hover:text-green-400 transition-colors ml-2" />
               </div>
             </div>
           </div>

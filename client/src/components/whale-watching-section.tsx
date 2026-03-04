@@ -112,7 +112,7 @@ export default function WhaleWatchingSection() {
                     
                     return (
                       <Collapsible key={txKey} open={isExpanded} onOpenChange={(open) => setExpandedTx(open ? txKey : null)}>
-                        <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 hover:bg-white/10 transition-all duration-200">
+                        <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] hover:bg-white/10 transition-all duration-200">
                           <div className="p-5">
                             <div className="flex items-center justify-between mb-3">
                               <div className="flex items-center gap-3">
@@ -188,7 +188,7 @@ export default function WhaleWatchingSection() {
                             </div>
                           </div>
                           
-                          <CollapsibleContent className="border-t border-crypto-silver/10">
+                          <CollapsibleContent className="border-t border-white/[0.03]">
                             <div className="p-5 space-y-4 bg-black/10">
                               <h4 className="font-semibold text-white mb-3">Transaction Details</h4>
                               

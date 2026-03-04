@@ -94,7 +94,7 @@ export default function TradeSection() {
               <div className="w-full lg:w-1/3">
                 <iframe
                   src="https://app.rubic.exchange/?fromChain=ETH&toChain=ETH"
-                  className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                   title="Rubic Exchange"
                   frameBorder="0"
                   loading="lazy"
@@ -108,7 +108,7 @@ export default function TradeSection() {
               <div className="w-full lg:w-2/3">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3AETHUSDT"
-                  className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                   title="TradingView Ethereum Chart"
                   sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
                 />
@@ -138,42 +138,42 @@ export default function TradeSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://oku.trade/?isExactOut=false&inputChain=plasma&inToken=0x6100E367285b01F48D07953803A2d8dCA5D19873&outToken=0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   Oku Trade
                 </div>
-                <div className="text-sm text-gray-300">Plasma chain DEX</div>
+                <div className="text-sm text-white/45">Plasma chain DEX</div>
               </div>
             </Button>
 
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://app.swing.xyz/swap?fromChain=base&fromToken=ETH&toChain=ethereum&toToken=SWING')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   Galaxy Swing
                 </div>
-                <div className="text-sm text-gray-300">Cross-chain swap protocol</div>
+                <div className="text-sm text-white/45">Cross-chain swap protocol</div>
               </div>
             </Button>
 
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://app.debridge.finance/?inputChain=1&outputChain=8453&inputCurrency=&outputCurrency=&dlnMode=simple')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   deBridge
                 </div>
-                <div className="text-sm text-gray-300">Cross-chain liquidity and infrastructure</div>
+                <div className="text-sm text-white/45">Cross-chain liquidity and infrastructure</div>
               </div>
             </Button>
           </div>
@@ -183,42 +183,42 @@ export default function TradeSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://app.dodoex.io/swap/network/mainnet/1-ETH/56-%24BeAI')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   DODO
                 </div>
-                <div className="text-sm text-gray-300">Decentralized exchange protocol</div>
+                <div className="text-sm text-white/45">Decentralized exchange protocol</div>
               </div>
             </Button>
 
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://app.xy.finance/')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   XY Finance
                 </div>
-                <div className="text-sm text-gray-300">Cross-chain swap aggregator</div>
+                <div className="text-sm text-white/45">Cross-chain swap aggregator</div>
               </div>
             </Button>
 
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://stargate.finance/bridge')}
-              className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+              className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
             >
               <div className="text-center">
                 <div className="font-bold text-base flex items-center justify-center">
                   <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                   Stargate Finance
                 </div>
-                <div className="text-sm text-gray-300">Omnichain bridge protocol</div>
+                <div className="text-sm text-white/45">Omnichain bridge protocol</div>
               </div>
             </Button>
           </div>
@@ -254,7 +254,7 @@ export default function TradeSection() {
             <div className="w-full">
               <iframe
                 src="https://swap.mayan.finance/"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 title="Mayan Finance Cross-chain Swap"
                 frameBorder="0"
                 loading="lazy"
@@ -295,7 +295,7 @@ export default function TradeSection() {
             <div className="w-full">
               <iframe
                 src="https://swap.defillama.com/?chain=bsc&from=0x0000000000000000000000000000000000000000&tab=swap&to="
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 title="DefiLlama Swap - BSC Cross-chain Swap"
                 frameBorder="0"
                 loading="lazy"
@@ -379,7 +379,7 @@ export default function TradeSection() {
             <div className="w-full">
               <iframe
                 src="https://app.zkaster.com/"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06]"
                 title="Zkaster Private Swap"
                 frameBorder="0"
                 loading="lazy"

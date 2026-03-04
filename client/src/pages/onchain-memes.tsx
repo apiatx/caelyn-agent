@@ -18,7 +18,7 @@ const SafeIframe = ({ src, title, className = "" }: { src: string; title: string
       <iframe
         src={src}
         title={title}
-        className={`w-full h-[600px] rounded-lg border border-crypto-silver/20 ${className}`}
+        className={`w-full h-[600px] rounded-lg border border-white/[0.06] ${className}`}
         frameBorder="0"
         loading="lazy"
         sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation"
@@ -36,10 +36,10 @@ export default function OnchainMemesPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}

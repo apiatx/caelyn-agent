@@ -177,7 +177,7 @@ export function CoinMarketCapTop100() {
       {isLoading && (
         <div className="flex items-center justify-center py-12">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-400"></div>
-          <span className="ml-3 text-gray-300">Loading market data from CoinMarketCap...</span>
+          <span className="ml-3 text-white/45">Loading market data from CoinMarketCap...</span>
         </div>
       )}
 
@@ -232,7 +232,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'market_cap' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 Market Cap {getSortIcon('market_cap')}
@@ -242,7 +242,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'volume_24h' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 24h Volume {getSortIcon('volume_24h')}
@@ -252,7 +252,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'percent_change_7d' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 7d % {getSortIcon('percent_change_7d')}
@@ -262,7 +262,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'percent_change_30d' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 30d % {getSortIcon('percent_change_30d')}
@@ -272,7 +272,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'percent_change_90d' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 90d % {getSortIcon('percent_change_90d')}
@@ -282,7 +282,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'price' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 Price {getSortIcon('price')}
@@ -292,7 +292,7 @@ export function CoinMarketCapTop100() {
                 className={`flex items-center justify-center gap-1 px-3 py-2 rounded-lg border transition-all ${
                   sortField === 'rank' 
                     ? 'bg-blue-500/20 border-blue-500/50 text-blue-400' 
-                    : 'bg-black/20 border-crypto-silver/20 text-gray-400 hover:text-white hover:border-crypto-silver/40'
+                    : 'bg-black/20 border-white/[0.06] text-white/35 hover:text-white hover:border-white/[0.10]'
                 }`}
               >
                 Rank {getSortIcon('rank')}
@@ -302,25 +302,25 @@ export function CoinMarketCapTop100() {
 
           {/* Desktop Table View */}
           <div className="hidden lg:block">
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
-              <div className="grid grid-cols-10 gap-4 p-4 bg-black/30 border-b border-crypto-silver/20">
-                <div className="text-gray-400 font-semibold">#</div>
-                <div className="text-gray-400 font-semibold col-span-2">Name</div>
-                <div className="text-gray-400 font-semibold text-right">Price</div>
-                <div className="text-gray-400 font-semibold text-right">24h %</div>
-                <div className="text-gray-400 font-semibold text-right">7d %</div>
-                <div className="text-gray-400 font-semibold text-right">30d %</div>
-                <div className="text-gray-400 font-semibold text-right">YTD %</div>
-                <div className="text-gray-400 font-semibold text-right">Market Cap</div>
-                <div className="text-gray-400 font-semibold text-right">Volume</div>
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
+              <div className="grid grid-cols-10 gap-4 p-4 bg-black/30 border-b border-white/[0.06]">
+                <div className="text-white/35 font-semibold">#</div>
+                <div className="text-white/35 font-semibold col-span-2">Name</div>
+                <div className="text-white/35 font-semibold text-right">Price</div>
+                <div className="text-white/35 font-semibold text-right">24h %</div>
+                <div className="text-white/35 font-semibold text-right">7d %</div>
+                <div className="text-white/35 font-semibold text-right">30d %</div>
+                <div className="text-white/35 font-semibold text-right">YTD %</div>
+                <div className="text-white/35 font-semibold text-right">Market Cap</div>
+                <div className="text-white/35 font-semibold text-right">Volume</div>
               </div>
               <div className="max-h-96 overflow-y-auto">
                 {sortedCryptos.slice(0, 50).map((crypto) => (
                   <div
                     key={crypto.id}
-                    className="grid grid-cols-10 gap-4 p-4 border-b border-crypto-silver/10 hover:bg-black/20 transition-colors"
+                    className="grid grid-cols-10 gap-4 p-4 border-b border-white/[0.03] hover:bg-black/20 transition-colors"
                   >
-                    <div className="text-gray-300 font-medium">{crypto.cmc_rank}</div>
+                    <div className="text-white/45 font-medium">{crypto.cmc_rank}</div>
                     <div className="col-span-2">
                       <div 
                         onClick={() => openCoinMarketCap(crypto.slug)}
@@ -331,7 +331,7 @@ export function CoinMarketCapTop100() {
                         </div>
                         <div>
                           <p className="font-semibold text-white">{crypto.name}</p>
-                          <p className="text-sm text-gray-400">{crypto.symbol}</p>
+                          <p className="text-sm text-white/35">{crypto.symbol}</p>
                         </div>
                       </div>
                     </div>
@@ -369,20 +369,20 @@ export function CoinMarketCapTop100() {
             {sortedCryptos.slice(0, 50).map((crypto) => (
               <div
                 key={crypto.id}
-                className="bg-black/20 border border-crypto-silver/20 rounded-lg p-4 hover:bg-black/30 transition-colors"
+                className="bg-black/20 border border-white/[0.06] rounded-lg p-4 hover:bg-black/30 transition-colors"
               >
                 <div className="flex items-center justify-between mb-3">
                   <div 
                     onClick={() => openCoinMarketCap(crypto.slug)}
                     className="flex items-center gap-3 cursor-pointer hover:text-blue-400 transition-colors"
                   >
-                    <span className="text-gray-400 font-medium">#{crypto.cmc_rank}</span>
+                    <span className="text-white/35 font-medium">#{crypto.cmc_rank}</span>
                     <div className="w-8 h-8 bg-gradient-to-r from-gray-600 to-gray-700 rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-xs">{crypto.symbol.substring(0, 2)}</span>
                     </div>
                     <div>
                       <p className="font-semibold text-white">{crypto.name}</p>
-                      <p className="text-sm text-gray-400">{crypto.symbol}</p>
+                      <p className="text-sm text-white/35">{crypto.symbol}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -394,35 +394,35 @@ export function CoinMarketCapTop100() {
                 </div>
                 <div className="grid grid-cols-2 gap-4 text-sm mb-3">
                   <div>
-                    <span className="text-gray-400">Market Cap:</span>
+                    <span className="text-white/35">Market Cap:</span>
                     <p className="text-white font-semibold">{formatMarketCap(crypto.quote.USD.market_cap)}</p>
                   </div>
                   <div>
-                    <span className="text-gray-400">Volume:</span>
+                    <span className="text-white/35">Volume:</span>
                     <p className="text-white font-semibold">{formatVolume(crypto.quote.USD.volume_24h)}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-4 gap-2 text-xs">
                   <div className="text-center">
-                    <span className="text-gray-400 block">7d</span>
+                    <span className="text-white/35 block">7d</span>
                     <p className={`font-semibold ${getPercentageColor(crypto.quote.USD.percent_change_7d)}`}>
                       {formatPercentage(crypto.quote.USD.percent_change_7d)}
                     </p>
                   </div>
                   <div className="text-center">
-                    <span className="text-gray-400 block">30d</span>
+                    <span className="text-white/35 block">30d</span>
                     <p className={`font-semibold ${getPercentageColor(crypto.quote.USD.percent_change_30d || 0)}`}>
                       {formatPercentage(crypto.quote.USD.percent_change_30d || 0)}
                     </p>
                   </div>
                   <div className="text-center">
-                    <span className="text-gray-400 block">90d</span>
+                    <span className="text-white/35 block">90d</span>
                     <p className={`font-semibold ${getPercentageColor(crypto.quote.USD.percent_change_60d || 0)}`}>
                       {formatPercentage(crypto.quote.USD.percent_change_60d || 0)}
                     </p>
                   </div>
                   <div className="text-center">
-                    <span className="text-gray-400 block">YTD</span>
+                    <span className="text-white/35 block">YTD</span>
                     <p className={`font-semibold ${getPercentageColor(crypto.quote.USD.percent_change_90d || 0)}`}>
                       {formatPercentage(crypto.quote.USD.percent_change_90d || 0)}
                     </p>
@@ -433,7 +433,7 @@ export function CoinMarketCapTop100() {
           </div>
 
           {/* Footer */}
-          <div className="text-center text-sm text-gray-400 border-t border-crypto-silver/20 pt-4">
+          <div className="text-center text-sm text-white/35 border-t border-white/[0.06] pt-4">
             Data updates every 5 minutes • Powered by CoinMarketCap API
           </div>
         </div>

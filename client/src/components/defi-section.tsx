@@ -44,7 +44,7 @@ const SafeIframe = ({ src, title, className = "", ...props }: {
 
 // Glass card component for DeFi section
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -78,7 +78,7 @@ export default function DeFiSection() {
           </SafeLink>
         </div>
         
-        <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+        <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
           <SafeIframe
             src="https://defillama.com/"
             title="DeFi TVL Rankings by DefiLlama"
@@ -140,7 +140,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://www.yield.fi/vyusd"
               title="Yield.fi vyUSD Yield Protocol"
@@ -166,7 +166,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://engine.aarna.ai/?_branch_match_id=1349040087720564161&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0EtMLMpL1EvM1HfLN7Lw98oxzAxPsq8rSk1LLSrKzEuPTyrKLy9OLbJ1zijKz00FAD%2FYufM6AAAA"
               title="Aarna AI Engine Platform"
@@ -192,7 +192,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.spark.fi/"
               title="Spark Fi Lending Protocol"
@@ -219,7 +219,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://balancer.fi/pools"
               title="Balancer Liquidity Pools"
@@ -245,7 +245,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.impermax.finance/"
               title="Impermax Finance"
@@ -271,7 +271,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://420.synthetix.io/"
               title="Synthetix 420"
@@ -297,7 +297,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.sky.money/?network=ethereum"
               title="Sky Money"
@@ -323,7 +323,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.venus.io/#/pool/0xfD36E2c2a6789Db23113685031d7F16329158384?chainId=56&tab=assets"
               title="Venus Protocol"
@@ -349,7 +349,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://www.convexfinance.com/"
               title="Convex Finance"
@@ -375,7 +375,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.solstice.finance/"
               title="Solstice Finance"
@@ -401,7 +401,7 @@ export default function DeFiSection() {
               Open Full View →
             </button>
           </div>
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://portal.plume.org/"
               title="Plume Network Portal"
@@ -429,7 +429,7 @@ export default function DeFiSection() {
           </div>
           <iframe
             src="https://peapods.finance/"
-            className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[600px] rounded-lg border border-white/[0.06]"
             title="Peapods Finance"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
           />
@@ -440,7 +440,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://fluid.instadapp.io/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-fluid"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
@@ -455,7 +455,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.plasma.to/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-plasma"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-indigo-500/20">
@@ -470,7 +470,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://kerneldao.com/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-kernel"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-indigo-500/20">
@@ -485,7 +485,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://kinetiq.xyz/earn')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-kinetiq-earn"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-cyan-500/20 to-teal-500/20">
@@ -500,7 +500,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://kamino.com/earn')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-kamino"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20">
@@ -515,7 +515,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.gearbox.fi/dashboard')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-gearbox"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
@@ -530,7 +530,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.pendle.finance/trade/markets')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-pendle"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20">
@@ -545,7 +545,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://boros.pendle.finance/markets')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-borosfi"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-green-500/20 to-teal-500/20">
@@ -560,7 +560,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.maple.finance/earn?_gl=1*8470fi*_ga*MTA1NDM1NDE0OS4xNzU4OTg4ODUw*_ga_7GW90C7X77*czE3NTg5ODg4NDkkbzEkZzAkdDE3NTg5ODg4NDkkajYwJGwwJGgw')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-maple"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-amber-500/20 to-yellow-500/20">
@@ -574,7 +574,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.euler.finance/earn?network=ethereum')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-euler"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-violet-500/20">
@@ -589,7 +589,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.aave.com/?ampDeviceId=c6075ac5-445d-4e03-b727-5c01b59e4b95')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-aave"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20">
@@ -604,7 +604,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.resolv.xyz/overview')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-resolv"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-cyan-500/20 to-teal-500/20">
@@ -619,7 +619,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.initia.xyz/liquidity')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-initia"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-emerald-500/20 to-green-500/20">
@@ -634,7 +634,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://lido.fi/lido-multichain')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-lido"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
@@ -650,7 +650,7 @@ export default function DeFiSection() {
             href="https://app.eigenlayer.xyz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black/20 border border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2 rounded-md transition-colors flex items-center"
+            className="bg-black/20 border border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2 rounded-md transition-colors flex items-center"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-red-500/20">
               <Shield className="h-6 w-6 text-orange-400" />
@@ -664,7 +664,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://morpho.org/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-indigo-500/20">
               <DollarSign className="h-6 w-6 text-blue-400" />
@@ -678,7 +678,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://www.ether.fi/app/cash/safe')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-pink-500/20">
               <Wallet className="h-6 w-6 text-purple-400" />
@@ -692,7 +692,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.ethena.fi/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-ethena"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-indigo-500/20 to-violet-500/20">
@@ -707,7 +707,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://aerodrome.finance/liquidity')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20">
               <ArrowLeftRight className="h-6 w-6 text-green-400" />
@@ -721,7 +721,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.teller.org/ethereum/borrow')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20">
               <DollarSign className="h-6 w-6 text-cyan-400" />
@@ -735,7 +735,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.seamlessprotocol.com/#/?tab=Vaults')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-teal-500/20 to-emerald-500/20">
               <Shield className="h-6 w-6 text-teal-400" />
@@ -749,7 +749,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://www.tarot.to/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-pink-500/20 hover:border-pink-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-pink-500/20 hover:border-pink-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-pink-500/20 to-rose-500/20">
               <DollarSign className="h-6 w-6 text-pink-400" />
@@ -763,7 +763,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://arcadia.finance/farm')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-yellow-500/20 hover:border-yellow-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-yellow-500/20 hover:border-yellow-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-amber-500/20">
               <TrendingUp className="h-6 w-6 text-yellow-400" />
@@ -777,7 +777,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.spectra.finance/pools')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-indigo-500/20">
               <Layers className="h-6 w-6 text-purple-400" />
@@ -791,7 +791,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.lotusfinance.io/explore-pools')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-yellow-500/20">
               <DollarSign className="h-6 w-6 text-orange-400" />
@@ -806,7 +806,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.tharwa.finance/staking')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-teal-500/20 to-emerald-500/20">
               <DollarSign className="h-6 w-6 text-teal-400" />
@@ -820,7 +820,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.harvest.finance/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-yellow-500/20 hover:border-yellow-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-yellow-500/20 hover:border-yellow-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-amber-500/20">
               <TrendingUp className="h-6 w-6 text-yellow-400" />
@@ -834,7 +834,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.mux.network/#/liquidity/mux-v3/overview?chainId=42161')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-mux"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-indigo-500/20">
@@ -849,7 +849,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://web3.okx.com/earn')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-okx-earn"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-amber-500/20">
@@ -864,7 +864,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.gearbox.fi/dashboard')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-gearbox"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-blue-500/20 to-cyan-500/20">
@@ -882,7 +882,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.huma.finance/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-teal-500/20 hover:border-teal-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-huma"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-teal-500/20 to-emerald-500/20">
@@ -897,7 +897,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.river.inc/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-river"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20">
@@ -912,7 +912,7 @@ export default function DeFiSection() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.yala.org/litemodePrimeinvest')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-yala"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-purple-500/20 to-violet-500/20">

@@ -17,10 +17,10 @@ export default function OnchainLaunchpadPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -80,7 +80,7 @@ export default function OnchainLaunchpadPage() {
           </div>
           <iframe
             src="https://coinlaunch.space/launchpads/"
-            className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[600px] rounded-lg border border-white/[0.06]"
             title="CoinLaunch Launchpads"
             frameBorder="0"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
@@ -107,7 +107,7 @@ export default function OnchainLaunchpadPage() {
           </div>
           <iframe
             src="https://chainbroker.io/platforms/"
-            className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[600px] rounded-lg border border-white/[0.06]"
             title="ChainBroker Platforms"
             frameBorder="0"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
@@ -153,7 +153,7 @@ export default function OnchainLaunchpadPage() {
           </div>
           <iframe
             src="https://proofplatform.io/projects"
-            className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[600px] rounded-lg border border-white/[0.06]"
             title="ProofPlatform Projects"
             frameBorder="0"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"

@@ -4,7 +4,7 @@ import { Brain, TrendingUp, BarChart3 } from "lucide-react";
 import { openSecureLink } from "@/utils/security";
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -27,7 +27,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://senpi.ai/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-cyan-500/20 hover:border-cyan-500/30 text-white justify-start p-4 h-auto"
             >
               <Brain className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -41,7 +41,7 @@ export default function DeFAIContent() {
               href="https://chat.ethyai.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-black/20 border border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto rounded-md transition-colors flex items-center"
+              className="bg-black/20 border border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto rounded-md transition-colors flex items-center"
             >
               <Brain className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -54,7 +54,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://bankr.bot/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
             >
               <Brain className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -73,7 +73,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://www.aixvc.io/axelrod')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-4 h-auto"
             >
               <Brain className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -86,7 +86,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://app.arma.xyz/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
             >
               <TrendingUp className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -99,7 +99,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://www.zyf.ai/dashboard')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto"
             >
               <BarChart3 className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -112,7 +112,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://mamo.bot/onboarding')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-4 h-auto"
             >
               <Brain className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -125,7 +125,7 @@ export default function DeFAIContent() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://quant.fun/vaults')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-4 h-auto"
             >
               <BarChart3 className="w-4 h-4 mr-2" />
               <div className="text-left">

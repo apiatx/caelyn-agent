@@ -41,8 +41,8 @@ export default function OnchainAnalyzePage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
-      <div className="sticky top-0 z-50 border-b border-crypto-silver/20 bg-black/90 backdrop-blur-lg">
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
+      <div className="sticky top-0 z-50 border-b border-white/[0.06] bg-black/90 backdrop-blur-lg">
         <CryptoTickerTape />
       </div>
 
@@ -59,7 +59,7 @@ export default function OnchainAnalyzePage() {
                   <iframe
                     src="https://app.artemisanalytics.com/"
                     title="Artemis Analytics Dashboard"
-                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                     frameBorder="0"
                     loading="lazy"
                     sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation"
@@ -84,7 +84,7 @@ export default function OnchainAnalyzePage() {
                   <div className="w-2 h-2 bg-purple-400 rounded-full group-hover:animate-pulse"></div>
                   Token Terminal
                 </div>
-                <div className="text-sm text-gray-300 group-hover:text-gray-200">Protocol metrics explorer</div>
+                <div className="text-sm text-white/45 group-hover:text-gray-200">Protocol metrics explorer</div>
               </button>
             </div>
 
@@ -99,7 +99,7 @@ export default function OnchainAnalyzePage() {
                   <div className="w-2 h-2 bg-green-400 rounded-full group-hover:animate-pulse"></div>
                   Developer Report
                 </div>
-                <div className="text-sm text-gray-300 group-hover:text-gray-200 text-center">Developer activity by blockchain</div>
+                <div className="text-sm text-white/45 group-hover:text-gray-200 text-center">Developer activity by blockchain</div>
               </button>
 
               <button
@@ -111,7 +111,7 @@ export default function OnchainAnalyzePage() {
                   <div className="w-2 h-2 bg-orange-400 rounded-full group-hover:animate-pulse"></div>
                   The Block: DEX Metrics
                 </div>
-                <div className="text-sm text-gray-300 group-hover:text-gray-200 text-center">Comprehensive DEX analytics and metrics</div>
+                <div className="text-sm text-white/45 group-hover:text-gray-200 text-center">Comprehensive DEX analytics and metrics</div>
               </button>
 
               <button
@@ -123,7 +123,7 @@ export default function OnchainAnalyzePage() {
                   <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:animate-pulse"></div>
                   Chainspect
                 </div>
-                <div className="text-sm text-gray-300 group-hover:text-gray-200 text-center">Chain scalability and decentralization analytics</div>
+                <div className="text-sm text-white/45 group-hover:text-gray-200 text-center">Chain scalability and decentralization analytics</div>
               </button>
             </div>
           </GlassCard>

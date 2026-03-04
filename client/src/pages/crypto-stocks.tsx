@@ -3,7 +3,7 @@ import TickerTapeWidget from "@/components/TickerTapeWidget";
 
 export default function CryptoStocksPage() {
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       <div className="w-full h-[72px] overflow-hidden">
         <TickerTapeWidget />
       </div>

@@ -9,10 +9,10 @@ export default function OnchainAirdropPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -65,7 +65,7 @@ export default function OnchainAirdropPage() {
             </a>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <iframe
               src="https://www.alphadrops.net/alpha"
               className="w-full h-[700px] border-0"
@@ -76,7 +76,7 @@ export default function OnchainAirdropPage() {
           </div>
           
           <div className="mt-4 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-white/35">
               AlphaDrops • Discover and track cryptocurrency airdrops
             </p>
           </div>

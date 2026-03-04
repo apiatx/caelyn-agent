@@ -110,7 +110,7 @@ const TopTrendingCMC = () => {
 
   if (isLoading) {
     return (
-      <div className="h-full bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6 flex flex-col">
+      <div className="h-full bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6 flex flex-col">
         <div className="flex flex-col items-center justify-center space-y-2 mb-4">
           <div className="flex items-center space-x-2">
             <Flame className="w-5 h-5 text-orange-400" />
@@ -134,7 +134,7 @@ const TopTrendingCMC = () => {
 
   if (error) {
     return (
-      <div className="h-full bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6 flex flex-col">
+      <div className="h-full bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6 flex flex-col">
         <div className="flex flex-col items-center justify-center space-y-2 mb-4">
           <div className="flex items-center space-x-2">
             <Flame className="w-5 h-5 text-orange-400" />
@@ -157,7 +157,7 @@ const TopTrendingCMC = () => {
   }
 
   return (
-    <div className="h-full bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6 flex flex-col" data-testid="top-trending-cmc">
+    <div className="h-full bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6 flex flex-col" data-testid="top-trending-cmc">
       <div className="flex flex-col items-center justify-center space-y-2 mb-6 flex-shrink-0">
         <div className="flex items-center space-x-2">
           <Flame className="w-5 h-5 text-orange-400" />
@@ -209,7 +209,7 @@ const TopTrendingCMC = () => {
                 <div className="text-crypto-silver text-[9px]">MCap</div>
               </div>
               
-              <ExternalLink className="w-3 h-3 text-gray-400 group-hover:text-orange-400 transition-colors flex-shrink-0" />
+              <ExternalLink className="w-3 h-3 text-white/35 group-hover:text-orange-400 transition-colors flex-shrink-0" />
             </div>
           </div>
         ))}

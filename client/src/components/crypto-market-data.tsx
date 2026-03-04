@@ -70,7 +70,7 @@ const formatVolume = (volume: number): string => {
 const getChangeColor = (change: number): string => {
   if (change > 0) return 'text-green-400';
   if (change < 0) return 'text-red-400';
-  return 'text-gray-400';
+  return 'text-white/35';
 };
 
 const getChangeIcon = (change: number) => {
@@ -91,7 +91,7 @@ export default function CryptoMarketData({ symbol, className = "" }: CryptoMarke
 
   if (isLoading) {
     return (
-      <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 p-4 ${className}`}>
+      <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] p-4 ${className}`}>
         <div className="animate-pulse flex space-x-4">
           <div className="rounded-full bg-gray-700 h-8 w-8"></div>
           <div className="flex-1 space-y-2">
@@ -108,7 +108,7 @@ export default function CryptoMarketData({ symbol, className = "" }: CryptoMarke
 
   if (error || !crypto) {
     return (
-      <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 p-4 ${className}`}>
+      <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] p-4 ${className}`}>
         <div className="text-center">
           <p className="text-red-400 text-sm mb-2">Failed to load {symbol} data</p>
           <button 
@@ -125,7 +125,7 @@ export default function CryptoMarketData({ symbol, className = "" }: CryptoMarke
   const quote = crypto.quote.USD;
 
   return (
-    <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 p-4 ${className}`}>
+    <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] p-4 ${className}`}>
       {/* Header */}
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
@@ -181,7 +181,7 @@ export default function CryptoMarketData({ symbol, className = "" }: CryptoMarke
       </div>
 
       {/* Performance Indicators */}
-      <div className="mt-3 pt-3 border-t border-crypto-silver/10">
+      <div className="mt-3 pt-3 border-t border-white/[0.03]">
         <div className="grid grid-cols-3 gap-2 text-xs">
           <div className="text-center">
             <span className="text-crypto-silver block">1h</span>
@@ -205,7 +205,7 @@ export default function CryptoMarketData({ symbol, className = "" }: CryptoMarke
       </div>
 
       {/* Last Updated */}
-      <div className="mt-2 pt-2 border-t border-crypto-silver/10">
+      <div className="mt-2 pt-2 border-t border-white/[0.03]">
         <p className="text-crypto-silver text-xs text-center">
           Data updates every 30s • Powered by CoinMarketCap
         </p>

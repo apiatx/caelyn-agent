@@ -40,7 +40,7 @@ const SafeIframe = ({ src, title, className = "", ...props }: {
 );
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -66,7 +66,7 @@ export default function BTCDeFiContent() {
             </SafeLink>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://app.bitfi.one/bfBTC/stake"
               title="BitFi BTC Staking"
@@ -75,7 +75,7 @@ export default function BTCDeFiContent() {
           </div>
           
           <div className="mt-4 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-white/35">
               BitFi bfBTC staking • Bitcoin DeFi yield farming protocol
             </p>
           </div>
@@ -92,7 +92,7 @@ export default function BTCDeFiContent() {
             </SafeLink>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://merlinchain.io/stakebtc"
               title="Merlin Chain Stake BTC"
@@ -101,7 +101,7 @@ export default function BTCDeFiContent() {
           </div>
           
           <div className="mt-4 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-white/35">
               Merlin Chain • Bitcoin Layer 2 staking protocol
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function BTCDeFiContent() {
             </SafeLink>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <SafeIframe
               src="https://yield.goat.network/"
               title="Goat Network Yield Protocol"
@@ -127,7 +127,7 @@ export default function BTCDeFiContent() {
           </div>
           
           <div className="mt-4 text-center">
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-white/35">
               Goat Network Yield • DeFi yield optimization protocol
             </p>
           </div>
@@ -137,7 +137,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://www.stacks.co/explore/ecosystem?category=All+Teams#apps')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-yellow-500/20">
               <Layers className="h-6 w-6 text-orange-400" />
@@ -151,7 +151,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.satlayer.xyz/vaults/restake')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-red-500/20">
               <Shield className="h-6 w-6 text-orange-400" />
@@ -165,7 +165,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://www.btcfi.one/dashboard')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-btcfi-dashboard"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-amber-500/20">
@@ -180,7 +180,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://app.solv.finance/solvbtc?network=ethereum')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-solv-finance"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-yellow-500/20 to-orange-500/20">
@@ -195,7 +195,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://usda.avalonfinance.xyz/markets/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-avalon"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-orange-500/20 to-red-500/20">
@@ -210,7 +210,7 @@ export default function BTCDeFiContent() {
           <Button
             variant="outline"
             onClick={() => openInNewTab('https://www.lombard.finance/app/')}
-            className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
+            className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-6 h-auto flex-col space-y-2"
             data-testid="button-lombard"
           >
             <div className="p-3 rounded-lg bg-gradient-to-r from-green-500/20 to-emerald-500/20">

@@ -22,7 +22,7 @@ const SafeIframe = ({ src, title, className = "", ...props }: {
 
 // Glass card component
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -33,7 +33,7 @@ export default function RWAPage() {
   };
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Main Content */}
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-6">
@@ -65,7 +65,7 @@ export default function RWAPage() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <SafeIframe
                 src="https://app.rwa.xyz/"
                 title="RWA.xyz Platform"
@@ -74,7 +74,7 @@ export default function RWAPage() {
             </div>
             
             <div className="mt-4 text-center">
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-white/35">
                 RWA.xyz platform • Comprehensive real world asset trading
               </p>
             </div>
@@ -104,7 +104,7 @@ export default function RWAPage() {
 
             {/* Jupiter Pro - Stocks Iframe */}
             <div className="mb-6">
-              <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+              <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                 <SafeIframe
                   src="https://jup.ag/pro?tab=stocks"
                   title="Jupiter Pro Stocks Trading"
@@ -112,7 +112,7 @@ export default function RWAPage() {
                 />
               </div>
               <div className="mt-2 text-center">
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-white/35">
                   Tokenized stock trading on Solana via Jupiter Pro
                 </p>
               </div>
@@ -149,14 +149,14 @@ export default function RWAPage() {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">AU</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">Oro Gold</h3>
-                    <p className="text-gray-400 text-xs">Trade gold</p>
+                    <p className="text-white/35 text-xs">Trade gold</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -181,14 +181,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">📈</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">xStocks</h3>
-                    <p className="text-gray-400 text-xs">Trade stocks</p>
+                    <p className="text-white/35 text-xs">Trade stocks</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -213,14 +213,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">🏢</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">PreStocks</h3>
-                    <p className="text-gray-400 text-xs">Trade pre-IPO stocks</p>
+                    <p className="text-white/35 text-xs">Trade pre-IPO stocks</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -245,14 +245,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">₿</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">Apollo BTC</h3>
-                    <p className="text-gray-400 text-xs">Trade native Bitcoin</p>
+                    <p className="text-white/35 text-xs">Trade native Bitcoin</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -277,14 +277,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">🏠</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">Parcl</h3>
-                    <p className="text-gray-400 text-xs">Trade real estate</p>
+                    <p className="text-white/35 text-xs">Trade real estate</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -309,14 +309,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">✨</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">Magic Eden</h3>
-                    <p className="text-gray-400 text-xs">Trade digital slop</p>
+                    <p className="text-white/35 text-xs">Trade digital slop</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -341,14 +341,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">🏦</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">RECC Finance</h3>
-                    <p className="text-gray-400 text-xs">Trade RWA</p>
+                    <p className="text-white/35 text-xs">Trade RWA</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -373,14 +373,14 @@ export default function RWAPage() {
                 </div>
               </div>
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">📊</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">Etherfuse</h3>
-                    <p className="text-gray-400 text-xs">Trade bonds</p>
+                    <p className="text-white/35 text-xs">Trade bonds</p>
                   </div>
                 </div>
                 <div className="flex gap-2">
@@ -406,14 +406,14 @@ export default function RWAPage() {
               </div>
 
 
-              <div className="p-4 bg-black/20 border border-crypto-silver/20 rounded-lg">
+              <div className="p-4 bg-black/20 border border-white/[0.06] rounded-lg">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-lime-500 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-sm">🌾</span>
                   </div>
                   <div>
                     <h3 className="text-white font-medium text-sm">AgriDex</h3>
-                    <p className="text-gray-400 text-xs">Trade agriculture</p>
+                    <p className="text-white/35 text-xs">Trade agriculture</p>
                   </div>
                 </div>
                 <div className="flex gap-2">

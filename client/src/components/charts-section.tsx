@@ -42,7 +42,7 @@ export default function ChartsSection() {
         <div className="w-full">
           <iframe
             src="https://dexscreener.com/multicharts?theme=dark"
-            className="w-full h-[600px] lg:h-[800px] rounded-lg border border-crypto-silver/20"
+            className="w-full h-[600px] lg:h-[800px] rounded-lg border border-white/[0.06]"
             title="DexScreener Multicharts"
             sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
           />

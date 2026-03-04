@@ -57,7 +57,7 @@ function getPriceChangeDisplay(change: number) {
   } else {
     return {
       icon: <Minus className="w-4 h-4" />,
-      color: 'text-gray-400',
+      color: 'text-white/35',
       bgColor: 'bg-gray-500/10',
       borderColor: 'border-gray-500/20',
       prefix: ''
@@ -108,7 +108,7 @@ export function Top100Cryptos() {
         </div>
         <div className="text-center py-8">
           <p className="text-red-400">Failed to load cryptocurrency data</p>
-          <p className="text-gray-400 text-sm mt-2">Please check your API connection</p>
+          <p className="text-white/35 text-sm mt-2">Please check your API connection</p>
         </div>
       </GlassCard>
     );
@@ -122,12 +122,12 @@ export function Top100Cryptos() {
             <TrendingUp className="w-4 h-4 text-white" />
           </div>
           <h3 className="text-xl font-semibold text-white">Top 100 Cryptocurrencies</h3>
-          <Badge className="bg-gray-500/20 text-gray-400 border-gray-500/30">
+          <Badge className="bg-gray-500/20 text-white/35 border-gray-500/30">
             NO DATA
           </Badge>
         </div>
         <div className="text-center py-8">
-          <p className="text-gray-400">No cryptocurrency data available</p>
+          <p className="text-white/35">No cryptocurrency data available</p>
         </div>
       </GlassCard>
     );
@@ -155,11 +155,11 @@ export function Top100Cryptos() {
           return (
             <div
               key={crypto.id}
-              className="flex items-center justify-between p-4 bg-gray-900/30 rounded-lg border border-crypto-silver/10 hover:border-crypto-silver/20 transition-colors"
+              className="flex items-center justify-between p-4 bg-gray-900/30 rounded-lg border border-white/[0.03] hover:border-white/[0.06] transition-colors"
             >
               <div className="flex items-center gap-3">
                 <div className="flex items-center gap-2 min-w-[60px]">
-                  <span className="text-xs text-gray-400 font-mono">
+                  <span className="text-xs text-white/35 font-mono">
                     #{crypto.rank || 'N/A'}
                   </span>
                 </div>
@@ -178,7 +178,7 @@ export function Top100Cryptos() {
                 <div>
                   <div className="flex items-center gap-2">
                     <span className="text-white font-semibold">{crypto.symbol}</span>
-                    <span className="text-gray-400 text-sm">{crypto.name}</span>
+                    <span className="text-white/35 text-sm">{crypto.name}</span>
                   </div>
                   {crypto.market_cap && (
                     <div className="text-xs text-gray-500">

@@ -802,7 +802,7 @@ function PredictionAgent() {
     <GlassCard className="p-5 mb-8">
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 50%, #06b6d4 100%)' }}>
+        <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #2090d0 0%, #3b82f6 50%, #80d8f8 100%)' }}>
           <Sparkles className="w-4 h-4 text-white" />
         </div>
         <div>
@@ -881,7 +881,7 @@ function PredictionAgent() {
         <Button
           type="submit"
           disabled={loading || !input.trim()}
-          className="text-white px-3 py-2 rounded-lg transition-all disabled:opacity-30 flex-shrink-0" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)' }}
+          className="text-white px-3 py-2 rounded-lg transition-all disabled:opacity-30 flex-shrink-0" style={{ background: 'linear-gradient(135deg, #2090d0, #3b82f6, #80d8f8)' }}
         >
           {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
         </Button>
@@ -925,7 +925,7 @@ function LazyIframe({ src, title, sandbox, referrerPolicy, scrolling }: {
   return (
     <iframe
       src={src}
-      className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+      className="w-full h-[600px] rounded-lg border border-white/[0.06]"
       title={title}
       frameBorder="0"
       sandbox={sandbox}
@@ -956,14 +956,14 @@ const openInNewTab = (url: string) => {
 
 export default function PredictPage() {
   return (
-    <div className="min-h-screen text-white relative" style={{ background: '#050510', fontFamily: "'Outfit', sans-serif" }}>
+    <div className="min-h-screen text-white relative" style={{ background: '#050608', fontFamily: "'Outfit', sans-serif" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
       `}</style>
       {/* Blue radial gradient background — same as Social page */}
       <div style={{
         position: 'fixed', top: '-40%', left: '-20%', width: '140%', height: '140%',
-        background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(99,102,241,0.06) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(6,182,212,0.04) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 60%)',
+        background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(32,144,208,0.06) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(92,200,240,0.04) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 60%)',
         pointerEvents: 'none', zIndex: 0
       }} />
       {/* Header */}
@@ -971,17 +971,17 @@ export default function PredictPage() {
         <div className="text-center relative">
           <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-blue-500/10 to-cyan-500/10 blur-3xl -z-10"></div>
           <div className="flex justify-center items-center gap-4 mb-4">
-            <div className="w-28 h-28 rounded-full flex items-center justify-center border-2 shadow-2xl hover:scale-110 transition-transform duration-300 overflow-hidden" style={{ borderColor: '#38bdf8' }}>
+            <div className="w-28 h-28 rounded-full flex items-center justify-center border-2 shadow-2xl hover:scale-110 transition-transform duration-300 overflow-hidden" style={{ borderColor: '#5cc8f0' }}>
               <img
                 src={diceImage}
                 alt="Prediction Markets"
                 className="w-28 h-28 object-cover"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl font-bold" style={{ background: 'linear-gradient(135deg, #6366f1 0%, #3b82f6 40%, #06b6d4 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prediction Markets</h2>
+            <h2 className="text-2xl lg:text-3xl font-bold" style={{ background: 'linear-gradient(135deg, #2090d0 0%, #3b82f6 40%, #80d8f8 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Prediction Markets</h2>
           </div>
           <p className="text-base font-medium tracking-wide" style={{ color: '#64748b' }}>Decentralized Casino and Analytics</p>
-          <div className="w-32 h-1 mx-auto mt-3 rounded-full" style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)' }}></div>
+          <div className="w-32 h-1 mx-auto mt-3 rounded-full" style={{ background: 'linear-gradient(135deg, #2090d0, #3b82f6, #80d8f8)' }}></div>
         </div>
       </div>
 

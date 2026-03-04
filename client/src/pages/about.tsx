@@ -5,16 +5,16 @@ import caelynFairy3 from "@assets/image_1771565690741.png";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen text-white relative" style={{ background: '#050510', fontFamily: "'Outfit', sans-serif", lineHeight: 1.65 }}>
+    <div className="min-h-screen text-white relative" style={{ background: '#050608', fontFamily: "'Outfit', sans-serif", lineHeight: 1.65 }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-        .about-page .ice { color: #38bdf8; }
+        .about-page .ice { color: #5cc8f0; }
         .about-page .gradient-text {
-          background: linear-gradient(135deg, #6366f1 0%, #3b82f6 40%, #06b6d4 100%);
+          background: linear-gradient(135deg, #e0f0ff 0%, #5cc8f0 40%, #2090d0 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-        .about-page .data-cell:hover { background: #161838 !important; }
+        .about-page .data-cell:hover { background: rgba(255,255,255,0.03) !important; }
         .about-page .pipeline-wrap::before {
           content: '';
           position: absolute;
@@ -22,15 +22,15 @@ export default function AboutPage() {
           top: 24px;
           bottom: 24px;
           width: 1px;
-          background: linear-gradient(to bottom, #6366f1, #38bdf8, #06b6d4);
-          opacity: 0.4;
+          background: linear-gradient(to bottom, #2090d0, #5cc8f0, #80d8f8);
+          opacity: 0.3;
         }
       `}</style>
 
       <div className="about-page relative" style={{ zIndex: 1 }}>
         <div style={{
           position: 'fixed', top: '-40%', left: '-20%', width: '140%', height: '140%',
-          background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(99,102,241,0.06) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(6,182,212,0.04) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(59,130,246,0.03) 0%, transparent 60%)',
+          background: 'radial-gradient(ellipse 800px 600px at 20% 15%, rgba(40,160,220,0.04) 0%, transparent 70%), radial-gradient(ellipse 600px 500px at 80% 70%, rgba(60,180,240,0.03) 0%, transparent 70%), radial-gradient(ellipse 900px 400px at 50% 50%, rgba(50,170,230,0.02) 0%, transparent 60%)',
           pointerEvents: 'none', zIndex: 0
         }} />
 
@@ -38,9 +38,9 @@ export default function AboutPage() {
         <div style={{ padding: '4rem 3rem 2rem', maxWidth: 900, margin: '0 auto', textAlign: 'center', position: 'relative', zIndex: 1 }}>
           <div style={{
             display: 'inline-block', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.72rem', fontWeight: 500,
-            letterSpacing: '0.12em', textTransform: 'uppercase', color: '#38bdf8',
-            border: '1px solid rgba(56,189,248,0.25)', borderRadius: 100, padding: '0.4rem 1.2rem',
-            marginBottom: '2.5rem', background: 'rgba(56,189,248,0.05)'
+            letterSpacing: '0.12em', textTransform: 'uppercase', color: '#5cc8f0',
+            border: '1px solid rgba(92,200,240,0.2)', borderRadius: 100, padding: '0.4rem 1.2rem',
+            marginBottom: '2.5rem', background: 'rgba(92,200,240,0.04)'
           }}>
             Cross-Asset Trading Intelligence
           </div>
@@ -61,7 +61,7 @@ export default function AboutPage() {
         </div>
 
         {/* DIVIDER */}
-        <div style={{ width: 60, height: 2, background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)', margin: '0 auto 2rem', borderRadius: 2 }} />
+        <div style={{ width: 60, height: 2, background: 'linear-gradient(135deg, #2090d0, #3b82f6, #80d8f8)', margin: '0 auto 2rem', borderRadius: 2 }} />
 
         {/* WHAT IT IS */}
         <Section>
@@ -133,7 +133,7 @@ export default function AboutPage() {
         <Section>
           <SectionLabel>The Difference</SectionLabel>
           <h2 style={h2Style}>What this <span className="ice">replaces</span></h2>
-          <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, border: '1px solid #1e2148', borderRadius: 12, overflow: 'hidden', margin: '2rem 0', fontSize: '0.88rem' }}>
+          <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: 0, border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, overflow: 'hidden', margin: '2rem 0', fontSize: '0.88rem' }}>
             <thead>
               <tr>
                 <th style={thStyle}></th>
@@ -160,25 +160,25 @@ export default function AboutPage() {
             Every scan pulls from multiple sources in parallel. If one is rate-limited or down, the others fill the gap. No single point of failure.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.75rem', margin: '1.5rem 0' }}>
-            <SourceItem color="#38bdf8" name="Finnhub" />
-            <SourceItem color="#38bdf8" name="Finviz" />
-            <SourceItem color="#38bdf8" name="StockAnalysis" />
-            <SourceItem color="#38bdf8" name="AlphaVantage" />
-            <SourceItem color="#38bdf8" name="Polygon" />
-            <SourceItem color="#38bdf8" name="TwelveData" />
-            <SourceItem color="#38bdf8" name="FMP" />
+            <SourceItem color="#5cc8f0" name="Finnhub" />
+            <SourceItem color="#5cc8f0" name="Finviz" />
+            <SourceItem color="#5cc8f0" name="StockAnalysis" />
+            <SourceItem color="#5cc8f0" name="AlphaVantage" />
+            <SourceItem color="#5cc8f0" name="Polygon" />
+            <SourceItem color="#5cc8f0" name="TwelveData" />
+            <SourceItem color="#5cc8f0" name="FMP" />
             <SourceItem color="#22c55e" name="CoinGecko" />
             <SourceItem color="#22c55e" name="CoinMarketCap" />
             <SourceItem color="#22c55e" name="HyperLiquid" />
             <SourceItem color="#22c55e" name="altFINS" />
-            <SourceItem color="#6366f1" name="Grok / xAI" />
-            <SourceItem color="#6366f1" name="StockTwits" />
-            <SourceItem color="#6366f1" name="Reddit" />
+            <SourceItem color="#2090d0" name="Grok / xAI" />
+            <SourceItem color="#2090d0" name="StockTwits" />
+            <SourceItem color="#2090d0" name="Reddit" />
             <SourceItem color="#f97316" name="FRED" />
             <SourceItem color="#f97316" name="Fear & Greed" />
             <SourceItem color="#f97316" name="SEC / EDGAR" />
-            <SourceItem color="#06b6d4" name="Options Flow" />
-            <SourceItem color="#06b6d4" name="Claude (Anthropic)" />
+            <SourceItem color="#80d8f8" name="Options Flow" />
+            <SourceItem color="#80d8f8" name="Claude (Anthropic)" />
           </div>
         </Section>
 
@@ -218,8 +218,8 @@ export default function AboutPage() {
         </div>
 
         {/* FOOTER */}
-        <footer style={{ borderTop: '1px solid #1e2148', padding: '3rem', textAlign: 'center', color: '#64748b', fontSize: '0.85rem' }}>
-          <p><span style={{ background: 'linear-gradient(135deg, #6366f1, #3b82f6, #06b6d4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 600 }}>CaelynAI</span> — Signal over noise.</p>
+        <footer style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '3rem', textAlign: 'center', color: '#64748b', fontSize: '0.85rem' }}>
+          <p><span style={{ background: 'linear-gradient(135deg, #2090d0, #3b82f6, #80d8f8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 600 }}>CaelynAI</span> — Signal over noise.</p>
           <p style={{ marginTop: '0.5rem', fontSize: '0.75rem', color: '#475569' }}>
             Not financial advice. CaelynAI is a research tool. All trading involves risk.
           </p>
@@ -231,19 +231,19 @@ export default function AboutPage() {
 
 const h2Style: React.CSSProperties = { fontSize: '1.6rem', fontWeight: 600, letterSpacing: '-0.02em', marginBottom: '1rem', color: '#e2e8f0' };
 const pStyle: React.CSSProperties = { color: '#475569', marginBottom: '1.25rem' };
-const thStyle: React.CSSProperties = { background: '#111228', padding: '1rem 1.25rem', textAlign: 'left', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748b', borderBottom: '1px solid #1e2148' };
+const thStyle: React.CSSProperties = { background: 'rgba(10,12,18,0.85)', padding: '1rem 1.25rem', textAlign: 'left', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748b', borderBottom: '1px solid rgba(255,255,255,0.06)' };
 
 function Section({ children }: { children: React.ReactNode }) {
   return <section style={{ maxWidth: 880, margin: '0 auto', padding: '2rem 3rem', position: 'relative', zIndex: 1 }}>{children}</section>;
 }
 
 function SectionLabel({ children }: { children: string }) {
-  return <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#38bdf8', marginBottom: '0.75rem' }}>{children}</h3>;
+  return <h3 style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.78rem', fontWeight: 500, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#5cc8f0', marginBottom: '0.75rem' }}>{children}</h3>;
 }
 
 function DataGrid({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1px', background: '#1e2148', border: '1px solid #1e2148', borderRadius: 12, overflow: 'hidden', margin: '2.5rem 0' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1px', background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 12, overflow: 'hidden', margin: '2.5rem 0' }}>
       {children}
     </div>
   );
@@ -251,7 +251,7 @@ function DataGrid({ children }: { children: React.ReactNode }) {
 
 function DataCell({ label, value, fullWidth }: { label: string; value: React.ReactNode; fullWidth?: boolean }) {
   return (
-    <div className="data-cell" style={{ background: '#111228', padding: '1.5rem', transition: 'background 0.2s', ...(fullWidth ? { gridColumn: '1 / -1', textAlign: 'center' } : {}) }}>
+    <div className="data-cell" style={{ background: 'rgba(10,12,18,0.85)', padding: '1.5rem', transition: 'background 0.2s', ...(fullWidth ? { gridColumn: '1 / -1', textAlign: 'center' } : {}) }}>
       <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#64748b', marginBottom: '0.5rem' }}>{label}</div>
       <div style={{ fontSize: '1.1rem', fontWeight: 600, color: '#e2e8f0', lineHeight: 1.4 }}>{value}</div>
     </div>
@@ -261,7 +261,7 @@ function DataCell({ label, value, fullWidth }: { label: string; value: React.Rea
 function PipelineStep({ text }: { text: React.ReactNode }) {
   return (
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '0.9rem 0', position: 'relative' }}>
-      <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#38bdf8', boxShadow: '0 0 8px rgba(56,189,248,0.3)', marginTop: 5, flexShrink: 0, marginLeft: 10 }} />
+      <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#5cc8f0', boxShadow: '0 0 8px rgba(92,200,240,0.3)', marginTop: 5, flexShrink: 0, marginLeft: 10 }} />
       <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.82rem', color: '#475569', lineHeight: 1.5 }}>{text}</div>
     </div>
   );
@@ -269,20 +269,20 @@ function PipelineStep({ text }: { text: React.ReactNode }) {
 
 function FeatureRow({ label, desc, isLast }: { label: string; desc: React.ReactNode; isLast?: boolean }) {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '2rem', padding: '2rem 0', borderBottom: isLast ? 'none' : '1px solid #1e2148', alignItems: 'start' }}>
-      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.06em', color: '#38bdf8', paddingTop: '0.15rem' }}>{label}</div>
+    <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '2rem', padding: '2rem 0', borderBottom: isLast ? 'none' : '1px solid rgba(255,255,255,0.06)', alignItems: 'start' }}>
+      <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.06em', color: '#5cc8f0', paddingTop: '0.15rem' }}>{label}</div>
       <div style={{ color: '#475569', fontSize: '0.95rem' }}>{desc}</div>
     </div>
   );
 }
 
 function CompareRow({ label, them, us, isLast }: { label: string; them: string; us: React.ReactNode; isLast?: boolean }) {
-  const tdStyle: React.CSSProperties = { padding: '0.85rem 1.25rem', borderBottom: isLast ? 'none' : '1px solid rgba(30,33,72,0.5)', color: '#475569' };
+  const tdStyle: React.CSSProperties = { padding: '0.85rem 1.25rem', borderBottom: isLast ? 'none' : '1px solid rgba(255,255,255,0.04)', color: '#475569' };
   return (
     <tr>
       <td style={tdStyle}>{label}</td>
       <td style={{ ...tdStyle, color: '#64748b' }}>{them}</td>
-      <td style={{ ...tdStyle, color: '#38bdf8', fontWeight: 500 }}>{us}</td>
+      <td style={{ ...tdStyle, color: '#5cc8f0', fontWeight: 500 }}>{us}</td>
     </tr>
   );
 }
@@ -291,7 +291,7 @@ function Tag({ color, children }: { color: 'green' | 'red' | 'blue'; children: s
   const colors = {
     green: { bg: 'rgba(34,197,94,0.12)', text: '#22c55e' },
     red: { bg: 'rgba(239,68,68,0.12)', text: '#ef4444' },
-    blue: { bg: 'rgba(56,189,248,0.12)', text: '#38bdf8' },
+    blue: { bg: 'rgba(92,200,240,0.12)', text: '#5cc8f0' },
   };
   return (
     <span style={{ display: 'inline-block', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.05em', padding: '0.2rem 0.6rem', borderRadius: 4, textTransform: 'uppercase', background: colors[color].bg, color: colors[color].text }}>
@@ -302,7 +302,7 @@ function Tag({ color, children }: { color: 'green' | 'red' | 'blue'; children: s
 
 function SourceItem({ color, name }: { color: string; name: string }) {
   return (
-    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#475569', padding: '0.6rem 0.9rem', background: '#111228', border: '1px solid #1e2148', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+    <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#475569', padding: '0.6rem 0.9rem', background: 'rgba(10,12,18,0.85)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: 6, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
       <span style={{ width: 6, height: 6, borderRadius: '50%', background: color, flexShrink: 0 }} />
       {name}
     </div>

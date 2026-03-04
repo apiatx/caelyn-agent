@@ -69,7 +69,7 @@ const formatVolume = (volume: number): string => {
 const getChangeColor = (change: number): string => {
   if (change > 0) return 'text-green-400';
   if (change < 0) return 'text-red-400';
-  return 'text-gray-400';
+  return 'text-white/35';
 };
 
 const getChangeIcon = (change: number) => {
@@ -165,7 +165,7 @@ export default function CryptoMarketDataBare({ symbol, className = "" }: CryptoM
       </div>
 
       {/* Performance Indicators */}
-      <div className="grid grid-cols-4 gap-3 text-xs pt-3 border-t border-crypto-silver/10">
+      <div className="grid grid-cols-4 gap-3 text-xs pt-3 border-t border-white/[0.03]">
         <div className="text-center">
           <span className="text-crypto-silver block mb-1">1h</span>
           <span className={`font-medium ${getChangeColor(quote.percent_change_1h)}`}>
@@ -193,7 +193,7 @@ export default function CryptoMarketDataBare({ symbol, className = "" }: CryptoM
       </div>
 
       {/* Data Source */}
-      <div className="mt-3 pt-2 border-t border-crypto-silver/10">
+      <div className="mt-3 pt-2 border-t border-white/[0.03]">
         <p className="text-crypto-silver text-xs text-center">
           Data updates every 30s • Powered by CoinMarketCap
         </p>

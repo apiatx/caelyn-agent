@@ -1164,7 +1164,7 @@ export default function TradingAgent() {
             ['Bias', perpsSummary.market_bias, true],
           ].map(([label, val, isBias], i) => val && val !== 'N/A' ? <div key={i} style={{ flex:1, minWidth:120, padding:'0 12px', borderRight: i < 3 ? `1px solid ${C.border}` : 'none' }}>
             <div style={{ color:C.dim, fontSize:9, fontFamily:font, textTransform:'uppercase', letterSpacing:'0.06em', marginBottom:4 }}>{label as string}</div>
-            <div style={{ color: isBias ? biasColor(val as string) : '#38bdf8', fontSize:15, fontWeight:700, fontFamily:font }}>{val as string}</div>
+            <div style={{ color: isBias ? biasColor(val as string) : '#5cc8f0', fontSize:15, fontWeight:700, fontFamily:font }}>{val as string}</div>
           </div> : null)}
         </div>}
 
@@ -1185,7 +1185,7 @@ export default function TradingAgent() {
                   <div style={{ display:'flex', alignItems:'center', gap:10, flexWrap:'wrap' }}>
                     <span style={{ color:C.bright, fontWeight:800, fontSize:14, fontFamily:font }}>{sq.coin || sq.symbol}</span>
                     <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>Funding: <span style={{ color: frNeg ? C.red : C.green, fontWeight:600 }}>{frDisplay}{frAnn}</span></span>
-                    {oi != null && <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>OI: <span style={{ color:'#38bdf8', fontWeight:600 }}>{fmtBig(oi)}</span></span>}
+                    {oi != null && <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>OI: <span style={{ color:'#5cc8f0', fontWeight:600 }}>{fmtBig(oi)}</span></span>}
                     {ch24 != null && <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>24h: <span style={{ color:changeColor(fmtPct(ch24)), fontWeight:600 }}>{fmtPct(ch24)}</span></span>}
                   </div>
                   <Badge color="#f97316">SQUEEZE</Badge>
@@ -1205,7 +1205,7 @@ export default function TradingAgent() {
                 <div style={{ display:'flex', alignItems:'center', gap:10, flexWrap:'wrap' }}>
                   <span style={{ color:C.bright, fontWeight:700, fontSize:13, fontFamily:font }}>{cl.coin || cl.symbol}</span>
                   <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>Funding: <span style={{ color:C.red, fontWeight:600 }}>{fmtFunding(cl.funding_rate)}</span></span>
-                  {oi != null && <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>OI: <span style={{ color:'#38bdf8', fontWeight:600 }}>{fmtBig(oi)}</span></span>}
+                  {oi != null && <span style={{ color:C.dim, fontSize:11, fontFamily:font }}>OI: <span style={{ color:'#5cc8f0', fontWeight:600 }}>{fmtBig(oi)}</span></span>}
                 </div>
                 {cl.signal && <span style={{ color:C.gold, fontSize:10, fontFamily:sansFont, maxWidth:300 }}>⚠️ {cl.signal}</span>}
               </div>;
@@ -1249,8 +1249,8 @@ export default function TradingAgent() {
               const frNum = typeof fr === 'number' ? fr : parseFloat(String(fr || '0'));
               return <div key={i} style={{ display:'grid', gridTemplateColumns:'1.2fr 1fr 1fr 1fr 1fr', padding:'8px 14px', borderBottom: i < Math.min(perpsTopVol.length, 10) - 1 ? `1px solid ${C.border}` : 'none', fontSize:12, fontFamily:font }}>
                 <span style={{ color:C.bright, fontWeight:700 }}>{tv.coin || tv.symbol}</span>
-                <span style={{ textAlign:'right', color:'#38bdf8' }}>{fmtBig(vol)}</span>
-                <span style={{ textAlign:'right', color:'#38bdf8' }}>{oi != null ? fmtBig(oi) : '—'}</span>
+                <span style={{ textAlign:'right', color:'#5cc8f0' }}>{fmtBig(vol)}</span>
+                <span style={{ textAlign:'right', color:'#5cc8f0' }}>{oi != null ? fmtBig(oi) : '—'}</span>
                 <span style={{ textAlign:'right', color: frNum > 0 ? C.green : C.red, fontWeight:600 }}>{fmtFunding(fr)}</span>
                 <span style={{ textAlign:'right', color:changeColor(fmtPct(ch)), fontWeight:600 }}>{fmtPct(ch)}</span>
               </div>;
@@ -1312,7 +1312,7 @@ export default function TradingAgent() {
           <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(200px, 1fr))', gap:10 }}>
             {narrativeHeat.map((nh: any, i: number) => {
               const buzz = (nh.buzz_level || nh.heat || '').toLowerCase();
-              const heatColor = buzz.includes('hot') || buzz.includes('high') ? '#f97316' : buzz.includes('warm') || buzz.includes('medium') ? C.gold : '#38bdf8';
+              const heatColor = buzz.includes('hot') || buzz.includes('high') ? '#f97316' : buzz.includes('warm') || buzz.includes('medium') ? C.gold : '#5cc8f0';
               return <div key={i} style={{ background:C.card, border:`1px solid ${heatColor}25`, borderLeft:`3px solid ${heatColor}`, borderRadius:8, padding:12 }}>
                 <div style={{ color:C.bright, fontWeight:700, fontSize:12, fontFamily:font, marginBottom:4 }}>{nh.narrative || nh.name}</div>
                 <div style={{ display:'flex', gap:8, marginBottom:4 }}>
@@ -1499,7 +1499,7 @@ export default function TradingAgent() {
               'hottest_social': {icon: '🚀', color: C.purple},
               'top_squeeze': {icon: '💥', color: C.red},
               'biggest_volume': {icon: '📊', color: C.gold},
-              'strongest_sector': {icon: '🔄', color: '#06b6d4'},
+              'strongest_sector': {icon: '🔄', color: '#80d8f8'},
             };
             const cfg = labelMap[key] || {icon: '•', color: C.dim};
             return <div key={key} onClick={() => { if (val?.ticker) { setSignalPopup({ ticker: val.ticker, signal: val.signal || '', scannerName: key.replace(/_/g, ' '), color: cfg.color, icon: cfg.icon }); setSignalChartInterval('D'); } }} style={{ background:C.card, border:`1px solid ${C.border}`, borderRadius:10, padding:14, cursor: val?.ticker ? 'pointer' : 'default', transition:'all 0.2s', position:'relative', overflow:'hidden' }} onMouseEnter={e => { if (val?.ticker) { (e.currentTarget as HTMLElement).style.borderColor = cfg.color + '60'; (e.currentTarget as HTMLElement).style.transform = 'translateY(-1px)'; (e.currentTarget as HTMLElement).style.boxShadow = `0 4px 12px ${cfg.color}15`; } }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = C.border; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLElement).style.boxShadow = 'none'; }}>
@@ -2439,8 +2439,8 @@ export default function TradingAgent() {
           reader.readAsText(file);
           e.target.value = '';
         }} />
-        <button onClick={() => csvInputRef.current?.click()} title="Upload CSV watchlist" style={{ width:28, height:28, display:'flex', alignItems:'center', justifyContent:'center', background: csvData ? 'rgba(99,102,241,0.2)' : 'transparent', border: csvData ? '1px solid rgba(99,102,241,0.4)' : '1px solid rgba(255,255,255,0.08)', borderRadius:3, color: csvData ? '#a78bfa' : '#666', cursor:'pointer', fontSize:14, flexShrink:0 }}>+</button>
-        {csvFileName && <div style={{ display:'flex', alignItems:'center', gap:4, padding:'2px 8px', background:'rgba(99,102,241,0.15)', border:'1px solid rgba(99,102,241,0.3)', borderRadius:3, fontSize:10, color:'#a78bfa', fontFamily:'monospace', flexShrink:0, maxWidth:160, overflow:'hidden' }}><span style={{ overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{csvFileName}</span><span onClick={() => { setCsvData(null); setCsvFileName(null); }} style={{ cursor:'pointer', color:'#ef4444', fontWeight:700, flexShrink:0 }}>x</span></div>}
+        <button onClick={() => csvInputRef.current?.click()} title="Upload CSV watchlist" style={{ width:28, height:28, display:'flex', alignItems:'center', justifyContent:'center', background: csvData ? 'rgba(32,144,208,0.2)' : 'transparent', border: csvData ? '1px solid rgba(32,144,208,0.4)' : '1px solid rgba(255,255,255,0.08)', borderRadius:3, color: csvData ? '#a78bfa' : '#666', cursor:'pointer', fontSize:14, flexShrink:0 }}>+</button>
+        {csvFileName && <div style={{ display:'flex', alignItems:'center', gap:4, padding:'2px 8px', background:'rgba(32,144,208,0.15)', border:'1px solid rgba(32,144,208,0.3)', borderRadius:3, fontSize:10, color:'#a78bfa', fontFamily:'monospace', flexShrink:0, maxWidth:160, overflow:'hidden' }}><span style={{ overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{csvFileName}</span><span onClick={() => { setCsvData(null); setCsvFileName(null); }} style={{ cursor:'pointer', color:'#ef4444', fontWeight:700, flexShrink:0 }}>x</span></div>}
         <div style={{ position:'relative', flex:1 }}>
           <input
             ref={commandInputRef}

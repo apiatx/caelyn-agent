@@ -31,7 +31,7 @@ export default function MarketResearchSection() {
             <Button
               variant="outline"
               onClick={() => window.open('https://cointelegraph.com/category/latest-news', '_blank')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">

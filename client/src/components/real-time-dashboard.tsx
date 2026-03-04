@@ -60,7 +60,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
               ) : (
                 topMovers?.map((mover, index) => (
-                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-bold ${
@@ -115,7 +115,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
               ) : (
                 whaleActivity?.map((tx, index) => (
-                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center space-x-3">
                         <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
@@ -164,7 +164,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
               ) : (
                 socialSentiment?.map((mention, index) => (
-                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                  <div key={index} className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center space-x-3">
                         <Badge 
@@ -218,7 +218,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
             ) : marketAnalysis?.aiAnalysis ? (
               <div className="space-y-6">
                 {/* Overall Market Sentiment */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">Market Sentiment Analysis</h4>
                   <div className="flex items-center justify-between mb-3">
                     <Badge 
@@ -248,7 +248,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
 
                 {/* AI Trading Signals */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">AI Trading Signals</h4>
                   <div className="space-y-3">
                     {marketAnalysis.aiAnalysis.signals.map((signal, i) => (
@@ -284,7 +284,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
 
                 {/* Market Trends */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">Market Trend Analysis</h4>
                   <p className="text-crypto-silver text-sm whitespace-pre-wrap">{marketAnalysis.aiAnalysis.trends}</p>
                 </div>
@@ -319,7 +319,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
             ) : portfolioOptimization ? (
               <div className="space-y-6">
                 {/* Risk Assessment */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">Risk Assessment</h4>
                   <Badge 
                     variant="outline" 
@@ -337,7 +337,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
 
                 {/* Recommendations */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">AI Recommendations</h4>
                   <div className="space-y-2">
                     {portfolioOptimization.recommendations.map((rec, i) => (
@@ -349,7 +349,7 @@ export default function RealTimeDashboard({ portfolioId }: { portfolioId?: numbe
                 </div>
 
                 {/* Suggested Allocations */}
-                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-crypto-silver/10 p-4">
+                <div className="backdrop-blur-sm bg-white/5 rounded-xl border border-white/[0.03] p-4">
                   <h4 className="font-medium text-white mb-3">Suggested Allocations</h4>
                   <div className="space-y-3">
                     {portfolioOptimization.suggestedAllocations.map((allocation, i) => (

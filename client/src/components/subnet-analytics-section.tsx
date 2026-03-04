@@ -73,7 +73,7 @@ export default function SubnetAnalyticsSection() {
       </div>
 
       <Tabs defaultValue="overview" className="w-full">
-        <TabsList className="grid w-full grid-cols-3 bg-white/5 backdrop-blur-sm border border-crypto-silver/20">
+        <TabsList className="grid w-full grid-cols-3 bg-white/5 backdrop-blur-sm border border-white/[0.06]">
           <TabsTrigger 
             value="overview"
             className="data-[state=active]:bg-purple-500 data-[state=active]:text-white text-crypto-silver"
@@ -248,7 +248,7 @@ export default function SubnetAnalyticsSection() {
               variant="outline" 
               size="sm"
               onClick={() => setSelectedSubnet(null)}
-              className="border-crypto-silver/30"
+              className="border-white/[0.08]"
             >
               Close
             </Button>

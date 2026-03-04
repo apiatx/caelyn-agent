@@ -10,7 +10,7 @@ import {
 
 // Glass card component
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -65,7 +65,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                 <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 ml-1 inline" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
               <DropdownMenuItem
                 onClick={() => navigateTo("/app/charts/majors")}
                 className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -95,7 +95,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                 <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 ml-1 inline" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
               <DropdownMenuItem
                 onClick={() => navigateTo("/app/onchain/analytics")}
                 className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -160,7 +160,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                 <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 ml-1 inline" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
               <DropdownMenuItem
                 onClick={() => navigateTo("/app/ethereum")}
                 className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -218,7 +218,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                 <ChevronDown className="w-3 h-3 xl:w-4 xl:h-4 ml-1 inline" />
               </button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+            <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
               <DropdownMenuItem
                 onClick={() => navigateTo("/app/trade")}
                 className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -351,7 +351,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                     <ChevronDown className="w-4 h-4 ml-1 inline" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
                   <DropdownMenuItem
                     onClick={() => navigateTo("/app/charts/majors")}
                     className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -381,7 +381,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                     <ChevronDown className="w-4 h-4 ml-1 inline" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
                   <DropdownMenuItem
                     onClick={() => navigateTo("/app/onchain/alpha")}
                     className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -418,7 +418,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                     <ChevronDown className="w-4 h-4 ml-1 inline" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
                   <DropdownMenuItem
                     onClick={() => navigateTo("/app/ethereum")}
                     className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"
@@ -476,7 +476,7 @@ export function UniversalNavigation({ activePage }: UniversalNavigationProps) {
                     <ChevronDown className="w-4 h-4 ml-1 inline" />
                   </button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-crypto-silver/20">
+                <DropdownMenuContent className="bg-black/80 backdrop-blur-lg border-white/[0.06]">
                   <DropdownMenuItem
                     onClick={() => navigateTo("/app/trade")}
                     className="text-white hover:bg-white/10 focus:bg-white/10 cursor-pointer"

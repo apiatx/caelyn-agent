@@ -4,7 +4,7 @@ import { Zap } from "lucide-react";
 import { openSecureLink } from "@/utils/security";
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -34,7 +34,7 @@ export default function DePINContent() {
                 DEPIN MARKETPLACE
               </Badge>
             </div>
-            <div className="text-sm text-crypto-silver group-hover:text-gray-300">
+            <div className="text-sm text-crypto-silver group-hover:text-white/45">
               Decentralized Physical Infrastructure Networks marketplace • Discover and invest in DePIN projects
             </div>
           </button>

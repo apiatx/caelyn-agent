@@ -96,14 +96,14 @@ export function MultiChainPortfolioTracker() {
       {/* Search Input */}
       <div className="flex flex-col sm:flex-row gap-3 mb-4 lg:mb-6">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+          <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/35 w-4 h-4" />
           <Input
             type="text"
             placeholder="Enter wallet address (0x...)"
             value={walletAddress}
             onChange={(e) => setWalletAddress(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="pl-10 bg-black/20 border-crypto-silver/30 text-white placeholder-gray-400 text-sm sm:text-base"
+            className="pl-10 bg-black/20 border-white/[0.08] text-white placeholder-gray-400 text-sm sm:text-base"
           />
         </div>
         <Button
@@ -119,7 +119,7 @@ export function MultiChainPortfolioTracker() {
       {isLoading && (
         <div className="flex items-center justify-center py-12">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-400"></div>
-          <span className="ml-3 text-gray-300">Scanning blockchain networks...</span>
+          <span className="ml-3 text-white/45">Scanning blockchain networks...</span>
         </div>
       )}
 
@@ -175,7 +175,7 @@ export function MultiChainPortfolioTracker() {
                   <span className="text-xl font-semibold text-white">
                     ${chainData.totalValue.toLocaleString(undefined, { maximumFractionDigits: 2 })}
                   </span>
-                  <span className="text-gray-400">({chainData.tokens.length} assets)</span>
+                  <span className="text-white/35">({chainData.tokens.length} assets)</span>
                 </div>
               </div>
 
@@ -185,7 +185,7 @@ export function MultiChainPortfolioTracker() {
                   ?.filter(token => token.value >= 1) // Only show tokens worth $1+
                   ?.sort((a, b) => b.value - a.value)
                   ?.map((token, index) => (
-                  <div key={`${token.contractAddress}-${index}`} className="bg-black/20 border border-crypto-silver/20 rounded-lg p-4">
+                  <div key={`${token.contractAddress}-${index}`} className="bg-black/20 border border-white/[0.06] rounded-lg p-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
                         {token.logo ? (
@@ -199,7 +199,7 @@ export function MultiChainPortfolioTracker() {
                         )}
                         <div>
                           <p className="font-semibold text-white">{token.symbol}</p>
-                          <p className="text-sm text-gray-400">{formatBalance(token.balance)}</p>
+                          <p className="text-sm text-white/35">{formatBalance(token.balance)}</p>
                           <p className="text-xs text-gray-500">${token.price.toFixed(4)}</p>
                         </div>
                       </div>
@@ -213,14 +213,14 @@ export function MultiChainPortfolioTracker() {
                               {token.change24h >= 0 ? '+' : ''}{token.change24h.toFixed(2)}%
                             </p>
                           )}
-                          <p className="text-sm text-gray-400">{token.chain}</p>
+                          <p className="text-sm text-white/35">{token.chain}</p>
                         </div>
                         {token.contractAddress !== 'native' && (
                           <Button
                             size="sm"
                             variant="outline"
                             onClick={() => openDexScreener(token.contractAddress!, token.chain)}
-                            className="text-gray-400 border-gray-600 hover:text-white hover:border-gray-400"
+                            className="text-white/35 border-gray-600 hover:text-white hover:border-gray-400"
                           >
                             <ExternalLink className="w-4 h-4" />
                           </Button>
@@ -234,7 +234,7 @@ export function MultiChainPortfolioTracker() {
           ))}
 
           {/* Refresh Info */}
-          <div className="text-center text-sm text-gray-400 border-t border-crypto-silver/20 pt-4">
+          <div className="text-center text-sm text-white/35 border-t border-white/[0.06] pt-4">
             Portfolio data refreshes every 30 seconds • Powered by Coinbase + Blockchain APIs
           </div>
         </div>
@@ -243,8 +243,8 @@ export function MultiChainPortfolioTracker() {
       {/* Empty State */}
       {!portfolio && !isLoading && searchAddress && (
         <div className="text-center py-12">
-          <Wallet className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-          <p className="text-gray-400 mb-2">No portfolio data found</p>
+          <Wallet className="w-16 h-16 text-white/35 mx-auto mb-4" />
+          <p className="text-white/35 mb-2">No portfolio data found</p>
           <p className="text-sm text-gray-500">Make sure the wallet address is correct and has transaction history</p>
         </div>
       )}
@@ -252,8 +252,8 @@ export function MultiChainPortfolioTracker() {
       {/* Initial State */}
       {!searchAddress && !isLoading && (
         <div className="text-center py-12">
-          <Search className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-          <p className="text-gray-400 mb-2">Enter a wallet address to track portfolio</p>
+          <Search className="w-16 h-16 text-white/35 mx-auto mb-4" />
+          <p className="text-white/35 mb-2">Enter a wallet address to track portfolio</p>
           <p className="text-sm text-gray-500">
             Track holdings across Ethereum and Base networks with live pricing data
           </p>

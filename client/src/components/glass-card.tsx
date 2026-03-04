@@ -7,7 +7,7 @@ interface GlassCardProps {
 
 export function GlassCard({ children, className = "" }: GlassCardProps) {
   return (
-    <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+    <Card className={`glass-card ${className}`}>
       {children}
     </Card>
   );

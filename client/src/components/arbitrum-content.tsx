@@ -24,7 +24,7 @@ const SafeLink = ({ href, children, className = "", ...props }: {
 );
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -43,7 +43,7 @@ export default function ArbitrumContent() {
           </SafeLink>
         </div>
         
-        <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+        <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
           <iframe
             {...getSecureIframeProps('https://portal.arbitrum.io/', 'Arbitrum Ecosystem Portal')}
             className="w-full h-[700px] border-0"
@@ -51,7 +51,7 @@ export default function ArbitrumContent() {
         </div>
         
         <div className="mt-4 text-center">
-          <p className="text-xs text-gray-400">
+          <p className="text-xs text-white/35">
             Arbitrum Ecosystem Portal • Explore the Arbitrum ecosystem
           </p>
         </div>

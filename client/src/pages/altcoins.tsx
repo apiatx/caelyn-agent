@@ -40,8 +40,8 @@ function CryptoTickerTape() {
 export default function AltcoinsPage() {
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
-      <div className="sticky top-0 z-50 border-b border-crypto-silver/20 bg-black/90 backdrop-blur-lg">
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
+      <div className="sticky top-0 z-50 border-b border-white/[0.06] bg-black/90 backdrop-blur-lg">
         <CryptoTickerTape />
       </div>
 
@@ -84,7 +84,7 @@ export default function AltcoinsPage() {
 
           {/* Daily Gainers */}
           <div className="space-y-4">
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-4 lg:p-6 transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl hover:shadow-crypto-warning/20">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-4 lg:p-6 transform transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl hover:shadow-crypto-warning/20">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <h3 className="text-lg font-semibold text-white text-center">📈 24h Gainers (CMC Top 100)</h3>
                 <Badge className="bg-green-500/20 text-green-400 border-green-500/30">
@@ -99,34 +99,34 @@ export default function AltcoinsPage() {
 
           {/* XRP Chart */}
           <Suspense fallback={<SectionLoadingState title="XRP Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <h3 className="text-lg font-semibold text-gray-400">XRP</h3>
-                  <Badge variant="outline" className="bg-gray-500/20 text-gray-300 border-gray-500/30">
+                  <h3 className="text-lg font-semibold text-white/35">XRP</h3>
+                  <Badge variant="outline" className="bg-gray-500/20 text-white/45 border-gray-500/30">
                     XRP
                   </Badge>
                 </div>
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={() => openSecureLink('https://coinmarketcap.com/currencies/xrp/')}
-                    className="text-gray-400 hover:text-gray-300 text-xs sm:text-sm flex items-center gap-1"
+                    className="text-white/35 hover:text-white/45 text-xs sm:text-sm flex items-center gap-1"
                   >
                     <ExternalLink className="w-3 h-3" />
                     CoinMarketCap
                   </button>
                   <button
                     onClick={() => openSecureLink('https://www.tradingview.com/chart/?symbol=BITSTAMP%3AXRPUSD')}
-                    className="text-gray-400 hover:text-gray-300 text-xs sm:text-sm"
+                    className="text-white/35 hover:text-white/45 text-xs sm:text-sm"
                   >
                     Open Full View →
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BITSTAMP%3AXRPUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="XRP Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -140,7 +140,7 @@ export default function AltcoinsPage() {
 
           {/* BNB Chart */}
           <Suspense fallback={<SectionLoadingState title="BNB Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-yellow-400">BNB</h3>
@@ -164,10 +164,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ABNBUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="BNB Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -181,7 +181,7 @@ export default function AltcoinsPage() {
 
           {/* Solana Chart */}
           <Suspense fallback={<SectionLoadingState title="Solana Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-purple-400">Solana</h3>
@@ -205,10 +205,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ASOLUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="Solana Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -222,7 +222,7 @@ export default function AltcoinsPage() {
 
           {/* DOGE Chart */}
           <Suspense fallback={<SectionLoadingState title="DOGE Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-orange-400">DOGE</h3>
@@ -246,10 +246,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ADOGEUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="DOGE Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -263,7 +263,7 @@ export default function AltcoinsPage() {
 
           {/* CHAINLINK Chart */}
           <Suspense fallback={<SectionLoadingState title="CHAINLINK Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-blue-400">Chainlink</h3>
@@ -287,10 +287,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ALINKUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="CHAINLINK Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -304,7 +304,7 @@ export default function AltcoinsPage() {
 
           {/* Hyperliquid Chart */}
           <Suspense fallback={<SectionLoadingState title="Hyperliquid Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-cyan-400">Hyperliquid</h3>
@@ -328,10 +328,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=PYTH%3AHYPEUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="Hyperliquid Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -345,7 +345,7 @@ export default function AltcoinsPage() {
 
           {/* SUI Chart */}
           <Suspense fallback={<SectionLoadingState title="SUI Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-green-400">SUI</h3>
@@ -369,10 +369,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ASUIUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="SUI Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -386,7 +386,7 @@ export default function AltcoinsPage() {
 
           {/* XLM Chart */}
           <Suspense fallback={<SectionLoadingState title="XLM Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-blue-400">Stellar</h3>
@@ -410,10 +410,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=COINBASE%3AXLMUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="XLM Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -427,7 +427,7 @@ export default function AltcoinsPage() {
 
           {/* HBAR Chart */}
           <Suspense fallback={<SectionLoadingState title="HBAR Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-green-400">Hedera</h3>
@@ -451,10 +451,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3AHBARUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="Hedera HBAR Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -468,34 +468,34 @@ export default function AltcoinsPage() {
 
           {/* LTC Chart */}
           <Suspense fallback={<SectionLoadingState title="LTC Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
-                  <h3 className="text-lg font-semibold text-gray-400">Litecoin</h3>
-                  <Badge variant="outline" className="bg-gray-500/20 text-gray-300 border-gray-500/30">
+                  <h3 className="text-lg font-semibold text-white/35">Litecoin</h3>
+                  <Badge variant="outline" className="bg-gray-500/20 text-white/45 border-gray-500/30">
                     LTC
                   </Badge>
                 </div>
                 <div className="flex items-center space-x-3">
                   <button
                     onClick={() => openSecureLink('https://coinmarketcap.com/currencies/litecoin/')}
-                    className="text-gray-400 hover:text-gray-300 text-xs sm:text-sm flex items-center gap-1"
+                    className="text-white/35 hover:text-white/45 text-xs sm:text-sm flex items-center gap-1"
                   >
                     <ExternalLink className="w-3 h-3" />
                     CoinMarketCap
                   </button>
                   <button
                     onClick={() => openSecureLink('https://www.tradingview.com/chart/e5l95XgZ/?symbol=COINBASE%3ALTCUSD')}
-                    className="text-gray-400 hover:text-gray-300 text-xs sm:text-sm"
+                    className="text-white/35 hover:text-white/45 text-xs sm:text-sm"
                   >
                     Open Full View →
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=COINBASE%3ALTCUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="LTC Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -509,7 +509,7 @@ export default function AltcoinsPage() {
 
           {/* XMR Chart */}
           <Suspense fallback={<SectionLoadingState title="XMR Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-orange-400">Monero</h3>
@@ -533,10 +533,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=KRAKEN%3AXMRUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="XMR Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -550,7 +550,7 @@ export default function AltcoinsPage() {
 
           {/* ENA Chart */}
           <Suspense fallback={<SectionLoadingState title="ENA Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-purple-400">Ethena</h3>
@@ -574,10 +574,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3AENAUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="ENA Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -591,7 +591,7 @@ export default function AltcoinsPage() {
 
           {/* Bittensor Chart */}
           <Suspense fallback={<SectionLoadingState title="Bittensor Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-orange-400">Bittensor</h3>
@@ -615,10 +615,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BITGET%3ATAOUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="Bittensor Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -632,7 +632,7 @@ export default function AltcoinsPage() {
 
           {/* Ondo Finance Chart */}
           <Suspense fallback={<SectionLoadingState title="Ondo Finance Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-purple-400">Ondo Finance</h3>
@@ -656,10 +656,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BYBIT%3AONDOUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="Ondo Finance Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -673,7 +673,7 @@ export default function AltcoinsPage() {
 
           {/* PENGU Chart */}
           <Suspense fallback={<SectionLoadingState title="PENGU Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-cyan-400">PENGU</h3>
@@ -697,10 +697,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3APENGUUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="PENGU Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -714,7 +714,7 @@ export default function AltcoinsPage() {
 
           {/* SEI Chart */}
           <Suspense fallback={<SectionLoadingState title="SEI Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-red-400">Sei</h3>
@@ -738,10 +738,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ASEIUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="SEI Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -755,7 +755,7 @@ export default function AltcoinsPage() {
 
           {/* BONK Chart */}
           <Suspense fallback={<SectionLoadingState title="BONK Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-yellow-400">BONK</h3>
@@ -779,10 +779,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=MEXC%3ABONKUSDT"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="BONK Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -796,7 +796,7 @@ export default function AltcoinsPage() {
 
           {/* AERO Chart */}
           <Suspense fallback={<SectionLoadingState title="AERO Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-blue-400">Aerodrome Finance</h3>
@@ -820,10 +820,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=COINBASE%3AAEROUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="AERO Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -837,7 +837,7 @@ export default function AltcoinsPage() {
 
           {/* VIRTUAL Chart */}
           <Suspense fallback={<SectionLoadingState title="VIRTUAL Chart" />}>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <h3 className="text-lg font-semibold text-cyan-400">VIRTUAL</h3>
@@ -861,10 +861,10 @@ export default function AltcoinsPage() {
                   </button>
                 </div>
               </div>
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTO%3AVIRTUALUSD"
-                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                   title="VIRTUAL Advanced Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -879,7 +879,7 @@ export default function AltcoinsPage() {
           {/* Velo Chart */}
           <Suspense fallback={<SectionLoadingState title="Velo Chart" />}>
             <div className="space-y-3">
-              <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+              <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
                     <h3 className="text-lg font-semibold text-white">SUPERCHARTS</h3>
@@ -888,10 +888,10 @@ export default function AltcoinsPage() {
                 
                 {/* CoinGlass SuperCharts */}
                 <div className="space-y-3">
-                  <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+                  <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                     <iframe
                       src="https://www.coinglass.com/tv/Binance_BTCUSDT"
-                      className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                      className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                       title="CoinGlass SuperCharts"
                       frameBorder="0"
                       scrolling="no"
@@ -902,7 +902,7 @@ export default function AltcoinsPage() {
                 </div>
                 
                 {/* Velo Charts Button */}
-                <div className="pt-4 border-t border-crypto-silver/10">
+                <div className="pt-4 border-t border-white/[0.06]">
                   <div className="flex flex-col items-center justify-center text-center space-y-3">
                     <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-sm font-bold">
                       V

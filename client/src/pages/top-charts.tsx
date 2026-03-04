@@ -64,8 +64,8 @@ export default function TopChartsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
-      <div className="sticky top-0 z-50 border-b border-crypto-silver/20 bg-black/90 backdrop-blur-lg">
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
+      <div className="sticky top-0 z-50 border-b border-white/[0.06] bg-black/90 backdrop-blur-lg">
         <CryptoTickerTape />
       </div>
 
@@ -96,7 +96,7 @@ export default function TopChartsPage() {
           </div>
 
           {/* AltFins Screener Widget */}
-          <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6">
             <div 
               className="altfins-clip-wrapper w-full"
               dangerouslySetInnerHTML={{
@@ -106,7 +106,7 @@ export default function TopChartsPage() {
           </div>
 
           {/* Crypto Total Market Cap Section */}
-          <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6">
             <div className="text-center mb-6">
               <h2 className="text-xl sm:text-2xl font-bold text-white">Crypto Total Market Cap</h2>
             </div>
@@ -134,7 +134,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTOCAP%3ATOTAL"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Crypto Total Market Cap"
                     frameBorder="0"
                     scrolling="no"
@@ -164,7 +164,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTOCAP%3ATOTAL2"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Total Market Cap Excluding BTC"
                     frameBorder="0"
                     scrolling="no"
@@ -195,7 +195,7 @@ export default function TopChartsPage() {
               <div className="w-full">
                 <iframe
                   src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTOCAP%3AOTHERS.D"
-                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                  className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                   title="OTHERS Dominance Chart"
                   frameBorder="0"
                   scrolling="no"
@@ -205,7 +205,7 @@ export default function TopChartsPage() {
           </div>
 
           {/* Bitcoin Section */}
-          <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-6">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-6">
             <div className="text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-xl flex items-center justify-center">
@@ -249,7 +249,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3ABTCUSDT"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Bitcoin Chart"
                     frameBorder="0"
                     scrolling="no"
@@ -279,7 +279,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTOCAP%3ABTC.D"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="BTC Dominance Chart"
                     frameBorder="0"
                     scrolling="no"
@@ -293,7 +293,7 @@ export default function TopChartsPage() {
           </div>
 
           {/* Ethereum Section */}
-          <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-6">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-6">
             <div className="text-center">
               <div className="flex items-center justify-center gap-3 mb-4">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-black rounded-xl flex items-center justify-center">
@@ -340,7 +340,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=BINANCE%3AETHUSDT"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="Ethereum Chart"
                     frameBorder="0"
                     scrolling="no"
@@ -370,7 +370,7 @@ export default function TopChartsPage() {
                 <div className="w-full">
                   <iframe
                     src="https://s.tradingview.com/embed-widget/advanced-chart/?locale=en&width=100%25&height=610&interval=1D&range=3M&style=1&toolbar_bg=0a0a0a&enable_publishing=true&withdateranges=true&hide_side_toolbar=false&allow_symbol_change=true&calendar=false&studies=%5B%5D&theme=dark&timezone=Etc%2FUTC&hide_top_toolbar=false&disabled_features=[%22volume_force_overlay%22,%22create_volume_indicator_by_default%22]&enabled_features=[%22use_localstorage_for_settings%22,%22study_templates%22,%22header_indicators%22,%22header_compare%22,%22header_undo_redo%22,%22header_screenshot%22,%22header_chart_type%22,%22header_settings%22,%22header_resolutions%22,%22header_fullscreen_button%22,%22left_toolbar%22,%22drawing_templates%22]&symbol=CRYPTOCAP%3AETH.D"
-                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg border border-white/[0.06]"
                     title="ETH Dominance Chart"
                     frameBorder="0"
                     scrolling="no"
@@ -384,7 +384,7 @@ export default function TopChartsPage() {
           </div>
 
           {/* Monthly Returns */}
-          <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
+          <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-3 sm:p-4 lg:p-6 space-y-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <h3 className="text-lg font-semibold text-emerald-400">Monthly Returns</h3>
@@ -402,10 +402,10 @@ export default function TopChartsPage() {
                 </button>
               </div>
             </div>
-            <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+            <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
               <iframe
                 src="https://www.coinglass.com/today"
-                className="w-full h-[600px] sm:h-[800px] lg:h-[900px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[600px] sm:h-[800px] lg:h-[900px] rounded-lg border border-white/[0.06]"
                 title="CoinGlass Monthly Returns"
                 frameBorder="0"
                 scrolling="yes"

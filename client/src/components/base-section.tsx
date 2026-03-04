@@ -42,7 +42,7 @@ interface DashboardData {
 }
 
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -54,7 +54,7 @@ const SafeIframe = ({ src, title, className = "" }: { src: string; title: string
       <iframe
         src={src}
         title={title}
-        className={`w-full h-[600px] rounded-lg border border-crypto-silver/20 ${className}`}
+        className={`w-full h-[600px] rounded-lg border border-white/[0.06] ${className}`}
         frameBorder="0"
         loading="lazy"
         sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-top-navigation-by-user-activation"
@@ -195,7 +195,7 @@ export default function BaseSection() {
           </div>
           
           {/* Birdeye Base */}
-          <div className="border-t border-crypto-silver/20 pt-4 mt-4">
+          <div className="border-t border-white/[0.06] pt-4 mt-4">
             <div className="p-6 bg-gradient-to-r from-orange-500/10 to-yellow-500/10 border border-orange-500/20 rounded-lg">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
@@ -370,7 +370,7 @@ export default function BaseSection() {
         </div>
         <div className="space-y-4">
           {/* Alphanomics iframe */}
-          <div className="w-full bg-black/20 border border-crypto-silver/20 rounded-lg p-4 shadow-lg mb-4">
+          <div className="w-full bg-black/20 border border-white/[0.06] rounded-lg p-4 shadow-lg mb-4">
             <SafeIframe 
               src="https://platform.alphanomics.io/"
               title="Alphanomics Analytics Platform"
@@ -379,7 +379,7 @@ export default function BaseSection() {
           </div>
           
           {/* Farterminal iframe moved to top */}
-          <div className="w-full bg-black/20 border border-crypto-silver/20 rounded-lg p-4 shadow-lg mb-4">
+          <div className="w-full bg-black/20 border border-white/[0.06] rounded-lg p-4 shadow-lg mb-4">
             <SafeIframe 
               src="https://www.terminal.co/?tab=base"
               title="Farterminal"
@@ -388,7 +388,7 @@ export default function BaseSection() {
           </div>
           
           {/* Higher.bot iframe */}
-          <div className="w-full bg-black/20 border border-crypto-silver/20 rounded-lg p-4 shadow-lg mb-4">
+          <div className="w-full bg-black/20 border border-white/[0.06] rounded-lg p-4 shadow-lg mb-4">
             <SafeIframe
               src="https://app.higher.bot/en/trenches?ref=Raretype"
               title="Higher.bot Trading Terminal"
@@ -407,7 +407,7 @@ export default function BaseSection() {
               </div>
               <h4 className="text-green-400 font-semibold">DexScreener</h4>
             </div>
-            <p className="text-gray-400 text-sm">Live trending Base tokens and pair analytics with real-time charts</p>
+            <p className="text-white/35 text-sm">Live trending Base tokens and pair analytics with real-time charts</p>
           </button>
           
           {/* 30 Day Trending on OpenSea */}
@@ -421,7 +421,7 @@ export default function BaseSection() {
               </div>
               <h4 className="text-cyan-400 font-semibold">OpenSea</h4>
             </div>
-            <p className="text-gray-400 text-sm">Trending Base tokens by 30-day price changes</p>
+            <p className="text-white/35 text-sm">Trending Base tokens by 30-day price changes</p>
           </button>
             
           {/* Trending AI Agents */}
@@ -435,7 +435,7 @@ export default function BaseSection() {
               </div>
               <h4 className="text-purple-400 font-semibold">Trending AI Agents on CoinGecko</h4>
             </div>
-            <p className="text-gray-400 text-sm">View trending AI agent tokens and artificial intelligence category</p>
+            <p className="text-white/35 text-sm">View trending AI agent tokens and artificial intelligence category</p>
           </button>
           
           {/* BlockCreeper button moved here */}
@@ -449,7 +449,7 @@ export default function BaseSection() {
               </div>
               <h4 className="text-orange-400 font-semibold">BlockCreeper Explorer</h4>
             </div>
-            <p className="text-gray-400 text-sm">Blockchain explorer and analytics platform</p>
+            <p className="text-white/35 text-sm">Blockchain explorer and analytics platform</p>
           </button>
           
         </div>
@@ -492,7 +492,7 @@ export default function BaseSection() {
           <div className="space-y-4">
             <SafeLink
               href="https://app.virtuals.io/"
-              className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
+              className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
@@ -500,16 +500,16 @@ export default function BaseSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">Virtuals.io</h4>
-                  <p className="text-gray-400 text-xs">AI agent platform</p>
+                  <p className="text-white/35 text-xs">AI agent platform</p>
                 </div>
               </div>
-              <div className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors">→</div>
+              <div className="w-4 h-4 text-white/35 group-hover:text-purple-400 transition-colors">→</div>
             </SafeLink>
 
             {/* Whale Intel Button */}
             <SafeLink
               href="https://whaleintel.ai/virtuals"
-              className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-cyan-500/30 transition-all duration-200 group"
+              className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-cyan-500/30 transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
@@ -517,16 +517,16 @@ export default function BaseSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">Whale Intel</h4>
-                  <p className="text-gray-400 text-xs">Virtuals whale analytics</p>
+                  <p className="text-white/35 text-xs">Virtuals whale analytics</p>
                 </div>
               </div>
-              <div className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors">→</div>
+              <div className="w-4 h-4 text-white/35 group-hover:text-cyan-400 transition-colors">→</div>
             </SafeLink>
 
             {/* Loky AI Terminal Button */}
             <SafeLink
               href="https://lokyai.com/terminal/genesis"
-              className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-indigo-500/30 transition-all duration-200 group"
+              className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-indigo-500/30 transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -534,10 +534,10 @@ export default function BaseSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">Loky AI</h4>
-                  <p className="text-gray-400 text-xs">AI trading terminal</p>
+                  <p className="text-white/35 text-xs">AI trading terminal</p>
                 </div>
               </div>
-              <div className="w-4 h-4 text-gray-400 group-hover:text-indigo-400 transition-colors">→</div>
+              <div className="w-4 h-4 text-white/35 group-hover:text-indigo-400 transition-colors">→</div>
             </SafeLink>
           </div>
         </GlassCard>
@@ -556,7 +556,7 @@ export default function BaseSection() {
           
           <SafeLink
             href="https://creator.bid/agents"
-            className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-emerald-500/30 transition-all duration-200 group"
+            className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-emerald-500/30 transition-all duration-200 group"
           >
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center">
@@ -564,10 +564,10 @@ export default function BaseSection() {
               </div>
               <div>
                 <h4 className="text-white font-medium text-sm">Creator.bid</h4>
-                <p className="text-gray-400 text-xs">Agent marketplace</p>
+                <p className="text-white/35 text-xs">Agent marketplace</p>
               </div>
             </div>
-            <div className="w-4 h-4 text-gray-400 group-hover:text-emerald-400 transition-colors">→</div>
+            <div className="w-4 h-4 text-white/35 group-hover:text-emerald-400 transition-colors">→</div>
           </SafeLink>
         </GlassCard>
 
@@ -586,7 +586,7 @@ export default function BaseSection() {
           <div className="space-y-4">
             <SafeLink
               href="https://www.clanker.world/"
-              className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
+              className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-blue-500/30 transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
@@ -594,13 +594,13 @@ export default function BaseSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">Clanker</h4>
-                  <p className="text-gray-400 text-xs">Token creation platform</p>
+                  <p className="text-white/35 text-xs">Token creation platform</p>
                 </div>
               </div>
-              <div className="w-4 h-4 text-gray-400 group-hover:text-blue-400 transition-colors">→</div>
+              <div className="w-4 h-4 text-white/35 group-hover:text-blue-400 transition-colors">→</div>
             </SafeLink>
 
-            <div className="border-t border-crypto-silver/20 pt-4">
+            <div className="border-t border-white/[0.06] pt-4">
               <SafeIframe 
                 src="https://bankr.bot/terminal"
                 title="Bankr.bot Trading Terminal"
@@ -608,7 +608,7 @@ export default function BaseSection() {
             </div>
 
             {/* Checkr iframe moved here under Clanker */}
-            <div className="border-t border-crypto-silver/20 pt-4">
+            <div className="border-t border-white/[0.06] pt-4">
               <SafeIframe 
                 src="https://checkr.social/"
                 title="Checkr.social"
@@ -632,7 +632,7 @@ export default function BaseSection() {
           <div className="space-y-4">
             <SafeLink
               href="https://zora.co/explore/top-today"
-              className="w-full flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
+              className="w-full flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
@@ -640,14 +640,14 @@ export default function BaseSection() {
                 </div>
                 <div>
                   <h4 className="text-white font-medium text-sm">Zora</h4>
-                  <p className="text-gray-400 text-xs">Explore top trending NFTs today</p>
+                  <p className="text-white/35 text-xs">Explore top trending NFTs today</p>
                 </div>
               </div>
-              <div className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors">→</div>
+              <div className="w-4 h-4 text-white/35 group-hover:text-purple-400 transition-colors">→</div>
             </SafeLink>
 
             {/* Zoracle iframe for Zora */}
-            <div className="border-t border-crypto-silver/20 pt-4">
+            <div className="border-t border-white/[0.06] pt-4">
               <SafeIframe 
                 src="https://www.zoracle.xyz/"
                 title="Zoracle"

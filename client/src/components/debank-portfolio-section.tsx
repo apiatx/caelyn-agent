@@ -76,7 +76,7 @@ export function DeBankPortfolioSection({ initialWalletAddress = '' }: DeBankPort
                 </Button>
               )}
             </div>
-            <div className="text-xs text-gray-400 space-y-1">
+            <div className="text-xs text-white/35 space-y-1">
               <div>Your wallet is pre-loaded and ready to track!</div>
               <div className="text-green-400">
                 ✓ Currently tracking: {initialWalletAddress ? initialWalletAddress.slice(0, 10) + '...' : 'No wallet set'}
@@ -255,14 +255,14 @@ export function DeBankPortfolioSection({ initialWalletAddress = '' }: DeBankPort
                       )}
                       <div>
                         <div className="font-medium">{token.symbol}</div>
-                        <div className="text-sm text-gray-400">{token.name}</div>
+                        <div className="text-sm text-white/35">{token.name}</div>
                       </div>
                     </div>
                     <div className="text-right">
                       <div className="font-medium text-green-400">
                         {formatValue(token.value)}
                       </div>
-                      <div className="text-sm text-gray-400">
+                      <div className="text-sm text-white/35">
                         {token.amount.toFixed(4)} @ ${token.price.toFixed(4)}
                       </div>
                     </div>
@@ -279,7 +279,7 @@ export function DeBankPortfolioSection({ initialWalletAddress = '' }: DeBankPort
           <Card className="glass-card">
             <CardContent className="pt-6">
               <div className="text-center space-y-3">
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-white/35">
                   View complete portfolio analysis on external platforms
                 </p>
                 <div className="flex gap-3 justify-center">
@@ -314,7 +314,7 @@ export function DeBankPortfolioSection({ initialWalletAddress = '' }: DeBankPort
       {!currentWallet && (
         <Card className="glass-card">
           <CardContent className="pt-6">
-            <div className="text-center text-gray-400">
+            <div className="text-center text-white/35">
               <Wallet className="h-12 w-12 mx-auto mb-4 opacity-50" />
               <p>Enter a wallet address to view portfolio data from DeBank</p>
             </div>

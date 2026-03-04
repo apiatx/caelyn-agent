@@ -18,7 +18,7 @@ export function LoadingScreen() {
 
 export function SectionLoadingState({ title }: { title?: string }) {
   return (
-    <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+    <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
       <div className="animate-pulse">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-6 h-6 bg-crypto-silver/20 rounded-full"></div>

@@ -28,8 +28,8 @@ function CryptoTickerTape() {
 
 export default function OnchainAlphaPage() {
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
-      <div className="sticky top-0 z-50 border-b border-crypto-silver/20 bg-black/90 backdrop-blur-lg">
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
+      <div className="sticky top-0 z-50 border-b border-white/[0.06] bg-black/90 backdrop-blur-lg">
         <CryptoTickerTape />
       </div>
 

@@ -33,7 +33,7 @@ export function MainLayout({ children }: MainLayoutProps) {
   }, [isMobile, isMobileMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Mobile Overlay */}
       {isMobile && isMobileMenuOpen && (
         <div 

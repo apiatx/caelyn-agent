@@ -10,7 +10,7 @@ import { openSecureLink } from '@/utils/security';
 
 // Glass card component for crypto dashboard
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
@@ -36,7 +36,7 @@ export default function CryptoDashboardSection() {
                 <div className="font-medium text-blue-200 group-hover:text-blue-100 transition-colors">
                   Crypto Market Overview
                 </div>
-                <div className="text-xs text-gray-400 mt-1">
+                <div className="text-xs text-white/35 mt-1">
                   CoinMarketCap Charts
                 </div>
               </div>
@@ -53,7 +53,7 @@ export default function CryptoDashboardSection() {
                 <div className="font-medium text-purple-200 group-hover:text-purple-100 transition-colors">
                   Fear & Greed Index
                 </div>
-                <div className="text-xs text-gray-400 mt-1">
+                <div className="text-xs text-white/35 mt-1">
                   Market Sentiment
                 </div>
               </div>
@@ -70,7 +70,7 @@ export default function CryptoDashboardSection() {
                 <div className="font-medium text-green-200 group-hover:text-green-100 transition-colors">
                   ETF Net Flows
                 </div>
-                <div className="text-xs text-gray-400 mt-1">
+                <div className="text-xs text-white/35 mt-1">
                   Institutional Flow
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function CryptoDashboardSection() {
                 <div className="font-medium text-orange-200 group-hover:text-orange-100 transition-colors">
                   Alt Season Index
                 </div>
-                <div className="text-xs text-gray-400 mt-1">
+                <div className="text-xs text-white/35 mt-1">
                   Altcoin Performance
                 </div>
               </div>
@@ -137,7 +137,7 @@ export default function CryptoDashboardSection() {
           <div className="w-full">
             <iframe
               src="https://www.dlnews.com/"
-              className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[600px] rounded-lg border border-white/[0.06]"
               title="DL News"
               frameBorder="0"
               loading="lazy"
@@ -162,7 +162,7 @@ export default function CryptoDashboardSection() {
           <div className="w-full">
             <iframe
               src="https://www.notifai.news/"
-              className="w-full h-[600px] rounded-lg border border-crypto-silver/20"
+              className="w-full h-[600px] rounded-lg border border-white/[0.06]"
               title="NotifAI News"
               frameBorder="0"
               loading="lazy"
@@ -178,7 +178,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://cointelegraph.com/category/latest-news')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-blue-500/20 hover:border-blue-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -189,7 +189,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://www.coindesk.com/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-orange-500/20 hover:border-orange-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -200,7 +200,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://www.bankless.com/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-purple-500/20 hover:border-purple-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -211,7 +211,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://coingape.com/category/news/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-green-500/20 hover:border-green-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -222,7 +222,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://u.today/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-red-500/20 hover:border-red-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-red-500/20 hover:border-red-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -233,7 +233,7 @@ export default function CryptoDashboardSection() {
             <Button
               variant="outline"
               onClick={() => openInNewTab('https://thedefiant.io/')}
-              className="bg-black/20 border-crypto-silver/20 hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-4 h-auto"
+              className="bg-black/20 border-white/[0.06] hover:bg-indigo-500/20 hover:border-indigo-500/30 text-white justify-start p-4 h-auto"
             >
               <ExternalLink className="w-4 h-4 mr-2" />
               <div className="text-left">
@@ -244,7 +244,7 @@ export default function CryptoDashboardSection() {
           </div>
 
           {/* Crypto Events Calendar Button - moved to bottom of News section */}
-          <div className="mt-6 pt-6 border-t border-crypto-silver/20">
+          <div className="mt-6 pt-6 border-t border-white/[0.06]">
             <button
               onClick={() => openSecureLink('https://coinmarketcal.com/en/')}
               className="bg-gradient-to-br from-crypto-warning/10 to-yellow-600/10 hover:from-crypto-warning/20 hover:to-yellow-600/20 border border-crypto-warning/20 hover:border-crypto-warning/40 rounded-lg p-4 transition-all duration-300 group w-full"
@@ -284,7 +284,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg hover:bg-purple-500/20 transition-colors"
             >
               <h5 className="text-purple-400 font-semibold mb-1 text-sm sm:text-base">NewHedge Bitcoin</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Bitcoin Analytics</p>
+              <p className="text-white/35 text-xs sm:text-sm">Bitcoin Analytics</p>
             </button>
 
             <button
@@ -292,7 +292,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-purple-500/10 border border-purple-500/20 rounded-lg hover:bg-purple-500/20 transition-colors"
             >
               <h5 className="text-purple-400 font-semibold mb-1 text-sm sm:text-base">BitBo Charts</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Crypto Indices</p>
+              <p className="text-white/35 text-xs sm:text-sm">Crypto Indices</p>
             </button>
           </div>
 
@@ -303,7 +303,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-blue-500/10 border border-blue-500/20 rounded-lg hover:bg-blue-500/20 transition-colors"
             >
               <h5 className="text-blue-400 font-semibold mb-1 text-sm sm:text-base">CryptoQuant</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">On-Chain Metrics</p>
+              <p className="text-white/35 text-xs sm:text-sm">On-Chain Metrics</p>
             </button>
 
             <button
@@ -311,7 +311,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg hover:bg-orange-500/20 transition-colors"
             >
               <h5 className="text-orange-400 font-semibold mb-1 text-sm sm:text-base">BitcoinMagazine Indicators</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Bitcoin Analysis</p>
+              <p className="text-white/35 text-xs sm:text-sm">Bitcoin Analysis</p>
             </button>
           </div>
 
@@ -322,7 +322,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-orange-500/10 border border-orange-500/20 rounded-lg hover:bg-orange-500/20 transition-colors"
             >
               <h5 className="text-orange-400 font-semibold mb-1 text-sm sm:text-base">Bitcoin Monthly Returns Heatmap</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Historical performance analysis</p>
+              <p className="text-white/35 text-xs sm:text-sm">Historical performance analysis</p>
             </button>
           </div>
 
@@ -349,7 +349,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-red-500/10 border border-red-500/20 rounded-lg hover:bg-red-500/20 transition-colors"
             >
               <h5 className="text-red-400 font-semibold mb-1 text-sm sm:text-base">Open Interest</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Futures Data</p>
+              <p className="text-white/35 text-xs sm:text-sm">Futures Data</p>
             </button>
           </div>
 
@@ -360,7 +360,7 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-cyan-500/10 border border-cyan-500/20 rounded-lg hover:bg-cyan-500/20 transition-colors"
             >
               <h5 className="text-cyan-400 font-semibold mb-1 text-sm sm:text-base">SoSo Value</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Crypto Index</p>
+              <p className="text-white/35 text-xs sm:text-sm">Crypto Index</p>
             </button>
 
             <button
@@ -368,14 +368,14 @@ export default function CryptoDashboardSection() {
               className="p-3 sm:p-4 bg-indigo-500/10 border border-indigo-500/20 rounded-lg hover:bg-indigo-500/20 transition-colors"
             >
               <h5 className="text-indigo-400 font-semibold mb-1 text-sm sm:text-base">Messari</h5>
-              <p className="text-gray-400 text-xs sm:text-sm">Crypto Research</p>
+              <p className="text-white/35 text-xs sm:text-sm">Crypto Research</p>
             </button>
           </div>
         </div>
       </GlassCard>
 
       {/* Coinglass Bull Market Peak Signals */}
-      <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+      <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
         <div className="flex justify-end p-3">
           <button
             onClick={() => openInNewTab('https://www.coinglass.com/bull-market-peak-signals')}

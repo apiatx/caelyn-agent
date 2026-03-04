@@ -41,10 +41,10 @@ export default function TradePerpsPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -99,7 +99,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <SafeIframe
                     src="https://defillama.com/protocols/derivatives"
                     title="DeFiLlama Derivatives Protocols"
@@ -108,7 +108,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     DeFi derivatives protocols overview • Market analytics and TVL metrics
                   </p>
                 </div>
@@ -125,7 +125,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <iframe
                     {...getSecureIframeProps('https://app.hyperliquid.xyz/trade/HYPE', 'Hyperliquid HYPE Trading')}
                     className="w-full h-[800px] border-0"
@@ -133,7 +133,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Live HYPE trading on Hyperliquid • Real-time orderbook and charts
                   </p>
                 </div>
@@ -150,7 +150,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <SafeIframe
                     src="https://pro.vooi.io/"
                     title="Vooi.io Pro Trading"
@@ -159,7 +159,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Professional perpetual trading on Vooi.io • Advanced trading interface
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <SafeIframe
                     src="https://www.avantisfi.com/trade?asset=BTC-USD"
                     title="Avantisfi Trading Terminal"
@@ -185,7 +185,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     BTC-USD perpetual trading on Avantisfi • Advanced derivatives platform
                   </p>
                 </div>
@@ -229,17 +229,17 @@ export default function TradePerpsPage() {
 
               {/* SuperP - Iframe */}
               <div className="mb-6 mt-6">
-                <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+                <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                   <iframe
                     src="https://noliquidation.superp.xyz/en"
-                    className="w-full h-[500px] sm:h-[600px] lg:h-[800px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[500px] sm:h-[600px] lg:h-[800px] rounded-lg border border-white/[0.06]"
                     title="SuperP"
                     frameBorder="0"
                     scrolling="yes"
                   />
                 </div>
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     No liquidation perpetual futures • SuperP trading platform
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <SafeIframe
                     src="https://uranus.ag/trade/?token=BFgdzMkTPdKKJeTipv2njtDEwhKxkgFueJQfJGt1jups"
                     title="Uranus DEX"
@@ -284,7 +284,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Uranus DEX trading platform • Decentralized exchange for meme tokens
                   </p>
                 </div>
@@ -326,10 +326,10 @@ export default function TradePerpsPage() {
 
               {/* CoinGlass Main Analytics */}
               <div className="mb-6">
-                <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+                <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                   <iframe
                     src="https://www.coinglass.com/"
-                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                     title="CoinGlass"
                     frameBorder="0"
                     scrolling="yes"
@@ -350,7 +350,7 @@ export default function TradePerpsPage() {
                   </a>
                 </div>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
                   <iframe
                     src="https://hyperdash.info/analytics"
                     className="w-full h-[600px] border-0"
@@ -361,7 +361,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Hyperliquid ecosystem analytics • Volume, TVL, and performance metrics
                   </p>
                 </div>
@@ -369,10 +369,10 @@ export default function TradePerpsPage() {
 
               {/* CoinGlass Hyperliquid Whale Tracker */}
               <div className="mt-6">
-                <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+                <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                   <iframe
                     src="https://www.coinglass.com/hyperliquid"
-                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                     title="CoinGlass Hyperliquid"
                     frameBorder="0"
                     scrolling="yes"
@@ -380,7 +380,7 @@ export default function TradePerpsPage() {
                 </div>
                 
                 <div className="mt-4 text-center">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-white/35">
                     Hyperliquid whale tracker • CoinGlass analytics and insights
                   </p>
                 </div>
@@ -388,10 +388,10 @@ export default function TradePerpsPage() {
 
               {/* CoinGlass HL Analytics */}
               <div className="mt-6">
-                <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl overflow-hidden">
+                <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl overflow-hidden">
                   <iframe
                     src="https://www.coinglass.com/hl"
-                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                    className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                     title="CoinGlass HL Analytics"
                     frameBorder="0"
                     scrolling="yes"
@@ -411,9 +411,9 @@ export default function TradePerpsPage() {
                   </span>
                 </h3>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
                   {/* Hyperbot Network Iframe - Moved to Copy Trade Section */}
-                  <div className="mb-6 w-full bg-black/20 border border-crypto-silver/20 rounded-lg p-4 shadow-lg">
+                  <div className="mb-6 w-full bg-black/20 border border-white/[0.06] rounded-lg p-4 shadow-lg">
                     <SafeIframe
                       src="https://hyperbot.network/discover"
                       title="Hyperbot Network Discover"
@@ -424,7 +424,7 @@ export default function TradePerpsPage() {
                   <div className="grid grid-cols-1 gap-4">
                     <button
                       onClick={() => window.open('https://app.hyperliquid.xyz/vaults/0xe11b12a81ad743ae805078b0da61e9166475a829', '_blank')}
-                      className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
+                      className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-purple-500/30 transition-all duration-200 group"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full flex items-center justify-center">
@@ -432,15 +432,15 @@ export default function TradePerpsPage() {
                         </div>
                         <div className="text-left">
                           <h4 className="text-white font-medium text-sm">DegenAI Vault</h4>
-                          <p className="text-gray-400 text-xs">Copy trading vault strategy - 0xe11b12a81ad743ae805078b0da61e9166475a829</p>
+                          <p className="text-white/35 text-xs">Copy trading vault strategy - 0xe11b12a81ad743ae805078b0da61e9166475a829</p>
                         </div>
                       </div>
-                      <div className="w-4 h-4 text-gray-400 group-hover:text-purple-400 transition-colors">→</div>
+                      <div className="w-4 h-4 text-white/35 group-hover:text-purple-400 transition-colors">→</div>
                     </button>
 
                     <button
                       onClick={() => window.open('https://degenai.dev/', '_blank')}
-                      className="flex items-center justify-between p-4 bg-black/20 border border-crypto-silver/20 rounded-lg hover:bg-black/30 hover:border-pink-500/30 transition-all duration-200 group"
+                      className="flex items-center justify-between p-4 bg-black/20 border border-white/[0.06] rounded-lg hover:bg-black/30 hover:border-pink-500/30 transition-all duration-200 group"
                     >
                       <div className="flex items-center gap-3">
                         <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center">
@@ -448,10 +448,10 @@ export default function TradePerpsPage() {
                         </div>
                         <div className="text-left">
                           <h4 className="text-white font-medium text-sm">DegenAI Perps Bot</h4>
-                          <p className="text-gray-400 text-xs">AI-powered perpetual trading bot - Advanced trading automation</p>
+                          <p className="text-white/35 text-xs">AI-powered perpetual trading bot - Advanced trading automation</p>
                         </div>
                       </div>
-                      <div className="w-4 h-4 text-gray-400 group-hover:text-pink-400 transition-colors">→</div>
+                      <div className="w-4 h-4 text-white/35 group-hover:text-pink-400 transition-colors">→</div>
                     </button>
                   </div>
                 </div>
@@ -469,7 +469,7 @@ export default function TradePerpsPage() {
                   </span>
                 </h3>
                 
-                <div className="bg-black/20 border border-crypto-silver/20 rounded-lg p-6">
+                <div className="bg-black/20 border border-white/[0.06] rounded-lg p-6">
                   <div className="grid grid-cols-1 gap-3">
                     <button
                       onClick={() => window.open('https://app.coinmarketman.com/hypertracker', '_blank', 'noopener,noreferrer')}

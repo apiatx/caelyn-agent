@@ -67,7 +67,7 @@ export function CryptoPaymentModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md glass-card-dark border-crypto-silver/30">
+      <DialogContent className="max-w-md glass-card-dark border-white/[0.08]">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-white flex items-center">
             <Wallet className="mr-3 h-6 w-6 text-crypto-warning" />
@@ -103,7 +103,7 @@ export function CryptoPaymentModal({
                     type="text"
                     value={walletAddresses[paymentType]}
                     readOnly
-                    className="flex-1 bg-white/5 border border-crypto-silver/20 rounded-lg px-3 py-2 text-white text-sm font-mono"
+                    className="flex-1 bg-white/5 border border-white/[0.06] rounded-lg px-3 py-2 text-white text-sm font-mono"
                   />
                   <Button
                     variant="ghost"
@@ -170,7 +170,7 @@ export function CryptoPaymentModal({
           )}
 
           {/* Footer */}
-          <div className="flex justify-between items-center pt-4 border-t border-crypto-silver/20">
+          <div className="flex justify-between items-center pt-4 border-t border-white/[0.06]">
             <div className="text-xs text-crypto-silver">
               30-day access • Real-time alerts
             </div>

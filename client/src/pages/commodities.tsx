@@ -38,14 +38,14 @@ const CommoditiesQuotesWidget = memo(function CommoditiesQuotesWidget() {
 
 // Glass card component
 const GlassCard = ({ children, className = "" }: { children: React.ReactNode; className?: string }) => (
-  <Card className={`bg-black/40 backdrop-blur-lg border-crypto-silver/20 ${className}`}>
+  <Card className={`bg-black/40 backdrop-blur-lg border-white/[0.06] ${className}`}>
     {children}
   </Card>
 );
 
 export default function CommoditiesPage() {
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center relative">
@@ -70,14 +70,14 @@ export default function CommoditiesPage() {
       <main className="max-w-[95vw] mx-auto px-2 sm:px-3 py-4">
         <div className="space-y-6">
 
-          <div className="w-full h-[500px] rounded-lg overflow-hidden border border-crypto-silver/20">
+          <div className="w-full h-[500px] rounded-lg overflow-hidden border border-white/[0.06]">
             <CommoditiesQuotesWidget />
           </div>
 
-          <div className="w-full rounded-lg overflow-hidden border border-crypto-silver/20">
+          <div className="w-full rounded-lg overflow-hidden border border-white/[0.06]">
               <iframe
                 src="https://www.juniorminingnetwork.com/commodity-charts.html"
-                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                 title="Junior Mining Network Commodity Charts"
                 frameBorder="0"
                 loading="eager"
@@ -86,10 +86,10 @@ export default function CommoditiesPage() {
               />
           </div>
 
-          <div className="w-full rounded-lg overflow-hidden border border-crypto-silver/20">
+          <div className="w-full rounded-lg overflow-hidden border border-white/[0.06]">
               <iframe
                 src="https://sprottetfs.com/"
-                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-crypto-silver/20"
+                className="w-full h-[500px] sm:h-[600px] lg:h-[700px] rounded-lg border border-white/[0.06]"
                 title="Sprott ETFs"
                 loading="eager"
                 referrerPolicy="no-referrer"

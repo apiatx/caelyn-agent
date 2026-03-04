@@ -221,7 +221,7 @@ function SaveTemplateModal({ onSave, onClose }: { onSave: (name: string) => void
   return (
     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
-      <div className="relative bg-[#0c0c0f] border border-white/10 rounded-xl p-5 w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
+      <div className="relative bg-[#060709] border border-white/10 rounded-xl p-5 w-full max-w-sm" onClick={(e) => e.stopPropagation()}>
         <h3 className="text-sm font-bold text-white mb-3">Save as Template</h3>
         <input
           type="text" value={name} onChange={(e) => setName(e.target.value)}
@@ -236,7 +236,7 @@ function SaveTemplateModal({ onSave, onClose }: { onSave: (name: string) => void
             onClick={() => name.trim() && onSave(name.trim())}
             disabled={!name.trim()}
             className="text-xs text-white px-3 py-1.5 rounded-lg disabled:opacity-30"
-            style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)" }}
+            style={{ background: "linear-gradient(135deg, #2090d0, #5cc8f0)" }}
           >Save</Button>
         </div>
       </div>
@@ -393,13 +393,13 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
 
       {/* Modal */}
       <div
-        className="relative bg-[#0a0a0e] border border-white/[0.08] rounded-2xl w-full max-w-[900px] max-h-[90vh] flex flex-col shadow-2xl"
+        className="relative bg-[#060709] border border-white/[0.08] rounded-2xl w-full max-w-[900px] max-h-[90vh] flex flex-col shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/[0.06] flex-shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center">
+            <div className="w-9 h-9 bg-gradient-to-br from-[#2090d0] to-[#5cc8f0] rounded-xl flex items-center justify-center">
               <Settings className="w-4.5 h-4.5 text-white" />
             </div>
             <div>
@@ -633,7 +633,7 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
             onClick={handleSave}
             disabled={saving || loading}
             className="text-white text-sm px-5 py-2.5 rounded-lg transition-all disabled:opacity-40 flex items-center gap-2"
-            style={{ background: "linear-gradient(135deg, #3b82f6, #6366f1)" }}
+            style={{ background: "linear-gradient(135deg, #2090d0, #5cc8f0)" }}
           >
             {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
             Save Settings
@@ -651,7 +651,7 @@ export function SettingsModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
 // Keep default export for backward compatibility during transition
 export default function SettingsPage() {
   return (
-    <div className="min-h-screen text-white flex items-center justify-center" style={{ background: "linear-gradient(135deg, hsl(0,0%,0%) 0%, hsl(0,0%,10%) 50%, hsl(0,0%,0%) 100%)" }}>
+    <div className="min-h-screen text-white flex items-center justify-center" style={{ background: '#050608' }}>
       <p className="text-white/40 text-sm">Settings have moved — use the gear icon in the sidebar.</p>
     </div>
   );

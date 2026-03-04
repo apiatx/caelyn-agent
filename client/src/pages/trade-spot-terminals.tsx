@@ -23,10 +23,10 @@ export default function TradeSpotTerminalsPage() {
   const headerOpacity = useScrollFade(30, 120);
 
   return (
-    <div className="min-h-screen text-white" style={{background: 'linear-gradient(135deg, hsl(0, 0%, 0%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 0%) 100%)'}}>
+    <div className="min-h-screen text-white" style={{ background: '#050608' }}>
       {/* Header */}
       <header 
-        className="glass-card-dark border-b border-crypto-silver/20 sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
+        className="glass-card-dark border-b border-white/[0.06] sticky top-0 z-50 transition-opacity duration-300 relative overflow-hidden" 
         style={{ opacity: headerOpacity, pointerEvents: headerOpacity < 0.1 ? 'none' : 'auto' }}
       >
         {/* Background Image */}
@@ -90,7 +90,7 @@ export default function TradeSpotTerminalsPage() {
               {/* TabTrader Terminal */}
               <iframe
                 src="https://app.tabtrader.com/trading?list=Spot&market=BINANCE&pair=BTCUSDT"
-                className="w-full h-[600px] rounded-lg border border-crypto-silver/20 mb-6"
+                className="w-full h-[600px] rounded-lg border border-white/[0.06] mb-6"
                 title="TabTrader Terminal"
                 frameBorder="0"
                 loading="lazy"
@@ -122,42 +122,42 @@ export default function TradeSpotTerminalsPage() {
                 <Button
                   variant="outline"
                   onClick={() => openInNewTab('https://app.definitive.fi/0x9FDBdA0A5e284c32744D2f17Ee5c74B284993463/hyperevm')}
-                  className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+                  className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                 >
                   <div className="text-center">
                     <div className="font-bold text-base flex items-center justify-center">
                       <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                       Definitive Edge
                     </div>
-                    <div className="text-sm text-gray-300">Trade any token, on any chain</div>
+                    <div className="text-sm text-white/45">Trade any token, on any chain</div>
                   </div>
                 </Button>
 
                 <Button
                   variant="outline"
                   onClick={() => openInNewTab('https://universalx.app/home')}
-                  className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+                  className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                 >
                   <div className="text-center">
                     <div className="font-bold text-base flex items-center justify-center">
                       <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                       UniversalX
                     </div>
-                    <div className="text-sm text-gray-300">Trade any token, on any chain</div>
+                    <div className="text-sm text-white/45">Trade any token, on any chain</div>
                   </div>
                 </Button>
 
                 <Button
                   variant="outline"
                   onClick={() => openInNewTab('https://o1.exchange/')}
-                  className="group bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+                  className="group bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                 >
                   <div className="text-center">
                     <div className="font-bold text-base flex items-center justify-center">
                       <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                       O1 Exchange
                     </div>
-                    <div className="text-sm text-gray-300">Advanced trading on Base and Solana</div>
+                    <div className="text-sm text-white/45">Advanced trading on Base and Solana</div>
                   </div>
                 </Button>
 
@@ -168,7 +168,7 @@ export default function TradeSpotTerminalsPage() {
                 <Button
                   variant="outline"
                   onClick={() => openInNewTab('https://ave.ai/')}
-                  className="group w-full bg-black/20 border-crypto-silver/20 hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
+                  className="group w-full bg-black/20 border-white/[0.06] hover:bg-gray-500/20 hover:border-gray-500/30 text-white justify-center p-5 h-auto shadow-lg hover:shadow-gray-500/20 transform hover:scale-105 transition-all duration-300 backdrop-blur-sm"
                   data-testid="button-ave-ai"
                 >
                   <div className="text-center">
@@ -176,7 +176,7 @@ export default function TradeSpotTerminalsPage() {
                       <ArrowLeftRight className="w-5 h-5 mr-2 group-hover:rotate-180 transition-transform duration-300" />
                       Ave.ai
                     </div>
-                    <div className="text-sm text-gray-300">AI-powered multi-chain trading terminal</div>
+                    <div className="text-sm text-white/45">AI-powered multi-chain trading terminal</div>
                   </div>
                 </Button>
               </div>

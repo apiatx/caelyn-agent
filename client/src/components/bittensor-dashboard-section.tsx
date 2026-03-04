@@ -27,7 +27,7 @@ export default function BittensorDashboardSection() {
             </a>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <iframe
               src="https://www.tao.bot/explore"
               className="w-full h-[600px] border-0"
@@ -55,7 +55,7 @@ export default function BittensorDashboardSection() {
                 <span className="text-3xl font-bold text-orange-400">TS</span>
               </div>
               <h3 className="text-xl font-bold text-white">TaoStats</h3>
-              <p className="text-sm text-gray-400">Bittensor network analytics</p>
+              <p className="text-sm text-white/35">Bittensor network analytics</p>
             </div>
             <div className="absolute top-3 right-3">
               <ExternalLink className="w-4 h-4 text-gray-500 group-hover:text-orange-400 transition-colors" />
@@ -76,7 +76,7 @@ export default function BittensorDashboardSection() {
               <p className="text-sm text-gray-600">Explorer & analytics</p>
             </div>
             <div className="absolute top-3 right-3">
-              <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-cyan-500 transition-colors" />
+              <ExternalLink className="w-4 h-4 text-white/35 group-hover:text-cyan-500 transition-colors" />
             </div>
           </button>
 
@@ -114,7 +114,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taotensorlaw.com/"
                 className="w-full h-[600px] border-0"
@@ -143,7 +143,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taomarketcap.com/blockchain/accounts"
                 className="w-full h-[600px] border-0"
@@ -173,7 +173,7 @@ export default function BittensorDashboardSection() {
             </a>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <iframe
               src="https://www.taoyield.com/"
               className="w-full h-[600px] border-0"
@@ -204,7 +204,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taorevenue.com/"
                 className="w-full h-[600px] border-0"
@@ -233,7 +233,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://backprop.finance/screener/bubbles"
                 className="w-full h-[600px] border-0"
@@ -265,7 +265,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taotrack.com/simulator"
                 className="w-full h-[600px] border-0"
@@ -294,7 +294,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taocagr.com/"
                 className="w-full h-[600px] border-0"
@@ -324,7 +324,7 @@ export default function BittensorDashboardSection() {
             </a>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <iframe
               src="https://taogalaxy.com/app"
               className="w-full h-[600px] border-0"
@@ -353,7 +353,7 @@ export default function BittensorDashboardSection() {
             </a>
           </div>
           
-          <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+          <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
             <iframe
               src="https://subnetalpha.ai/"
               className="w-full h-[600px] border-0"
@@ -384,7 +384,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://taobridge.xyz/"
                 className="w-full h-[600px] border-0"
@@ -413,7 +413,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://www.taofi.com/swap"
                 className="w-full h-[600px] border-0"
@@ -442,7 +442,7 @@ export default function BittensorDashboardSection() {
               </a>
             </div>
             
-            <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+            <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
               <iframe
                 src="https://bridge.voidai.com/bridge-chains"
                 className="w-full h-[600px] border-0"
@@ -460,7 +460,7 @@ export default function BittensorDashboardSection() {
         </div>
 
         {/* TaoHub Portfolio */}
-        <div className="bg-black/20 border border-crypto-silver/20 rounded-lg overflow-hidden">
+        <div className="bg-black/20 border border-white/[0.06] rounded-lg overflow-hidden">
           <iframe
             src="https://www.taohub.info/"
             className="w-full h-[600px] border-0"

@@ -98,7 +98,7 @@ const TopDexGainers = () => {
 
   if (error) {
     return (
-      <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+      <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <div className="flex items-center space-x-2">
@@ -120,7 +120,7 @@ const TopDexGainers = () => {
 
   if (isLoading) {
     return (
-      <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+      <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
         <div className="flex items-center justify-between mb-4">
           <div>
             <div className="flex items-center space-x-2">
@@ -139,7 +139,7 @@ const TopDexGainers = () => {
   }
 
   return (
-    <div className="bg-black/40 backdrop-blur-lg border border-crypto-silver/20 rounded-xl p-6">
+    <div className="bg-black/40 backdrop-blur-lg border border-white/[0.06] rounded-xl p-6">
       <div className="flex items-center justify-between mb-4">
         <div>
           <div className="flex items-center space-x-2">
