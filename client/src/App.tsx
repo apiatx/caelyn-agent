@@ -27,6 +27,7 @@ import StocksPortfolioPage from "@/pages/stocks-portfolio";
 import StocksFundamentalsPage from "@/pages/stocks-fundamentals";
 import StocksScreeningPage from "@/pages/stocks-screening";
 import StocksEarningsCalendarPage from "@/pages/stocks-earnings-calendar";
+import SettingsPage from "@/pages/settings";
 import CryptoStonks from "@/pages/crypto-stonks";
 import CommoditiesPage from "@/pages/commodities";
 import RWAPage from "@/pages/rwa";
@@ -132,6 +133,7 @@ function Router() {
       <Route path="/predict" component={PredictPage} />
       <Route path="/app/portfolio" component={PortfolioPage} />
       <Route path="/portfolio" component={PortfolioPage} />
+      <Route path="/app/settings" component={SettingsPage} />
       <Route path="/app/about" component={AboutPage} />
       <Route path="/about" component={AboutPage} />
       <Route component={NotFound} />

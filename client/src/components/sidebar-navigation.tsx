@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Activity, BarChart3, TrendingUp, ChartLine, Brain, Zap, DollarSign, Building2, Layers, Coins, ChevronRight, ChevronDown, ChevronLeft, Wallet, Users, MessageSquare, Rocket, Globe, ArrowLeftRight, Search, Menu, X, Gamepad2, Gem, CalendarDays } from "lucide-react";
+import { Activity, BarChart3, TrendingUp, ChartLine, Brain, Zap, DollarSign, Building2, Layers, Coins, ChevronRight, ChevronDown, ChevronLeft, Wallet, Users, MessageSquare, Rocket, Globe, ArrowLeftRight, Search, Menu, X, Gamepad2, Gem, CalendarDays, Settings } from "lucide-react";
 import { useLocation } from "wouter";
 import caelynLogo from "@assets/ChatGPT_Image_Feb_20,_2026,_01_10_21_AM_1771571543846.png";
 
@@ -337,6 +337,12 @@ export function SidebarNavigation({ className = "", isCollapsed, isMobile = fals
       label: 'Social',
       icon: <MessageSquare className="w-4 h-4" />,
       path: '/app/onchain/social'
+    },
+    {
+      id: 'settings',
+      label: 'Settings',
+      icon: <Settings className="w-4 h-4" />,
+      path: '/app/settings'
     },
     {
       id: 'about',
