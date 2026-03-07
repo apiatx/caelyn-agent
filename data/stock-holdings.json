@@ -1,13 +1,5 @@
 [
   {
-    "id": "mlr2zp9mlz8kv",
-    "ticker": "ATOM",
-    "shares": 341,
-    "avgCost": 5.8,
-    "addedAt": "2026-02-17T20:54:10.858Z",
-    "assetType": "stock"
-  },
-  {
     "id": "mltv97dtmiczq",
     "ticker": "NVDA",
     "shares": 10,
