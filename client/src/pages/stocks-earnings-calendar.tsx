@@ -1952,6 +1952,12 @@ function EarningsAgent() {
         ...prev,
         { role: "assistant", content: analysisText, timestamp: Date.now() },
       ]);
+      // Auto-save to history (fire-and-forget)
+      fetch(`${AGENT_BACKEND_URL}/api/history`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-API-Key": AGENT_API_KEY },
+        body: JSON.stringify({ category: "earnings_agent", intent: "earnings_agent", content: analysisText }),
+      }).catch(() => {});
     } catch (err) {
       console.error("[EARNINGS_AGENT]", err);
       setMessages((prev) => [

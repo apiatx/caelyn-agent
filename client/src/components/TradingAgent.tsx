@@ -282,9 +282,7 @@ export default function TradingAgent() {
   const [screenerSortCol, setScreenerSortCol] = useState('');
   const [screenerSortAsc, setScreenerSortAsc] = useState(true);
   const [groupExpanded, setGroupExpanded] = useState<Record<string, boolean>>({ g1: true, g2: true, g3: true, g4: true, g5: true });
-  const [savedChats, setSavedChats] = useState<Array<{id: number, title: string, panels: Panel[], conversationId: string | null}>>(() => {
-    try { const s = sessionStorage.getItem('caelyn_history'); return s ? JSON.parse(s) : []; } catch { return []; }
-  });
+  const [recentHistory, setRecentHistory] = useState<Array<{key: string, category: string, intent: string, id: string, timestamp: number, content: string, display_type: string | null}>>([]);
   const [leftRailSearch, setLeftRailSearch] = useState('');
   const [expandedRiskIds, setExpandedRiskIds] = useState<Set<string>>(new Set());
   const [leftRailOpen, setLeftRailOpen] = useState(false);
@@ -313,8 +311,54 @@ export default function TradingAgent() {
   }, [conversationId]);
 
   useEffect(() => {
-    try { sessionStorage.setItem('caelyn_history', JSON.stringify(savedChats)); } catch {}
-  }, [savedChats]);
+    fetchRecentHistory();
+  }, []);
+
+  function fetchRecentHistory() {
+    fetch(`${AGENT_BACKEND_URL}/api/history`)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return;
+        const flat: typeof recentHistory = [];
+        for (const [key, bucket] of Object.entries(data as Record<string, any>)) {
+          for (const entry of (bucket as any).entries || []) {
+            flat.push({ key, category: (bucket as any).category, intent: (bucket as any).intent, ...entry });
+          }
+        }
+        flat.sort((a, b) => b.timestamp - a.timestamp);
+        setRecentHistory(flat.slice(0, 5));
+      })
+      .catch(() => {});
+  }
+
+  function humanReadableLabel(intent: string): string {
+    const known: Record<string, string> = {
+      daily_briefing: 'Daily Briefing', best_trades: 'Best Trades', macro_outlook: 'Macro Overview',
+      news_leaders: 'Headlines', catalyst_scan: 'Upcoming Catalysts', cross_asset_trending: 'Trending Now',
+      social_momentum_scan: 'Social Momentum', sector_rotation: 'Sector Rotation',
+      long_term_conviction: 'Best Investments', microcap_asymmetry: 'Asymmetric R:R',
+      microcap_spec: 'Small Cap Spec', short_squeeze_scan: 'Short Squeeze',
+      fundamental_leaders: 'Fundamental Leaders', fundamental_acceleration: 'Rapidly Improving',
+      earnings_watch: 'Earnings Watch', insider_buying: 'Insider Buying',
+      earnings_agent: 'Earnings Agent', prediction_markets: 'Prediction Markets',
+      news_intelligence: 'NotifAI', freeform_query: 'Terminal Query',
+    };
+    return known[intent] || intent.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  }
+
+  function loadRecentEntry(entry: typeof recentHistory[0]) {
+    let parsed: any = null;
+    try { parsed = JSON.parse(entry.content); } catch { /* plain text */ }
+    const responseText = parsed?.analysis || parsed?.structured?.message || parsed?.message || entry.content;
+    const title = parsed?._user_query ? (parsed._user_query as string).slice(0, 60) : humanReadableLabel(entry.intent);
+    const newPanel: Panel = {
+      id: Date.now(), title,
+      userQuery: parsed?._user_query || '',
+      data: { role: 'assistant', content: responseText, parsed },
+      timestamp: entry.timestamp * 1000,
+    };
+    setPanels(prev => [...prev, newPanel]);
+  }
 
   function newChat() {
     // Abort any in-flight request immediately
@@ -327,26 +371,11 @@ export default function TradingAgent() {
     setPrompt('');
     setError(null);
     setExpandedTicker(null);
-    // Save current panels to history (do NOT clear them — panels stay on screen)
-    if (panels.length > 0) {
-      const title = panels[0]?.title || 'Chat';
-      setSavedChats(prev => [{id: Date.now(), title, panels: [...panels], conversationId}, ...prev].slice(0, 20));
-    }
     setPanels([]);
     setConversationId(null);
   }
 
-  function loadChat(chat: typeof savedChats[0]) {
-    setPanels(chat.panels);
-    setConversationId(chat.conversationId);
-    setExpandedTicker(null);
-    setError(null);
-    setRightSidebarOpen(false);
-  }
 
-  function deleteChat(id: number) {
-    setSavedChats(prev => prev.filter(c => c.id !== id));
-  }
 
   function closePanel(id: number) {
     setPanels(prev => prev.filter(p => p.id !== id));
@@ -356,14 +385,6 @@ export default function TradingAgent() {
     setPanels(prev => prev.map(p => p.id === id ? { ...p, pinned: !p.pinned } : p));
   }
 
-  function saveToHistory(panelId: number) {
-    const panel = panels.find(p => p.id === panelId);
-    if (!panel) return;
-    const already = savedChats.some(c => c.id === panelId);
-    if (already) return;
-    const title = panel.title || 'Chat';
-    setSavedChats(prev => [{id: panelId, title, panels: [panel], conversationId: panel.conversationId || conversationId}, ...prev].slice(0, 20));
-  }
 
   async function sendFollowUp(panelId: number, followUpText: string) {
     const panel = panels.find(p => p.id === panelId);
@@ -556,10 +577,15 @@ export default function TradingAgent() {
         thread: [],
       };
       setPanels(prev => [...prev, newPanel]);
-      // Auto-save to prompt history for preset intents
-      if (presetIntent && !data.error) {
+      // Auto-save ALL successful responses to history
+      if (presetIntent) {
         saveToPromptHistory(presetIntent, raw, data.display_type || data.type);
+      } else if (queryText) {
+        let contentToSave: string;
+        try { const p = JSON.parse(raw); contentToSave = JSON.stringify({ _user_query: queryText, ...p }); } catch { contentToSave = raw; }
+        fetch(`${AGENT_BACKEND_URL}/api/history`, { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-API-Key': AGENT_API_KEY }, body: JSON.stringify({ category: 'terminal', intent: 'freeform_query', content: contentToSave }) }).catch(e => console.error('[HISTORY_SAVE]', e));
       }
+      setTimeout(fetchRecentHistory, 1500);
     } catch (err: any) {
       // User-initiated abort (New button) — exit silently, no error panel
       if (err?.name === 'AbortError') {
@@ -2610,7 +2636,6 @@ export default function TradingAgent() {
             )}
 
             {panels.map(panel => {
-              const isSaved = savedChats.some(c => c.id === panel.id);
               return (
               <div key={panel.id} style={{ marginBottom:14, border:`1px solid ${panel.pinned ? C.blue+'40' : C.border}`, borderRadius:10, background:C.card, overflow:'hidden', boxShadow:'0 2px 8px rgba(0,0,0,0.2)' }}>
                 <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', padding:'10px 14px', background:`${C.bg}cc`, borderBottom:`1px solid ${C.border}` }}>
@@ -2619,7 +2644,6 @@ export default function TradingAgent() {
                     <span style={{ color:C.dim, fontSize:9, fontFamily:font, flexShrink:0 }}>{new Date(panel.timestamp).toLocaleTimeString()}</span>
                   </div>
                   <div style={{ display:'flex', gap:4, flexShrink:0 }}>
-                    <button className="panel-btn" onClick={(e) => { e.stopPropagation(); saveToHistory(panel.id); }} style={{ width:26, height:26, display:'flex', alignItems:'center', justifyContent:'center', background:'transparent', border:`1px solid ${isSaved ? C.gold : C.border}`, borderRadius:6, color:isSaved ? C.gold : C.dim, fontSize:10, cursor:'pointer', fontFamily:font }} title={isSaved ? 'Saved' : 'Save to History'}>{isSaved ? '★' : '☆'}</button>
                     <button className="panel-btn" onClick={(e) => { e.stopPropagation(); togglePinPanel(panel.id); }} style={{ width:26, height:26, display:'flex', alignItems:'center', justifyContent:'center', background:'transparent', border:`1px solid ${panel.pinned ? C.blue : C.border}`, borderRadius:6, color:panel.pinned ? C.blue : C.dim, fontSize:10, cursor:'pointer', fontFamily:font }} title="Pin">📌</button>
                     <button className="panel-btn" onClick={(e) => { e.stopPropagation(); closePanel(panel.id); }} style={{ width:26, height:26, display:'flex', alignItems:'center', justifyContent:'center', background:'transparent', border:`1px solid ${C.border}`, borderRadius:6, color:C.dim, fontSize:12, cursor:'pointer', fontFamily:font }} title="Close">x</button>
                   </div>
@@ -2711,19 +2735,25 @@ export default function TradingAgent() {
               </div>
             </div>
 
-            {/* Chat History */}
+            {/* Recent */}
             <div style={{ marginBottom:12 }}>
-              <div style={{ color:C.bright, fontSize:10, fontWeight:700, fontFamily:font, textTransform:'uppercase', letterSpacing:'0.04em', marginBottom:6, padding:'0 4px' }}>History</div>
-              {savedChats.length === 0 ? (
-                <div style={{ color:C.dim, fontSize:10, fontFamily:font, padding:'8px 4px' }}>No saved chats yet</div>
+              <div style={{ color:C.bright, fontSize:10, fontWeight:700, fontFamily:font, textTransform:'uppercase', letterSpacing:'0.04em', marginBottom:6, padding:'0 4px' }}>Recent</div>
+              {recentHistory.length === 0 ? (
+                <div style={{ color:C.dim, fontSize:10, fontFamily:font, padding:'8px 4px' }}>No history yet</div>
               ) : (
                 <div style={{ display:'flex', flexDirection:'column', gap:2 }}>
-                  {savedChats.map(chat => (
-                    <div key={chat.id} style={{ display:'flex', alignItems:'center', gap:4, padding:'5px 6px', borderRadius:2, border:`1px solid ${C.border}`, background:C.bg }}>
-                      <div className="rail-item" onClick={() => loadChat(chat)} style={{ flex:1, cursor:'pointer', color:C.dim, fontSize:10, fontFamily:sansFont, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{chat.title}</div>
-                      <button onClick={() => deleteChat(chat.id)} style={{ background:'transparent', border:'none', color:C.dim, cursor:'pointer', fontSize:10, padding:0, lineHeight:1 }}>×</button>
-                    </div>
-                  ))}
+                  {recentHistory.map((entry, i) => {
+                    let displayLabel = humanReadableLabel(entry.intent);
+                    try { const p = JSON.parse(entry.content); if (p?._user_query) displayLabel = p._user_query; } catch {}
+                    const truncated = displayLabel.length > 60 ? displayLabel.slice(0, 57) + '...' : displayLabel;
+                    const timeStr = new Date(entry.timestamp * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                    return (
+                      <div key={`${entry.key}-${i}`} className="rail-item" onClick={() => loadRecentEntry(entry)} style={{ cursor:'pointer', padding:'5px 6px', borderRadius:2, border:`1px solid ${C.border}`, background:C.bg }}>
+                        <div style={{ color:C.dim, fontSize:10, fontFamily:sansFont, overflow:'hidden', textOverflow:'ellipsis', whiteSpace:'nowrap' }}>{truncated}</div>
+                        <div style={{ color:C.dim, fontSize:8, fontFamily:font, marginTop:1 }}>{timeStr}</div>
+                      </div>
+                    );
+                  })}
                 </div>
               )}
             </div>

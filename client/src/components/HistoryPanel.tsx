@@ -3,6 +3,19 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 const AGENT_BACKEND_URL = 'https://fast-api-server-trading-agent-aidanpilon.replit.app';
 const AGENT_API_KEY = 'hippo_ak_7f3x9k2m4p8q1w5t';
 
+// Human-readable category title map (used for both predefined and dynamic categories)
+const CATEGORY_TITLE_MAP: Record<string, string> = {
+  overview: 'Overview', trades: 'Trades & Ideas', fundamental: 'Fundamental',
+  sectors: 'Sectors', ta_screener: 'TA Screener',
+  earnings_agent: 'Earnings Agent', prediction_markets: 'Prediction Markets',
+  news_intelligence: 'NotifAI', terminal: 'Terminal',
+};
+
+function categoryTitle(id: string): string {
+  if (CATEGORY_TITLE_MAP[id]) return CATEGORY_TITLE_MAP[id];
+  return id.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
 // Must match TradingAgent.tsx promptGroups exactly
 const CATEGORIES: { id: string; title: string; intents: { label: string; intent: string }[] }[] = [
   { id: 'overview', title: 'Overview', intents: [
@@ -60,6 +73,18 @@ const CATEGORIES: { id: string; title: string; intents: { label: string; intent:
     { label: 'Crossover Signals', intent: 'technical_crossovers' },
     { label: 'Momentum Shifts', intent: 'momentum_shift_scan' },
     { label: 'Volume & Movers', intent: 'volume_movers_scan' },
+  ]},
+  { id: 'earnings_agent', title: 'Earnings Agent', intents: [
+    { label: 'Earnings Agent', intent: 'earnings_agent' },
+  ]},
+  { id: 'prediction_markets', title: 'Prediction Markets', intents: [
+    { label: 'Prediction Markets', intent: 'prediction_markets' },
+  ]},
+  { id: 'news_intelligence', title: 'NotifAI', intents: [
+    { label: 'NotifAI', intent: 'news_intelligence' },
+  ]},
+  { id: 'terminal', title: 'Terminal', intents: [
+    { label: 'Terminal Query', intent: 'freeform_query' },
   ]},
 ];
 
@@ -216,8 +241,9 @@ export function HistoryPanel({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   function renderBreadcrumb() {
     if (view.level === 'categories') return null;
     const cat = CATEGORIES.find(c => c.id === (view as any).categoryId);
+    const catTitle = cat?.title || categoryTitle((view as any).categoryId || '');
     const parts: string[] = [];
-    if (cat) parts.push(cat.title);
+    if ((view as any).categoryId) parts.push(catTitle);
     if (view.level === 'entries' || view.level === 'detail') parts.push(view.label);
     if (view.level === 'detail') parts.push(view.entryLabel);
 
@@ -234,6 +260,17 @@ export function HistoryPanel({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   }
 
   function renderCategories() {
+    // Collect any dynamic categories from API not already in CATEGORIES
+    const knownCatIds = new Set(CATEGORIES.map(c => c.id));
+    const dynamicCats: { id: string; title: string; count: number }[] = [];
+    for (const key of Object.keys(history)) {
+      const catId = key.split('::')[0];
+      if (!knownCatIds.has(catId)) {
+        const existing = dynamicCats.find(d => d.id === catId);
+        const entries = history[key]?.entries?.length || 0;
+        if (existing) { existing.count += entries; } else { dynamicCats.push({ id: catId, title: categoryTitle(catId), count: entries }); }
+      }
+    }
     return (
       <div style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: 4 }}>
         {CATEGORIES.map(cat => {
@@ -262,6 +299,29 @@ export function HistoryPanel({ isOpen, onClose }: { isOpen: boolean; onClose: ()
             </button>
           );
         })}
+        {dynamicCats.map(cat => (
+          <button
+            key={cat.id}
+            onClick={() => setView({ level: 'intents', categoryId: cat.id })}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+              padding: '10px 12px', background: C.card, border: `1px solid ${C.border}`,
+              borderRadius: 8, cursor: 'pointer', transition: 'all 0.15s', width: '100%',
+              textAlign: 'left',
+            }}
+            className="panel-btn"
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ fontSize: 7, color: C.dim }}>&#9654;</span>
+              <span style={{ color: C.bright, fontSize: 12, fontWeight: 600, fontFamily: sansFont }}>{cat.title}</span>
+            </div>
+            {cat.count > 0 && (
+              <span style={{ color: C.blue, fontSize: 10, fontWeight: 600, fontFamily: font, padding: '2px 8px', background: `${C.blue}12`, borderRadius: 10 }}>
+                {cat.count}
+              </span>
+            )}
+          </button>
+        ))}
       </div>
     );
   }
@@ -269,18 +329,24 @@ export function HistoryPanel({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   function renderIntents() {
     if (view.level !== 'intents') return null;
     const cat = CATEGORIES.find(c => c.id === view.categoryId);
-    if (!cat) return null;
+    // For dynamic categories not in CATEGORIES, build intents from history data
+    const intents = cat ? cat.intents : Object.keys(history)
+      .filter(key => key.startsWith(`${view.categoryId}::`))
+      .map(key => {
+        const intent = key.split('::')[1];
+        return { label: categoryTitle(intent), intent };
+      });
 
     return (
       <div style={{ padding: '8px 12px', display: 'flex', flexDirection: 'column', gap: 3 }}>
-        {cat.intents.map(i => {
-          const entries = getEntriesForIntent(cat.id, i.intent);
+        {intents.map(i => {
+          const entries = getEntriesForIntent(view.categoryId, i.intent);
           return (
             <button
               key={i.intent}
               onClick={() => {
                 if (entries.length > 0) {
-                  setView({ level: 'entries', categoryId: cat.id, intent: i.intent, label: i.label });
+                  setView({ level: 'entries', categoryId: view.categoryId, intent: i.intent, label: i.label });
                 }
               }}
               style={{

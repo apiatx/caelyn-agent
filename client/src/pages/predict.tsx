@@ -772,6 +772,12 @@ function PredictionAgent() {
         ...prev,
         { role: "assistant", content: analysisText, timestamp: Date.now() },
       ]);
+      // Auto-save to history (fire-and-forget)
+      fetch(`${AGENT_BACKEND_URL}/api/history`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "X-API-Key": AGENT_API_KEY },
+        body: JSON.stringify({ category: "prediction_markets", intent: "prediction_markets", content: analysisText }),
+      }).catch(() => {});
     } catch (err) {
       console.error("[PREDICT_AGENT]", err);
       setMessages((prev) => [
