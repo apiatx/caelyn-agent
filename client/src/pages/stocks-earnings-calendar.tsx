@@ -3,6 +3,46 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Loader2, Sparkles, Calendar, ChevronLeft, ChevronRight, CalendarDays, X, Clock, Send, MessageSquare } from "lucide-react";
 
+// ─── DATA FLOW AUDIT (March 2026) ─────────────────────────────
+//
+// API CALLS ON PAGE LOAD:
+//   1. Polymarket Gamma API (free, no key) — fetch 50 earnings events
+//   2. Finnhub /earnings_calendar (free tier, included in API key) — current week
+//   Both are lightweight list calls, no per-ticker enrichment.
+//
+// API CALLS ON SCROLL:
+//   None. The entry list is paginated in batches of 15 (render-only, no API calls).
+//
+// API CALLS ON CLICK (per-ticker detail):
+//   1. Finnhub company_profile (24hr cache) — name, sector, market_cap, logo
+//   2. Finnhub earnings_surprises (1hr cache) — past 4 quarters beat/miss
+//   3. Finnhub earnings_calendar per-ticker (no cache) — upcoming dates
+//   4. Finnhub recommendation_trends (10min cache) — analyst buy/hold/sell
+//   5. Finnhub quote (1min cache) — current price
+//   6. Finnhub company_news (no cache) — recent articles
+//   7. SEC EDGAR XBRL (free, 6hr cache) — revenue, financials
+//   Total: ~7 Finnhub calls + 1-2 EDGAR calls per click (all free tier).
+//
+// PERPLEXITY / LLM CALLS:
+//   NONE. Zero Perplexity, zero LLM calls anywhere in this flow.
+//   News sentiment is a simple keyword heuristic (backend lines 713-719).
+//   news_summary field exists but is always empty string — no LLM generates it.
+//
+// RATE LIMITS:
+//   /api/earnings/calendar: 10/minute (slowapi)
+//   /api/earnings/detail:   30/minute (slowapi)
+//   Finnhub free tier: 60 calls/minute (shared across all endpoints)
+//   SEC EDGAR: Token bucket 2 req/sec, circuit breaker on 429
+//
+// CACHING (backend in-memory TTL):
+//   Calendar response: 5 min
+//   Detail response:   10 min
+//   Company profile:   24 hr
+//   Earnings history:  1 hr
+//   EDGAR financials:  6 hr
+//   EDGAR CIK map:     7 days
+// ───────────────────────────────────────────────────────────────
+
 // ─── Constants ────────────────────────────────────────────────────
 const AGENT_BACKEND_URL = "https://fast-api-server-trading-agent-aidanpilon.replit.app";
 const AGENT_API_KEY = "hippo_ak_7f3x9k2m4p8q1w5t";
@@ -818,29 +858,30 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
     });
   }
 
-  const fetchedDaysRef = useRef<Set<string>>(new Set());
-  useEffect(() => {
-    if (fetchedDaysRef.current.has(selectedDayKey)) return;
-    const dateEntries = selectedDayKey === "undated" ? undated : (dateMap.get(selectedDayKey) || []);
-    const tickers = dateEntries.map(e => e.ticker).filter(t => t && t !== "???");
-    if (tickers.length === 0) return;
-    fetchedDaysRef.current.add(selectedDayKey);
-    setEnrichLoading(prev => new Set([...prev, ...tickers]));
-    tickers.slice(0, 15).forEach(async (ticker) => {
-      try {
-        const res = await fetch(
-          `${AGENT_BACKEND_URL}/api/earnings/detail?ticker=${encodeURIComponent(ticker)}`
-        );
-        if (res.ok) {
-          const data = await res.json();
-          setEnrichments(prev => ({ ...prev, [ticker]: data }));
-        }
-      } catch { /* silent */ }
-      finally {
-        setEnrichLoading(prev => { const n = new Set(prev); n.delete(ticker); return n; });
+  // ── On-demand enrichment: detail is fetched only when user clicks a ticker ──
+  // No batch prefetch on day selection — prevents rate limit exhaustion and ensures
+  // click-through always has budget available. Detail endpoint is cached 10min backend-side.
+  const fetchTickerDetail = useCallback(async (ticker: string): Promise<EarningsDetailData | null> => {
+    if (!ticker || ticker === "???") return null;
+    // Return cached if already fetched
+    if (enrichments[ticker]) return enrichments[ticker];
+    setEnrichLoading(prev => new Set([...prev, ticker]));
+    try {
+      const res = await fetch(
+        `${AGENT_BACKEND_URL}/api/earnings/detail?ticker=${encodeURIComponent(ticker)}`
+      );
+      if (res.ok) {
+        const data = await res.json();
+        setEnrichments(prev => ({ ...prev, [ticker]: data }));
+        return data;
       }
-    });
-  }, [selectedDayKey]);
+    } catch (e) {
+      console.warn(`[EARNINGS] detail fetch failed for ${ticker}:`, e);
+    } finally {
+      setEnrichLoading(prev => { const n = new Set(prev); n.delete(ticker); return n; });
+    }
+    return null;
+  }, [enrichments]);
 
   const weekDays = Array.from({ length: 7 }, (_, i) => addDays(weekStart, i));
   const weekMonth = MONTH_NAMES[weekStart.getMonth()];
@@ -867,6 +908,41 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
 
   const showUndated = selectedDayKey === "undated";
   const displayEntries = showUndated ? undated : selectedEntries;
+
+  // ── Lazy rendering: paginate in batches of 15 ──
+  const BATCH_SIZE = 15;
+  const [visibleCount, setVisibleCount] = useState(BATCH_SIZE);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
+
+  // Reset visible count when day changes
+  useEffect(() => {
+    setVisibleCount(BATCH_SIZE);
+  }, [selectedDayKey]);
+
+  // IntersectionObserver to load more entries as user scrolls
+  useEffect(() => {
+    const el = loadMoreRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && visibleCount < displayEntries.length) {
+          setVisibleCount(prev => Math.min(prev + BATCH_SIZE, displayEntries.length));
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [visibleCount, displayEntries.length]);
+
+  const visibleEntries = displayEntries.slice(0, visibleCount);
+
+  // Click handler: fetch detail on demand then open modal
+  const handleEntryClick = useCallback(async (entry: EarningsEntry) => {
+    setModalEntry(entry);
+    // Trigger on-demand fetch (non-blocking — modal will show loading state)
+    fetchTickerDetail(entry.ticker);
+  }, [fetchTickerDetail]);
 
   return (
     <div>
@@ -986,7 +1062,7 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
         </div>
       ) : (
         <div className="space-y-2">
-          {displayEntries.map((e) => {
+          {visibleEntries.map((e) => {
             const isHigh = e.beatPct >= 60;
             const isLow = e.beatPct <= 40;
             const enrich = enrichments[e.ticker];
@@ -998,7 +1074,7 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
               <div
                 key={e.market?.marketId || `fh-${e.ticker}`}
                 className="rounded-xl border border-white/[0.06] bg-white/[0.015] hover:bg-white/[0.03] hover:border-white/[0.1] transition-all group cursor-pointer"
-                onClick={() => setModalEntry(e)}
+                onClick={() => handleEntryClick(e)}
               >
                 <div className="flex items-start gap-4 p-4">
                   {enrich?.logo ? (
@@ -1041,7 +1117,12 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
                         </div>
                       </div>
 
-                      <div className="flex-shrink-0 text-right">
+                      {/* Right side: Market Cap + Beat % */}
+                      <div className="flex-shrink-0 flex items-center gap-2">
+                        {/* Market Cap — always visible when enrichment loaded, "—" otherwise */}
+                        <span className="text-[10px] font-semibold text-white/35 font-mono min-w-[48px] text-right">
+                          {enrich ? (enrich.market_cap ? formatMktCap(enrich.market_cap) : "\u2014") : ""}
+                        </span>
                         {e.beatPct >= 0 ? (
                         <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg ${
                           isHigh ? "bg-emerald-500/10 border border-emerald-500/20" : isLow ? "bg-red-500/10 border border-red-500/20" : "bg-yellow-500/10 border border-yellow-500/20"
@@ -1080,11 +1161,6 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
                             "bg-yellow-500/8 border border-yellow-500/15 text-yellow-400/80"
                           }`}>
                             Analysts: {consensus.rating} ({consensus.buy}B/{consensus.hold}H/{consensus.sell}S)
-                          </span>
-                        )}
-                        {enrich.market_cap && (
-                          <span className="text-[9px] px-1.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-white/40 font-semibold">
-                            {formatMktCap(enrich.market_cap)}
                           </span>
                         )}
                         {enrich.news_sentiment && enrich.news_sentiment !== "Neutral" && (
@@ -1144,6 +1220,13 @@ function EarningsCalendarWidget({ markets }: { markets: ParsedMarket[] }) {
               </div>
             );
           })}
+          {/* Lazy load sentinel — triggers next batch when scrolled into view */}
+          {visibleCount < displayEntries.length && (
+            <div ref={loadMoreRef} className="flex items-center justify-center py-4">
+              <Loader2 className="w-4 h-4 text-white/20 animate-spin mr-2" />
+              <span className="text-[10px] text-white/20">Loading more ({visibleCount} of {displayEntries.length})...</span>
+            </div>
+          )}
         </div>
       )}
 
